@@ -1,0 +1,14 @@
+prototype(465M.Site:Document.HomePage) < prototype(Neos.Neos:ContentComponent) {
+
+    title = ${q(node).property('title')}
+
+    content = Neos.Neos:ContentCollection {
+        nodePath = 'main'
+    }
+
+    @process.contentElementWrapping >
+
+    renderer = afx`
+        <465M.Site:Component.Page.AbstractPage title={props.title} content={props.content} />
+    `
+}

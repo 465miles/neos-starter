@@ -1,0 +1,18 @@
+{
+    "description": "",
+    "type": "neos-site",
+    "name": "465m/site",
+    "require": {
+        "neos/flow": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "465M\\Site\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "465M.Site"
+        }
+    }
+}

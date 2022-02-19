@@ -1,0 +1,15 @@
+'465M.Site:Content.Headline':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    icon: text
+    label: 'Headline'
+  properties:
+    text:
+      type: string
+      ui:
+        inlineEditable: true
+        inline:
+          editorOptions:
+            placeholder: 'Enter title here...'
+            autoparagraph: false

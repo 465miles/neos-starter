@@ -1,0 +1,10 @@
+prototype(465M.Site:Content.Headline) < prototype(Neos.Neos:ContentComponent) {
+
+    text = Neos.Neos:Editable {
+        property = 'text'
+    }
+
+    renderer = afx`
+        <465M.Site:Component.Atom.Headline text={props.text} />
+    `
+}

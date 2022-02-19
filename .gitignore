@@ -1,0 +1,11 @@
+/Build/
+/Configuration/
+/Data/
+/Packages/
+/Web/
+/bin/
+/flow
+/flow.bat
+
+/.idea
+

@@ -1,0 +1,35 @@
+{
+    "name": "465miles/neos-starter",
+    "type": "project",
+    "description": "465miles Neos Starter",
+    "license": "MIT",
+    "config": {
+        "vendor-dir": "Packages/Libraries",
+        "bin-dir": "bin"
+    },
+    "require": {
+        "neos/neos": "~7.3.0",
+        "neos/neos-ui": "~7.3.0",
+        "465m/site": "@dev",
+        "neos/cli-setup": "~7.3.0",
+        "neos/site-kickstarter": "~7.3.0"
+    },
+    "require-dev": {
+        "neos/buildessentials": "~7.3.0",
+        "mikey179/vfsstream": "^1.6",
+        "phpunit/phpunit": "^9.0"
+    },
+    "repositories": {
+        "distributionPackages": {
+            "type": "path",
+            "url": "./DistributionPackages/*"
+        }
+    },
+    "scripts": {
+        "post-create-project-cmd": "./flow welcome",
+        "post-update-cmd": "Neos\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",
+        "post-install-cmd": "Neos\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",
+        "post-package-update": "Neos\\Flow\\Composer\\InstallerScripts::postPackageUpdateAndInstall",
+        "post-package-install": "Neos\\Flow\\Composer\\InstallerScripts::postPackageUpdateAndInstall"
+    }
+}

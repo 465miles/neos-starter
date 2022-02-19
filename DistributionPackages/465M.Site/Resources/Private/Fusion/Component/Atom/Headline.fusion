@@ -1,0 +1,10 @@
+prototype(465M.Site:Component.Atom.Headline) < prototype(Neos.Fusion:Component) {
+
+    text = ''
+
+    renderer = afx`
+        <h1>heifewfewfo</h1>
+
+        {props.text}
+    `
+}

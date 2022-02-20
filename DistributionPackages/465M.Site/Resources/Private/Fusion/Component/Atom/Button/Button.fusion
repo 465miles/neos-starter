@@ -1,0 +1,15 @@
+prototype(465M.Site:Component.Atom.Button) < prototype(Neos.Fusion:Component) {
+
+    text = ''
+
+    renderer = afx`
+        <button
+            x-data="buttonData"
+            x-on:click="foo"
+            class="bg-[#ff0]"
+        >
+            wefewf
+            {props.text}
+        </button>
+    `
+}

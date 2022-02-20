@@ -1,0 +1,47 @@
+{
+  "license": "UNLICENSED",
+  "private": true,
+  "config": {
+    "packageManager": "pnpm"
+  },
+  "scripts": {
+    "postinstall": "touch ./node_modules/.metadata_never_index; mkdir ./Packages; touch ./Packages/.metadata_never_index",
+    "showConfig": "node Build/Carbon.Pipeline/showConfig.mjs",
+    "build": "concurrently -r $npm_package_config_packageManager:build:*",
+    "build:js": "node Build/Carbon.Pipeline/esbuild.mjs --production",
+    "build:css": "node Build/Carbon.Pipeline/postcss.mjs --production",
+    "dev": "concurrently -r $npm_package_config_packageManager:dev:*",
+    "dev:js": "node Build/Carbon.Pipeline/esbuild.mjs",
+    "dev:css": "node Build/Carbon.Pipeline/postcss.mjs",
+    "watch": "concurrently -r $npm_package_config_packageManager:watch:*",
+    "watch:js": "node Build/Carbon.Pipeline/esbuild.mjs --watch",
+    "watch:css": "node Build/Carbon.Pipeline/postcss.mjs --watch",
+    "pipeline:build": "concurrently -r $npm_package_config_packageManager:build:*",
+    "pipeline": "$npm_package_config_packageManager install;concurrently -r $npm_package_config_packageManager:pipeline:*"
+  },
+  "devDependencies": {
+    "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
+    "alpinejs": "^3.9.0",
+    "autoprefixer": "^10.4.2",
+    "carbon-pipeline": "^0.1.1",
+    "concurrently": "^7.0.0",
+    "cssnano": "^5.0.17",
+    "esbuild": "^0.14.22",
+    "eslint": "^8.9.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "node-sass-tilde-importer": "^1.0.2",
+    "postcss": "^8.4.6",
+    "postcss-assets": "^6.0.0",
+    "postcss-clip-path-polyfill": "~1.1.0",
+    "postcss-focus-visible": "^6.0.4",
+    "postcss-import": "^14.0.2",
+    "postcss-reporter": "^7.0.5",
+    "postcss-sort-media-queries": "^4.2.1",
+    "prettier": "^2.5.1",
+    "sass": "^1.49.8",
+    "stylelint": "^14.5.1",
+    "stylelint-config-standard": "^25.0.0",
+    "tailwindcss": "^3.0.23"
+  }
+}

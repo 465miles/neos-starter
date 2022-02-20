@@ -11,22 +11,15 @@ prototype(465M.Site:Component.Page.AbstractPage) < prototype(Neos.Fusion:Compone
             `
 
             titleTag = afx`<title>{props.title}</title>`
-
-            stylesheets.site = afx`
-                <link rel="stylesheet" href={StaticResource.uri('465M.Site', 'Public/site.css')}/>
-            `
-
-            javascripts.site = afx`
-                <link type="text/javascript" defer href={StaticResource.uri('465M.Site', 'Public/site.js')}/>
-            `
         }
 
-        body >
         body = 465M.Site:Component.Template.Default {
             content = ${props.content}
 
             # Script includes before the closing body tag should go here
-            javascripts = Neos.Fusion:Join
+            javascripts = Neos.Fusion:Join {
+                lol = "fwefwef"
+            }
             # This processor appends the rendered javascripts Array to the rendered template
             @process.appendJavaScripts = ${value + this.javascripts}
         }

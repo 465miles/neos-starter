@@ -6,6 +6,29 @@
 /bin/
 /flow
 /flow.bat
+# ignore the downloaded selenium server, config and the selenium
+# temporary directory (which starts with a quote, do not ask why...)
+/Tests/Selenium/settings.xml
+Build/Resources/Java/selenium-server-standalone*
+/"
+node_modules/
 
-/.idea
+.idea
+.vscode
 
+composer.lock
+
+# ignore carbon pipeline unchanged files:
+.browserslistrc
+.editorconfig
+.eslintignore
+.eslintrc
+.nvmrc
+.postcssrc.js
+.prettierignore
+.prettierrc
+.stylelintrc
+jsconfig.json
+tailwind.config.js
+pnpm-lock.yaml
+bs-config.js

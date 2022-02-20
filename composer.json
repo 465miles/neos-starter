@@ -17,7 +17,8 @@
     "require-dev": {
         "neos/buildessentials": "~7.3.0",
         "mikey179/vfsstream": "^1.6",
-        "phpunit/phpunit": "^9.0"
+        "phpunit/phpunit": "^9.0",
+        "carbon/pipeline": "^0.10.0"
     },
     "repositories": {
         "distributionPackages": {

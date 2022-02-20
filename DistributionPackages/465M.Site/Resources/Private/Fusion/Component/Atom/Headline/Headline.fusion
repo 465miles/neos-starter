@@ -1,0 +1,14 @@
+prototype(465M.Site:Component.Atom.Headline) < prototype(Neos.Fusion:Component) {
+
+    text = ''
+
+    renderer = afx`
+    <div class="headline">
+        <h1 class="bg-black">heifewfewfo</h1>
+        <br/>
+            <465M.Site:Component.Atom.Button text="foo" />
+        <br/>
+        {props.text}
+    </div>
+    `
+}

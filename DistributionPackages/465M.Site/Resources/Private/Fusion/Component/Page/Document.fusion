@@ -1,0 +1,22 @@
+prototype(465M.Site:Component.Page.Document) < prototype(Neos.Fusion:Component) {
+
+    title = ''
+    content = ''
+    template = '465M.Site:Component.Template.Default'
+
+    renderer = Neos.Neos:Page {
+        head {
+            headTags = afx`
+                <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            `
+
+            titleTag = afx`<title>{props.title}</title>`
+        }
+
+        body = Neos.Fusion:Renderer {
+            type = ${props.template}
+            element.content = ${props.content}
+        }
+    }
+}

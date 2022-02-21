@@ -6,4 +6,4 @@
     label: 'Page'
   childNodes:
     main:
-      type: 'Neos.Neos:ContentCollection'
+      type: '465M.Site:Collection.Main'

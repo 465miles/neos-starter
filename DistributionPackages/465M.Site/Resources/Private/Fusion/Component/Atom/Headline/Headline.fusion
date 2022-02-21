@@ -4,11 +4,13 @@ prototype(465M.Site:Component.Atom.Headline) < prototype(Neos.Fusion:Component) 
 
     renderer = afx`
     <div class="headline">
-        <h1 class="bg-black">heifewfewfo</h1>
+        <h1 class="bg-primary-light">heifewfewfo</h1>
         <br/>
             <465M.Site:Component.Atom.Button text="foo" />
         <br/>
-        {props.text}
+        <p class="text-red-500">
+            {props.text}
+        </p>
     </div>
     `
 }

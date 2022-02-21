@@ -9,6 +9,6 @@ prototype(465M.Site:Document.Page) < prototype(Neos.Neos:ContentComponent) {
     @process.contentElementWrapping >
 
     renderer = afx`
-        <465M.Site:Component.Page.AbstractPage title={props.title} content={props.content} />
+        <465M.Site:Component.Page.Document title={props.title} content={props.content} />
     `
 }

@@ -1,0 +1,9 @@
+'465M.Site:Collection.Main':
+  superTypes:
+    'Neos.Neos:ContentCollection': true
+  label: ${'Main'}
+  ui:
+    icon: icon-folder-open
+  constraints:
+    nodeTypes:
+      '*': true

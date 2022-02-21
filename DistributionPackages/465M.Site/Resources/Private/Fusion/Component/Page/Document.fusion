@@ -1,7 +1,11 @@
 prototype(465M.Site:Component.Page.Document) < prototype(Neos.Fusion:Component) {
 
-    title = ''
-    content = ''
+    @propTypes {
+        title = ${PropTypes.string.isRequired}
+        content = ${PropTypes.string.isRequired}
+        template = ${PropTypes.string.isRequired}
+    }
+
     template = '465M.Site:Component.Template.Default'
 
     renderer = Neos.Neos:Page {

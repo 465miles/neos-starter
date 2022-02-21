@@ -3,7 +3,8 @@
     "type": "neos-site",
     "name": "465m/site",
     "require": {
-        "neos/flow": "*"
+        "neos/flow": "*",
+        "sitegeist/kaleidoscope": "^6.2"
     },
     "autoload": {
         "psr-4": {

@@ -1,0 +1,19 @@
+'465M.Site:Content.Image':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    icon: image
+    label: 'Image'
+    inspector:
+      groups:
+        content:
+          label: "foo"
+          icon: image
+  properties:
+    image:
+      type: 'Neos\Media\Domain\Model\ImageInterface'
+      ui:
+        label: "Image"
+        reloadIfChanged: true
+        inspector:
+          group: content

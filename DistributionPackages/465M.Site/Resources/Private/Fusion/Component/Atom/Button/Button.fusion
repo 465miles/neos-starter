@@ -1,6 +1,8 @@
 prototype(465M.Site:Component.Atom.Button) < prototype(Neos.Fusion:Component) {
 
-    text = ''
+    @propTypes {
+        text = ${PropTypes.string.isRequired}
+    }
 
     renderer = afx`
         <button

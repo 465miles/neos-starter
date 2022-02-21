@@ -1,2 +1,3 @@
+document.querySelectorAll('js-headline', el => {
 
-document.querySelectorAll()
+})

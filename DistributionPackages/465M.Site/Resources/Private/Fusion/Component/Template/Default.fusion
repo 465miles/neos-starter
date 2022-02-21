@@ -6,10 +6,7 @@ prototype(465M.Site:Component.Template.Default) < prototype(Neos.Fusion:Componen
   # Template
   renderer = afx`
     <!-- change to your needs -->
-    <header>
-      Header
-      <nav>{props.menu}</nav>
-    </header>
+    <465M.Site:Component.Template.Partials.Header />
     <main id="main">
       {props.content}
     </main>

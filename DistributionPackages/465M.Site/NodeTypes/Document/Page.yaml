@@ -2,7 +2,7 @@
   superTypes:
     'Neos.Neos:Document': true
   ui:
-    icon: file
+    icon: file-text
     label: 'Page'
   childNodes:
     main:

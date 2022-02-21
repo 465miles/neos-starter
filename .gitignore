@@ -28,7 +28,7 @@ composer.lock
 .prettierignore
 .prettierrc
 .stylelintrc
-jsconfig.json
-tailwind.config.js
+
+
 pnpm-lock.yaml
 bs-config.js

@@ -2,7 +2,7 @@ prototype(465M.Site:Component.Template.Partials.Header) < prototype(Neos.Fusion:
 
     renderer = afx`
         <div class="relative bg-white border-b-2 border-gray-100">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <465M.Site:Component.Organism.Container>
                 <div
                     class="flex justify-between items-center py-6 md:justify-start md:space-x-10">
                     <div class="flex justify-start lg:w-0 lg:flex-1">
@@ -16,7 +16,7 @@ prototype(465M.Site:Component.Template.Partials.Header) < prototype(Neos.Fusion:
                         <465M.Site:Component.Template.Partials.Navigation.Default home='true' />
                     </nav>
                 </div>
-            </div>
+            </465M.Site:Component.Organism.Container>
         </div>
     `
 }

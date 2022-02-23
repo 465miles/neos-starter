@@ -2,17 +2,12 @@ prototype(465M.Site:Component.Atom.Headline) < prototype(Neos.Fusion:Component) 
 
     @propTypes {
         text = ${PropTypes.string.isRequired}
+        extraClass = ${PropTypes.string}
     }
 
     renderer = afx`
-        <div class="headline js-headline">
-            <h1 class="bg-primary-light">heifewfewfo</h1>
-            <br/>
-                <465M.Site:Component.Atom.Button text="foo" />
-            <br/>
-            <p class="text-red-500">
-                {props.text}
-            </p>
+        <div class={props.extraClass}>
+            {props.text}
         </div>
     `
 }

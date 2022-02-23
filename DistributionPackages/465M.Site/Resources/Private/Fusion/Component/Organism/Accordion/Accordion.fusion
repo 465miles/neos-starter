@@ -1,0 +1,14 @@
+prototype(465M.Site:Component.Organism.Accordion) < prototype(Neos.Fusion:Component) {
+
+    @propTypes {
+        content = ${PropTypes.any.isRequired}
+    }
+
+    renderer = afx`
+        <465M.Site:Component.Organism.Container extraClasses="my-10">
+            <div class="w-full bg-white drop-shadow rounded-md" x-data="{selected:null}">
+                {props.content}
+            </div>
+        </465M.Site:Component.Organism.Container>
+    `
+}

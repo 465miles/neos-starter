@@ -2,10 +2,10 @@
   superTypes:
     'Neos.Neos:Content': true
   ui:
-    icon: text
+    icon: heading
     label: 'Headline'
   properties:
-    text:
+    title:
       type: string
       ui:
         inlineEditable: true

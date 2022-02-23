@@ -1,0 +1,10 @@
+prototype(465M.Site:Content.Accordion) < prototype(Neos.Neos:ContentComponent) {
+    content = Neos.Neos:ContentCollection {
+        nodePath = ''
+        @process.contentElementWrapping >
+    }
+
+    renderer = afx`
+        <465M.Site:Component.Organism.Accordion content={props.content} />
+    `
+}

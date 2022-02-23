@@ -1,3 +1,0 @@
-prototype(465M.Site:Content.Accordion.Item) < prototype(Neos.Neos:ContentComponent) {
-    renderer = Neos.Fusion:Component
-}

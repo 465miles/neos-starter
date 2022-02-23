@@ -1,0 +1,14 @@
+prototype(465M.Site:Component.Molecule.AccordionGroup) < prototype(Neos.Fusion:Component) {
+
+    @propTypes {
+        content = ${PropTypes.any.isRequired}
+    }
+
+    renderer = afx`
+        <465M.Site:Component.Organism.Container>
+            <div class="w-full bg-white drop-shadow transition-all duration-250 rounded-md" x-data="{selected:null}">
+                {props.content}
+            </div>
+        </465M.Site:Component.Organism.Container>
+    `
+}

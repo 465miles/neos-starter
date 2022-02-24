@@ -1,0 +1,7 @@
+'465M.Site:Content.Text':
+  superTypes:
+    '465M.Site:Content.Headline': true
+    '465M.Site:Content.Paragraph': true
+  ui:
+    icon: text
+    label: 'Text'

@@ -1,16 +1,16 @@
-prototype(465M.Site:Component.Atom.Headline) < prototype(Neos.Fusion:Component) {
+prototype(465M.Site:Component.Atom.Paragraph) < prototype(Neos.Fusion:Component) {
 
     @propTypes {
-        title = ${PropTypes.string.isRequired}
+        text = ${PropTypes.string.isRequired}
         extraClass = ${PropTypes.string}
     }
 
-    class = 'headline'
+    class = 'paragraph'
     class.@process.extraClass = ${this.extraClass ? value + ' ' + this.extraClass : value}
 
     renderer = afx`
         <div class={props.class}>
-            {props.title}
+            {props.text}
         </div>
     `
 }

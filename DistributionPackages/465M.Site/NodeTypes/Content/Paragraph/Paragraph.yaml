@@ -1,0 +1,15 @@
+'465M.Site:Content.Paragraph':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    icon: paragraph
+    label: 'Paragraph'
+  properties:
+    text:
+      type: string
+      ui:
+        inlineEditable: true
+        inline:
+          editorOptions:
+            placeholder: 'Enter text here...'
+            autoparagraph: true

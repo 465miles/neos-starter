@@ -1,0 +1,14 @@
+prototype(465M.Site:Content.Text) < prototype(Neos.Neos:ContentComponent) {
+
+    title = Neos.Neos:Editable {
+        property = 'title'
+    }
+
+    text = Neos.Neos:Editable {
+        property = 'text'
+    }
+
+    renderer = afx`
+        <465M.Site:Component.Molecule.Text title={props.title} text={props.text} />
+    `
+}

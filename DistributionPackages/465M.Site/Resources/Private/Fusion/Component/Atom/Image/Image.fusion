@@ -5,7 +5,6 @@ prototype(465M.Site:Component.Atom.Image) < prototype(Neos.Fusion:Component) {
     }
 
     renderer = afx`
-        fwefewqf
         <Sitegeist.Kaleidoscope:Image
             imageSource={props.imageSource}
             srcset="1x, 1.5x, 2x"

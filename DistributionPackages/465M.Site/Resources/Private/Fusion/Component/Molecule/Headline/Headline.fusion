@@ -1,0 +1,18 @@
+prototype(465M.Site:Component.Molecule.Headline) < prototype(Neos.Fusion:Component) {
+
+    @propTypes {
+        tagName = ${PropTypes.string.isRequired}
+        fontSize = ${PropTypes.string.isRequired}
+        spacingTop = ${PropTypes.string}
+        spacingBottom = ${PropTypes.string}
+        color = ${PropTypes.string}
+        content = ${PropTypes.string.isRequired}
+        extraClass = ${PropTypes.string}
+    }
+
+    renderer = afx`
+        <465M.Site:Component.Organism.Container>
+            <465M.Site:Component.Atom.Headline {...props} />
+        </465M.Site:Component.Organism.Container>
+    `
+}

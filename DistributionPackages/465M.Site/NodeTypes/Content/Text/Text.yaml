@@ -3,5 +3,5 @@
     '465M.Site:Content.Headline': true
     '465M.Site:Content.Paragraph': true
   ui:
-    icon: text
+    icon: font
     label: 'Text'

@@ -1,14 +1,41 @@
 prototype(465M.Site:Component.Molecule.AccordionGroup) < prototype(Neos.Fusion:Component) {
 
     @propTypes {
+        spacingTop = ${PropTypes.string}
+        spacingBottom = ${PropTypes.string}
         content = ${PropTypes.any.isRequired}
     }
 
+    spacingTopClass = Neos.Fusion:Match {
+        @subject = ${props.spacingTop}
+        @default = 'none'
+        "none" = "mt-0"
+        "xs" = "mt-8"
+        "sm" = "mt-12"
+        "md" = "mt-16"
+        "lg" = "mt-24"
+        "xl" = "mt-36"
+        "2xl" = "mt-48"
+    }
+
+    spacingBottomClass = Neos.Fusion:Match {
+        @subject = ${props.spacingBottom}
+        @default = 'none'
+        "none" = "mb-0"
+        "xs" = "mb-8"
+        "sm" = "mb-12"
+        "md" = "mb-16"
+        "lg" = "mb-24"
+        "xl" = "mb-36"
+        "2xl" = "mb-48"
+    }
+
     renderer = afx`
-        <465M.Site:Component.Organism.Container>
-            <div class="w-full bg-white drop-shadow transition-all duration-250 rounded-md" x-data="{selected:null}">
-                {props.content}
-            </div>
-        </465M.Site:Component.Organism.Container>
+        <div class.main="w-full bg-white drop-shadow-md rounded-md"
+             class.spacingTop={props.spacingTopClass}
+             class.spacingBottom={props.spacingBottomClass}
+             x-data="{selected:null}">
+            {props.content}
+        </div>
     `
 }

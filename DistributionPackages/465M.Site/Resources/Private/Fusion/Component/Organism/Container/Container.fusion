@@ -1,12 +1,13 @@
 prototype(465M.Site:Component.Organism.Container) < prototype(Neos.Fusion:Component) {
 
     @propTypes {
+        @strict = true
         content = ${PropTypes.any}
-        extraClasses = ${PropTypes.string}
+        extraClass = ${PropTypes.string}
     }
 
     renderer = afx`
-        <div class={"w-full max-w-7xl mx-auto px-4 sm:px-6 " + props.extraClasses}>
+        <div class.main="w-full max-w-7xl mx-auto px-5 md:px-10" class.extra={props.extraClass}>
             {props.content}
         </div>
     `

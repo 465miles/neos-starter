@@ -1,0 +1,172 @@
+Neos:
+  Neos:
+    nodeTypes:
+      presets:
+        properties:
+          headline:
+            default:
+              type: string
+              defaultValue: "Überschrift eingeben ..."
+              ui:
+                inlineEditable: true
+                inline:
+                  editorOptions:
+                    placeholder: ""
+                    autoparagraph: false
+                    formatting:
+                      strong: true
+                      em: true
+                      u: true
+                      sub: true
+                      sup: true
+                      del: true
+                      p: false
+                      h1: false
+                      h2: false
+                      h3: false
+                      h4: false
+                      h5: false
+                      h6: false
+                      pre: false
+                      underline: false
+                      strikethrough: true
+                      removeFormat: false
+                      uppercase: true
+                      lowercase: true
+                      left: true
+                      right: true
+                      center: true
+                      justify: true
+                      table: false
+                      ol: false
+                      ul: false
+                      a: false
+            restricted:
+              type: string
+              ui:
+                inlineEditable: true
+          text:
+            default:
+              type: string
+              ui:
+                inlineEditable: true
+                inline:
+                  editorOptions:
+                    placeholder: ""
+                    autoparagraph: true
+                    linking:
+                      anchor: true
+                      title: true
+                      relNofollow: true
+                      targetBlank: true
+                      startingPoint: "/sites"
+                    formatting:
+                      strong: true
+                      em: true
+                      u: true
+                      sub: true
+                      sup: true
+                      del: true
+                      p: true
+                      h1: false
+                      h2: false
+                      h3: false
+                      h4: false
+                      h5: false
+                      h6: false
+                      pre: true
+                      underline: true
+                      strikethrough: true
+                      removeFormat: true
+                      left: true
+                      right: true
+                      center: true
+                      justify: true
+                      table: true
+                      ol: true
+                      ul: true
+                      a: true
+            simple:
+              type: string
+              ui:
+                inlineEditable: true
+                inline:
+                  editorOptions:
+                    placeholder: ""
+                    autoparagraph: true
+                    linking:
+                      anchor: true
+                      title: true
+                      relNofollow: true
+                      targetBlank: true
+                      startingPoint: "/sites"
+                    formatting:
+                      strong: true
+                      em: true
+                      u: true
+                      sub: true
+                      sup: true
+                      del: false
+                      p: true
+                      h1: false
+                      h2: false
+                      h3: false
+                      h4: false
+                      h5: false
+                      h6: false
+                      pre: false
+                      underline: false
+                      strikethrough: false
+                      removeFormat: false
+                      left: false
+                      right: false
+                      center: false
+                      justify: false
+                      table: false
+                      ol: false
+                      ul: true
+                      a: false
+            free:
+              type: string
+              ui:
+                inlineEditable: true
+                inline:
+                  editorOptions:
+                    placeholder: ""
+                    autoparagraph: true
+                    linking:
+                      anchor: true
+                      title: true
+                      relNofollow: true
+                      targetBlank: true
+                      startingPoint: "/sites"
+                    formatting:
+                      strong: true
+                      em: true
+                      u: true
+                      sub: true
+                      sup: true
+                      del: true
+                      p: true
+                      h1: false
+                      h2: true
+                      h3: true
+                      h4: true
+                      h5: true
+                      h6: false
+                      pre: true
+                      underline: true
+                      strikethrough: true
+                      removeFormat: true
+                      left: true
+                      right: true
+                      center: true
+                      justify: true
+                      table: true
+                      ol: true
+                      ul: true
+                      a: true
+            restricted:
+              type: string
+              ui:
+                inlineEditable: true

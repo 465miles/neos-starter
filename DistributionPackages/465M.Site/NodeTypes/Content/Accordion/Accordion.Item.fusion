@@ -1,6 +1,7 @@
 prototype(465M.Site:Content.Accordion.Item) < prototype(Neos.Neos:ContentComponent) {
-    id = ${node.identifier}
-    ref = ${'accordionitem-' + this.id}
+    // id = ${node.identifier}
+    id = ${iterator.index}
+    ref = ${'accordionitem-' + iterator.index}
 
     title = Neos.Neos:Editable {
         property = 'title'
@@ -12,6 +13,6 @@ prototype(465M.Site:Content.Accordion.Item) < prototype(Neos.Neos:ContentCompone
     }
 
     renderer = afx`
-        <465M.Site:Component.Atom.AccordionItem id={props.id} ref={props.ref} title={props.title} content={props.content} />
+        <465M.Site:Component.Atom.AccordionItem {...props} />
     `
 }

@@ -1,10 +1,14 @@
 prototype(465M.Site:Content.Headline) < prototype(Neos.Neos:ContentComponent) {
 
-    title = Neos.Neos:Editable {
+    tagName = ${q(node).property('title-hierarchy')}
+    fontSize = ${q(node).property('title-size')}
+    spacingTop = ${q(node).property('spacing-top')}
+    spacingBottom = ${q(node).property('spacing-bottom')}
+    content = Neos.Neos:Editable {
         property = 'title'
     }
 
     renderer = afx`
-        <465M.Site:Component.Atom.Headline title={props.title} />
+        <465M.Site:Component.Molecule.Headline {...props} />
     `
 }

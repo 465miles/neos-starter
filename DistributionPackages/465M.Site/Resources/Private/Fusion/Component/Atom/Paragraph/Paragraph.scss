@@ -1,0 +1,5 @@
+.paragraph {
+    p + p {
+        @apply mt-2;
+    }
+}

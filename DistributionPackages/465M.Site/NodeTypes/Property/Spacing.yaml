@@ -1,0 +1,78 @@
+'465M.Site:Property.Spacing':
+  ui:
+    inspector:
+      groups:
+        spacing:
+          label: Abstände
+          icon: expand
+          tab: default
+          position: 300
+  properties:
+    spacing-top:
+      type: string
+      defaultValue: md
+      ui:
+        label: 'Oberer Abstand'
+        reloadIfChanged: true
+        inspector:
+          group: spacing
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: false
+            placeholder: 'Abstand wählen'
+            values:
+              none:
+                label: 'Kein Abstand'
+                icon: expand
+              xs:
+                label: 'Sehr klein'
+                icon: expand
+              sm:
+                label: 'Klein'
+                icon: expand
+              md:
+                label: 'Mittel'
+                icon: expand
+              lg:
+                label: 'Groß'
+                icon: expand
+              xl:
+                label: 'XL'
+                icon: expand
+              2xl:
+                label: '2XL'
+                icon: expand
+    spacing-bottom:
+      type: string
+      defaultValue: md
+      ui:
+        label: 'Unterer Abstand'
+        reloadIfChanged: true
+        inspector:
+          group: spacing
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: false
+            placeholder: 'Abstand wählen'
+            values:
+              none:
+                label: 'Kein Abstand'
+                icon: expand
+              xs:
+                label: 'Sehr klein'
+                icon: expand
+              sm:
+                label: 'Klein'
+                icon: expand
+              md:
+                label: 'Mittel'
+                icon: expand
+              lg:
+                label: 'Groß'
+                icon: expand
+              xl:
+                label: 'XL'
+                icon: expand
+              2xl:
+                label: '2XL'
+                icon: expand

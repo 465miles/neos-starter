@@ -1,19 +1,54 @@
 prototype(465M.Site:Component.Molecule.Text) < prototype(Neos.Fusion:Component) {
 
     @propTypes {
-        title = ${PropTypes.string.isRequired}
-        text = ${PropTypes.string.isRequired}
+        titleTagName = ${PropTypes.string.isRequired}
+        titleFontSize = ${PropTypes.string.isRequired}
+        titleContent = ${PropTypes.string.isRequired}
+        textFontSize = ${PropTypes.string.isRequired}
+        textColumns = ${PropTypes.string.isRequired}
+        textContent = ${PropTypes.string.isRequired}
+        spacingTop = ${PropTypes.string}
+        spacingBottom = ${PropTypes.string}
         extraClass = ${PropTypes.string}
     }
 
-    class = 'text'
-    class.@process.extraClass = ${this.extraClass ? value + ' ' + this.extraClass : value}
+    spacingTopClass = Neos.Fusion:Match {
+        @subject = ${props.spacingTop}
+        @default = 'none'
+        "none" = "mt-0"
+        "xs" = "mt-8"
+        "sm" = "mt-12"
+        "md" = "mt-16"
+        "lg" = "mt-24"
+        "xl" = "mt-36"
+        "2xl" = "mt-48"
+    }
+
+    spacingBottomClass = Neos.Fusion:Match {
+        @subject = ${props.spacingBottom}
+        @default = 'none'
+        "none" = "mb-0"
+        "xs" = "mb-8"
+        "sm" = "mb-12"
+        "md" = "mb-16"
+        "lg" = "mb-24"
+        "xl" = "mb-36"
+        "2xl" = "mb-48"
+    }
 
     renderer = afx`
-        <465M.Site:Component.Organism.Container extraClasses="my-10">
-            <div class={props.class}>
-                <465M.Site:Component.Atom.Headline title={props.title} extraClass="mb-3" />
-                <465M.Site:Component.Atom.Paragraph text={props.text} />
+        <465M.Site:Component.Organism.Container>
+            <div
+                class.main='text'
+                class.extra={props.extraClass}
+                class.spacingTop={props.spacingTopClass}
+                class.spacingBottom={props.spacingBottomClass}>
+                <465M.Site:Component.Atom.Headline tagName={props.titleTagName} fontSize={props.titleFontSize} extraClass="mb-8">
+                    {props.titleContent}
+                </465M.Site:Component.Atom.Headline>
+                <465M.Site:Component.Atom.Paragraph fontSize={props.textFontSize} columns={props.textColumns}>
+                    {props.textContent}
+                </465M.Site:Component.Atom.Paragraph>
             </div>
         </465M.Site:Component.Organism.Container>
     `

@@ -1,15 +1,77 @@
 '465M.Site:Content.Paragraph':
   superTypes:
     'Neos.Neos:Content': true
+    '465M.Site:Property.Spacing': true
   ui:
     icon: paragraph
-    label: 'Paragraph'
+    label: 'Absatz'
+    inspector:
+      groups:
+        paragraph:
+          label: Absatz
+          icon: paragraph
+          tab: default
+          position: after heading
   properties:
     text:
+      options:
+        preset: 'text.default'
+    text-size:
       type: string
+      defaultValue: base
       ui:
-        inlineEditable: true
-        inline:
+        label: 'Schriftgröße'
+        reloadIfChanged: true
+        inspector:
+          group: paragraph
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
-            placeholder: 'Enter text here...'
-            autoparagraph: true
+            allowEmpty: false
+            placeholder: 'Größe wählen'
+            values:
+              base:
+                label: 'Standard'
+                icon: text-height
+                group: 'Standard'
+              xs:
+                label: 'Sehr klein'
+                icon: text-height
+                group: 'Klein'
+              sm:
+                label: 'Klein'
+                icon: text-height
+                group: 'Klein'
+              lg:
+                label: 'Groß'
+                icon: text-height
+                group: 'Groß'
+              xl:
+                label: 'XL'
+                icon: text-height
+                group: 'Groß'
+
+    text-columns:
+      type: string
+      defaultValue: 0
+      ui:
+        label: 'Textspalten'
+        reloadIfChanged: true
+        inspector:
+          group: paragraph
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: false
+            placeholder: 'Spaltenanzahl wählen'
+            values:
+              0:
+                label: 'Keine Spalten'
+                icon: columns
+              2:
+                label: '2 Spalten'
+                icon: columns
+              3:
+                label: '3 Spalten'
+                icon: columns
+              4:
+                label: '4 Spalten'
+                icon: columns

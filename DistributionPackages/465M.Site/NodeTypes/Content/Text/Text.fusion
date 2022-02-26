@@ -1,14 +1,20 @@
 prototype(465M.Site:Content.Text) < prototype(Neos.Neos:ContentComponent) {
 
-    title = Neos.Neos:Editable {
+    titleTagName = ${q(node).property('title-hierarchy')}
+    titleFontSize = ${q(node).property('title-size')}
+    titleContent = Neos.Neos:Editable {
         property = 'title'
     }
 
-    text = Neos.Neos:Editable {
+    textFontSize = ${q(node).property('text-size')}
+    textColumns = ${q(node).property('text-columns')}
+    textContent = Neos.Neos:Editable {
         property = 'text'
     }
+    spacingTop = ${q(node).property('spacing-top')}
+    spacingBottom = ${q(node).property('spacing-bottom')}
 
     renderer = afx`
-        <465M.Site:Component.Molecule.Text title={props.title} text={props.text} />
+        <465M.Site:Component.Molecule.Text {...props} />
     `
 }

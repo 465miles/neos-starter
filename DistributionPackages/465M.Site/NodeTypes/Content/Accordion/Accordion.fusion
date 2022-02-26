@@ -1,10 +1,12 @@
 prototype(465M.Site:Content.Accordion) < prototype(Neos.Neos:ContentComponent) {
+    spacingTop = ${q(node).property('spacing-top')}
+    spacingBottom = ${q(node).property('spacing-bottom')}
     content = Neos.Neos:ContentCollection {
         nodePath = ''
         @process.contentElementWrapping >
     }
 
     renderer = afx`
-        <465M.Site:Component.Organism.Accordion content={props.content} />
+        <465M.Site:Component.Organism.Accordion {...props} />
     `
 }

@@ -1,15 +1,20 @@
 '465M.Site:Content.Headline':
   superTypes:
     'Neos.Neos:Content': true
+    '465M.Site:Property.TitleHierarchy': true
+    '465M.Site:Property.TitleSize': true
+    '465M.Site:Property.Spacing': true
   ui:
     icon: heading
-    label: 'Headline'
+    label: 'Überschrift'
+    inspector:
+      groups:
+        heading:
+          label: Überschrift
+          icon: heading
+          tab: default
+          position: before text
   properties:
     title:
-      type: string
-      ui:
-        inlineEditable: true
-        inline:
-          editorOptions:
-            placeholder: 'Enter title here...'
-            autoparagraph: false
+      options:
+        preset: 'headline.default'

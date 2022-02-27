@@ -32,8 +32,8 @@ prototype(465M.Site:Component.Atom.Paragraph) < prototype(Neos.Fusion:Component)
         <div
             class.main="paragraph"
             class.prose='prose'
-            class.fontSize={props.fontSizeClass}
-            class.columns={props.columnsClass}
+            class.fontSize={props.fontSize}
+            class.columns={props.columns}
             class.columnGap="gap-8"
             class.color={props.color ? props.color : "text-gray-700"}
             class.width="w-full"

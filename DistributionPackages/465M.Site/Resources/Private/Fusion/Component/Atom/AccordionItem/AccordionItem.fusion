@@ -1,6 +1,7 @@
 prototype(465M.Site:Component.Atom.AccordionItem) < prototype(Neos.Fusion:Component) {
 
     @propTypes {
+        @strict = true
         id = ${PropTypes.integer.isRequired}
         ref = ${PropTypes.string.isRequired}
         title = ${PropTypes.string.isRequired}

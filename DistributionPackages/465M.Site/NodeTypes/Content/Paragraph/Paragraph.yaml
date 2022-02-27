@@ -1,7 +1,7 @@
 '465M.Site:Content.Paragraph':
   superTypes:
     'Neos.Neos:Content': true
-    '465M.Site:Property.Spacing': true
+    '465M.Site:Mixin.Spacing': true
   ui:
     icon: paragraph
     label: 'Absatz'
@@ -11,7 +11,7 @@
           label: Absatz
           icon: paragraph
           tab: default
-          position: after heading
+          position: 130
   properties:
     text:
       options:
@@ -49,10 +49,9 @@
                 label: 'XL'
                 icon: text-height
                 group: 'Groß'
-
     text-columns:
       type: string
-      defaultValue: 0
+      defaultValue: "0"
       ui:
         label: 'Textspalten'
         reloadIfChanged: true
@@ -63,15 +62,15 @@
             allowEmpty: false
             placeholder: 'Spaltenanzahl wählen'
             values:
-              0:
+              "0":
                 label: 'Keine Spalten'
                 icon: columns
-              2:
+              "2":
                 label: '2 Spalten'
                 icon: columns
-              3:
+              "3":
                 label: '3 Spalten'
                 icon: columns
-              4:
+              "4":
                 label: '4 Spalten'
                 icon: columns

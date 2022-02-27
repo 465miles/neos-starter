@@ -5,8 +5,8 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                'sans': ['Urbanist', 'ui-sans-serif', 'system-ui'],
-                'body': ['Urbanist', 'ui-sans-serif', 'system-ui'],
+                'sans': ['Outfit', 'ui-sans-serif', 'system-ui'],
+                'body': ['Outfit', 'ui-sans-serif', 'system-ui'],
             },
             typography: (theme) => ({
                 DEFAULT: {

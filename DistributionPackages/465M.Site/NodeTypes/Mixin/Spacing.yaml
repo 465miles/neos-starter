@@ -1,4 +1,4 @@
-'465M.Site:Property.Spacing':
+'465M.Site:Mixin.Spacing':
   ui:
     inspector:
       groups:
@@ -6,7 +6,7 @@
           label: Abstände
           icon: expand
           tab: default
-          position: 300
+          position: 400
   properties:
     spacing-top:
       type: string

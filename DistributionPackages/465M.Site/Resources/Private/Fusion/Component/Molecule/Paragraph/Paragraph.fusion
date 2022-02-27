@@ -1,6 +1,7 @@
 prototype(465M.Site:Component.Molecule.Paragraph) < prototype(Neos.Fusion:Component) {
 
     @propTypes {
+        @strict = true
         fontSize = ${PropTypes.string.isRequired}
         columns = ${PropTypes.string.isRequired}
         spacingTop = ${PropTypes.string}
@@ -11,8 +12,18 @@ prototype(465M.Site:Component.Molecule.Paragraph) < prototype(Neos.Fusion:Compon
     }
 
     renderer = afx`
-        <465M.Site:Component.Organism.Container>
-            <465M.Site:Component.Atom.Paragraph {...props} />
+        <465M.Site:Component.Organism.Container
+            spacingTop={props.spacingTop}
+            spacingBottom={props.spacingBottom}
+        >
+            <465M.Site:Component.Atom.Paragraph
+                fontSize={props.fontSize}
+                color={props.color}
+                columns={props.columns}
+                extraClass={props.extraClass}
+            >
+                {props.content}
+            </465M.Site:Component.Atom.Paragraph>
         </465M.Site:Component.Organism.Container>
     `
 }

@@ -1,6 +1,7 @@
 prototype(465M.Site:Component.Atom.Image) < prototype(Neos.Fusion:Component) {
 
     @propTypes {
+        @strict = true
         imageSource = ${PropTypes.instanceOf('\\Sitegeist\\Kaleidoscope\\EelHelpers\\ImageSourceHelperInterface')}
     }
 
@@ -10,6 +11,7 @@ prototype(465M.Site:Component.Atom.Image) < prototype(Neos.Fusion:Component) {
             srcset="1x, 1.5x, 2x"
             sizes="(min-width: 320px) 440px, 100vw"
             formats="webp, png, jpeg"
+            class="rounded-xl"
         />
     `
 }

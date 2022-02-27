@@ -1,0 +1,12 @@
+:root {
+    --plyr-color-main: theme('colors.blue.500');
+    --plyr-video-background: transparent;
+}
+
+.plyr--video {
+    @apply rounded-xl;
+}
+
+.plyr__poster {
+    @apply bg-cover;
+}

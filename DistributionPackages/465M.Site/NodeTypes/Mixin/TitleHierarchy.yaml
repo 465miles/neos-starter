@@ -1,4 +1,4 @@
-'465M.Site:Property.TitleHierarchy':
+'465M.Site:Mixin.TitleHierarchy':
   properties:
     title-hierarchy:
       type: string

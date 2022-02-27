@@ -1,6 +1,8 @@
 prototype(465M.Site:Component.Molecule.Text) < prototype(Neos.Fusion:Component) {
 
     @propTypes {
+        @strict = true
+        labelContent = ${PropTypes.string}
         titleTagName = ${PropTypes.string.isRequired}
         titleFontSize = ${PropTypes.string.isRequired}
         titleContent = ${PropTypes.string.isRequired}
@@ -12,41 +14,31 @@ prototype(465M.Site:Component.Molecule.Text) < prototype(Neos.Fusion:Component) 
         extraClass = ${PropTypes.string}
     }
 
-    spacingTopClass = Neos.Fusion:Match {
-        @subject = ${props.spacingTop}
-        @default = 'none'
-        "none" = "mt-0"
-        "xs" = "mt-8"
-        "sm" = "mt-12"
-        "md" = "mt-16"
-        "lg" = "mt-24"
-        "xl" = "mt-36"
-        "2xl" = "mt-48"
-    }
-
-    spacingBottomClass = Neos.Fusion:Match {
-        @subject = ${props.spacingBottom}
-        @default = 'none'
-        "none" = "mb-0"
-        "xs" = "mb-8"
-        "sm" = "mb-12"
-        "md" = "mb-16"
-        "lg" = "mb-24"
-        "xl" = "mb-36"
-        "2xl" = "mb-48"
-    }
-
     renderer = afx`
-        <465M.Site:Component.Organism.Container>
+        <465M.Site:Component.Organism.Container
+        spacingTop={props.spacingTop}
+        spacingBottom={props.spacingBottom}
+        >
             <div
                 class.main='text'
                 class.extra={props.extraClass}
-                class.spacingTop={props.spacingTopClass}
-                class.spacingBottom={props.spacingBottomClass}>
-                <465M.Site:Component.Atom.Headline tagName={props.titleTagName} fontSize={props.titleFontSize} extraClass="mb-8">
+            >
+                <465M.Site:Component.Atom.Lead>
+                    {props.labelContent}
+                </465M.Site:Component.Atom.Lead>
+
+                <465M.Site:Component.Atom.Headline
+                    tagName={props.titleTagName}
+                    fontSize={props.titleFontSize}
+                    extraClass="mb-6"
+                >
                     {props.titleContent}
                 </465M.Site:Component.Atom.Headline>
-                <465M.Site:Component.Atom.Paragraph fontSize={props.textFontSize} columns={props.textColumns}>
+
+                <465M.Site:Component.Atom.Paragraph
+                    fontSize={props.textFontSize}
+                    columns={props.textColumns}
+                >
                     {props.textContent}
                 </465M.Site:Component.Atom.Paragraph>
             </div>

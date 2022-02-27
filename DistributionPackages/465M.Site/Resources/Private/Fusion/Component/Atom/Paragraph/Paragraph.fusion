@@ -1,75 +1,44 @@
 prototype(465M.Site:Component.Atom.Paragraph) < prototype(Neos.Fusion:Component) {
 
     @propTypes {
+        @strict = true
         fontSize = ${PropTypes.string.isRequired}
-        columns = ${PropTypes.string.isRequired}
-        spacingTop = ${PropTypes.string}
-        spacingBottom = ${PropTypes.string}
+        columns = ${PropTypes.string}
         color = ${PropTypes.string}
         content = ${PropTypes.string.isRequired}
         extraClass = ${PropTypes.string}
     }
 
-    renderer = Neos.Fusion:Component {
-        @apply.props = ${props}
-
-        fontSizeClass = Neos.Fusion:Match {
-            @subject = ${props.fontSize}
-            @default = 'base'
-            "base" = "text-lg"
-            "xs" = "text-sm"
-            "sm" = "text-base"
-            "lg" = "text-xl"
-            "xl" = "text-2xl"
-        }
-
-        columnsClass = Neos.Fusion:Match {
-            @subject = ${props.columns}
-            @default = '0'
-            "0" = ""
-            "2" = "md:columns-2"
-            "3" = "md:columns-2 lg:columns-3"
-            "4" = "md:columns-2 lg:columns-4"
-        }
-
-        spacingTopClass = Neos.Fusion:Match {
-            @subject = ${props.spacingTop}
-            @default = 'none'
-            "none" = "mt-0"
-            "xs" = "mt-8"
-            "sm" = "mt-12"
-            "md" = "mt-16"
-            "lg" = "mt-24"
-            "xl" = "mt-36"
-            "2xl" = "mt-48"
-        }
-
-        spacingBottomClass = Neos.Fusion:Match {
-            @subject = ${props.spacingBottom}
-            @default = 'none'
-            "none" = "mb-0"
-            "xs" = "mb-8"
-            "sm" = "mb-12"
-            "md" = "mb-16"
-            "lg" = "mb-24"
-            "xl" = "mb-36"
-            "2xl" = "mb-48"
-        }
-
-        renderer = afx`
-            <div
-                class.main="paragraph"
-                class.prose='prose'
-                class.fontSize={props.fontSizeClass}
-                class.columns={props.columnsClass}
-                class.columnGap="gap-8"
-                class.color={props.color ? props.color : "text-gray-700"}
-                class.spacingTop={props.spacingTopClass}
-                class.spacingBottom={props.spacingBottomClass}
-                class.width="w-full"
-                class.extra={props.extraClass}>
-                {props.content}
-            </div>
-        `
+    fontSize.@process.class = Neos.Fusion:Match {
+        @subject = ${value}
+        @default = 'text-base'
+        "base" = "text-lg"
+        "xs" = "text-sm"
+        "sm" = "text-base"
+        "lg" = "text-xl"
+        "xl" = "text-2xl"
     }
+
+    columns.@process.class = Neos.Fusion:Match {
+        @subject = ${value}
+        @default = ''
+        "0" = ""
+        "2" = "md:columns-2"
+        "3" = "md:columns-2 lg:columns-3"
+        "4" = "md:columns-2 lg:columns-4"
+    }
+
+    renderer = afx`
+        <div
+            class.main="paragraph"
+            class.prose='prose'
+            class.fontSize={props.fontSizeClass}
+            class.columns={props.columnsClass}
+            class.columnGap="gap-8"
+            class.color={props.color ? props.color : "text-gray-700"}
+            class.width="w-full"
+            class.extra={props.extraClass}>
+            {props.content}
+        </div>
+    `
 }

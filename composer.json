@@ -11,8 +11,7 @@
         "neos/neos": "~7.3.0",
         "neos/neos-ui": "~7.3.0",
         "465m/site": "@dev",
-        "neos/cli-setup": "~7.3.0",
-        "neos/site-kickstarter": "~7.3.0"
+        "neos/cli-setup": "~7.3.0"
     },
     "require-dev": {
         "neos/buildessentials": "~7.3.0",

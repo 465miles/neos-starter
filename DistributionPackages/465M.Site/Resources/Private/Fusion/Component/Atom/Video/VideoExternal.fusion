@@ -1,0 +1,18 @@
+prototype(465M.Site:Component.Atom.VideoExternal) < prototype(Neos.Fusion:Component) {
+
+    @propTypes {
+        @strict = true
+        videoId = ${PropTypes.string.isRequired}
+        provider = ${PropTypes.string.isRequired}
+    }
+
+
+    renderer = afx`
+        <div
+            class.main="rounded-xl"
+            class.js='js_video-player'
+            data-plyr-provider={props.provider}
+            data-plyr-embed-id={props.videoId}
+        ></div>
+    `
+}

@@ -3,12 +3,44 @@ prototype(465M.Site:Component.Organism.Container) < prototype(Neos.Fusion:Compon
     @propTypes {
         @strict = true
         content = ${PropTypes.any}
+        spacingTop = ${PropTypes.string}
+        spacingBottom = ${PropTypes.string}
         extraClass = ${PropTypes.string}
     }
 
+    spacingTop.@process.class = Neos.Fusion:Match {
+        @subject = ${value}
+        @default = ''
+        "none" = "mt-0"
+        "xs" = "mt-8"
+        "sm" = "mt-12"
+        "md" = "mt-16"
+        "lg" = "mt-24"
+        "xl" = "mt-36"
+        "2xl" = "mt-48"
+    }
+
+    spacingBottom.@process.class = Neos.Fusion:Match {
+        @subject = ${value}
+        @default = ''
+        "none" = "mb-0"
+        "xs" = "mb-8"
+        "sm" = "mb-12"
+        "md" = "mb-16"
+        "lg" = "mb-24"
+        "xl" = "mb-36"
+        "2xl" = "mb-48"
+    }
+
     renderer = afx`
-        <div class.main="w-full max-w-7xl mx-auto px-5 md:px-10" class.extra={props.extraClass}>
-            {props.content}
+        <div
+            class.main="w-full flex center middle px-5 md:px-10"
+            class.spacingTop={props.spacingTop}
+            class.spacingBottom={props.spacingBottom}
+            class.extra={props.extraClass}>
+            <div class.main="w-full max-w-7xl mx-auto px-5 md:px-10">
+                {props.content}
+            </div>
         </div>
     `
 }

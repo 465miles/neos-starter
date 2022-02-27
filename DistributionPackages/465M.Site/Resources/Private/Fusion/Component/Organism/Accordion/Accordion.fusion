@@ -1,14 +1,20 @@
 prototype(465M.Site:Component.Organism.Accordion) < prototype(Neos.Fusion:Component) {
 
     @propTypes {
+        @strict = true
         spacingTop = ${PropTypes.string}
         spacingBottom = ${PropTypes.string}
         content = ${PropTypes.any.isRequired}
     }
 
     renderer = afx`
-        <465M.Site:Component.Organism.Container>
-            <465M.Site:Component.Molecule.AccordionGroup {...props} />
+        <465M.Site:Component.Organism.Container
+            spacingTop={props.spacingTop}
+            spacingBottom={props.spacingBottom}
+        >
+            <465M.Site:Component.Molecule.AccordionGroup>
+                {props.content}
+            </465M.Site:Component.Molecule.AccordionGroup>
         </465M.Site:Component.Organism.Container>
     `
 }

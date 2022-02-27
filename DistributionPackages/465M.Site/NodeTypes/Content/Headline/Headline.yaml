@@ -1,9 +1,9 @@
 '465M.Site:Content.Headline':
   superTypes:
     'Neos.Neos:Content': true
-    '465M.Site:Property.TitleHierarchy': true
-    '465M.Site:Property.TitleSize': true
-    '465M.Site:Property.Spacing': true
+    '465M.Site:Mixin.TitleHierarchy': true
+    '465M.Site:Mixin.TitleSize': true
+    '465M.Site:Mixin.Spacing': true
   ui:
     icon: heading
     label: 'Überschrift'
@@ -13,7 +13,7 @@
           label: Überschrift
           icon: heading
           tab: default
-          position: before text
+          position: 110
   properties:
     title:
       options:

@@ -3,7 +3,7 @@
     'Neos.Neos:Content': true
     'Neos.Neos:ContentCollection': true
     '465M.Site:Constraint.Accordion': true
-    '465M.Site:Property.Spacing': true
+    '465M.Site:Mixin.Spacing': true
   ui:
     icon: stream
     label: 'Accordion'

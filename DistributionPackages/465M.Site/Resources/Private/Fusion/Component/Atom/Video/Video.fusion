@@ -1,0 +1,21 @@
+prototype(465M.Site:Component.Atom.Video) < prototype(Neos.Fusion:Component) {
+
+    @propTypes {
+        @strict = true
+        videoUri = ${PropTypes.string.isRequired}
+        videoPoster = ${PropTypes.instanceOf('\\Sitegeist\\Kaleidoscope\\EelHelpers\\ImageSourceHelperInterface')}
+    }
+
+
+    renderer = afx`
+        <video
+            class.main="rounded-xl"
+            class.js='js_video-player'
+            playsinline
+            controls
+            data-poster={props.videoPoster.src()}
+        >
+            <source src={props.videoUri} type="video/mp4" />
+        </video>
+    `
+}

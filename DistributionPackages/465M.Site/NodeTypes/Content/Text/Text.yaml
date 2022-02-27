@@ -5,3 +5,7 @@
   ui:
     icon: font
     label: 'Text'
+  properties:
+    label:
+      options:
+        preset: 'text.restricted'

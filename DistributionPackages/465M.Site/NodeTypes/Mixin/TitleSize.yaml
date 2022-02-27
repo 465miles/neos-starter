@@ -1,4 +1,4 @@
-'465M.Site:Property.TitleSize':
+'465M.Site:Mixin.TitleSize':
   properties:
     title-size:
       type: string

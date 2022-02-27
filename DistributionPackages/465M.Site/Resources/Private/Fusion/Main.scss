@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;400;500;500;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://cdn.plyr.io/3.6.12/plyr.css');
 
-//@import 'Component/Atom/Paragraph/Paragraph';
+@import 'Component/Atom/Video/Video';

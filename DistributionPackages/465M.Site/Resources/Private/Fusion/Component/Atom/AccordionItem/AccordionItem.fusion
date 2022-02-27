@@ -2,8 +2,7 @@ prototype(465M.Site:Component.Atom.AccordionItem) < prototype(Neos.Fusion:Compon
 
     @propTypes {
         @strict = true
-        id = ${PropTypes.integer.isRequired}
-        ref = ${PropTypes.string.isRequired}
+        id = ${PropTypes.anyOf(PropTypes.string, PropTypes.integer).isRequired}
         title = ${PropTypes.string.isRequired}
         content = ${PropTypes.any}
     }
@@ -23,7 +22,10 @@ prototype(465M.Site:Component.Atom.AccordionItem) < prototype(Neos.Fusion:Compon
             </button>
             <div
                 class="overflow-hidden px-5 md:px-10 transition-all duration-500"
-                x-bind:class={"selected == '" + props.id + "' ? 'max-h-auto pb-3 md:pb-5' : 'max-h-[0] py-0'"}>
+                x-bind:style={"selected == '" + props.id + "' ? 'max-height: ' + $el.scrollHeight + 'px' : ''"}
+                x-bind:class={"selected == '" + props.id + "' ? 'max-h-auto pb-3 md:pb-5' : 'max-h-[0] py-0'"}
+                x-effect="console.log($el.scrollHeight)"
+            >
                 {props.content}
             </div>
         </div>

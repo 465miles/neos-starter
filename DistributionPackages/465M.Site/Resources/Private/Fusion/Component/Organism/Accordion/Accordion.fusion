@@ -4,7 +4,7 @@ prototype(465M.Site:Component.Organism.Accordion) < prototype(Neos.Fusion:Compon
         @strict = true
         spacingTop = ${PropTypes.string}
         spacingBottom = ${PropTypes.string}
-        content = ${PropTypes.any.isRequired}
+        content = ${PropTypes.string.isRequired}
     }
 
     renderer = afx`

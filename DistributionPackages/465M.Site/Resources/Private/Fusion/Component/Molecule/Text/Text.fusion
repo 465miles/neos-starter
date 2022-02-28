@@ -7,41 +7,34 @@ prototype(465M.Site:Component.Molecule.Text) < prototype(Neos.Fusion:Component) 
         titleFontSize = ${PropTypes.string.isRequired}
         titleContent = ${PropTypes.string.isRequired}
         textFontSize = ${PropTypes.string.isRequired}
-        textColumns = ${PropTypes.string.isRequired}
+        textColumns = ${PropTypes.string}
         textContent = ${PropTypes.string.isRequired}
-        spacingTop = ${PropTypes.string}
-        spacingBottom = ${PropTypes.string}
         extraClass = ${PropTypes.string}
     }
 
     renderer = afx`
-        <465M.Site:Component.Organism.Container
-        spacingTop={props.spacingTop}
-        spacingBottom={props.spacingBottom}
+        <div
+            class.main='text'
+            class.extra={props.extraClass}
         >
-            <div
-                class.main='text'
-                class.extra={props.extraClass}
+            <465M.Site:Component.Atom.Lead>
+                {props.labelContent}
+            </465M.Site:Component.Atom.Lead>
+
+            <465M.Site:Component.Atom.Headline
+                tagName={props.titleTagName}
+                fontSize={props.titleFontSize}
+                extraClass="mb-6"
             >
-                <465M.Site:Component.Atom.Lead>
-                    {props.labelContent}
-                </465M.Site:Component.Atom.Lead>
+                {props.titleContent}
+            </465M.Site:Component.Atom.Headline>
 
-                <465M.Site:Component.Atom.Headline
-                    tagName={props.titleTagName}
-                    fontSize={props.titleFontSize}
-                    extraClass="mb-6"
-                >
-                    {props.titleContent}
-                </465M.Site:Component.Atom.Headline>
-
-                <465M.Site:Component.Atom.Paragraph
-                    fontSize={props.textFontSize}
-                    columns={props.textColumns}
-                >
-                    {props.textContent}
-                </465M.Site:Component.Atom.Paragraph>
-            </div>
-        </465M.Site:Component.Organism.Container>
+            <465M.Site:Component.Atom.Paragraph
+                fontSize={props.textFontSize}
+                columns={props.textColumns}
+            >
+                {props.textContent}
+            </465M.Site:Component.Atom.Paragraph>
+        </div>
     `
 }

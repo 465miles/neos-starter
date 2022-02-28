@@ -1,7 +1,7 @@
 '465M.Site:Content.Paragraph':
   superTypes:
     'Neos.Neos:Content': true
-    '465M.Site:Mixin.Spacing': true
+    '465M.Site:Wrap.Container': true
   ui:
     icon: paragraph
     label: 'Absatz'

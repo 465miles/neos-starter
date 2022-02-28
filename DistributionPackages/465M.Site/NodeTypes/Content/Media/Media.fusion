@@ -11,8 +11,6 @@ prototype(465M.Site:Content.Media) < prototype(Neos.Neos:ContentComponent) {
     caption = Neos.Neos:Editable {
         property = 'caption'
     }
-    spacingTop = ${q(node).property('spacing-top')}
-    spacingBottom = ${q(node).property('spacing-bottom')}
 
     renderer = afx`
         <465M.Site:Component.Molecule.Media {...props} />

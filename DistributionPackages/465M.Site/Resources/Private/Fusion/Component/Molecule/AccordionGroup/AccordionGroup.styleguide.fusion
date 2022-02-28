@@ -1,4 +1,4 @@
-prototype(465M.Site:Component.Organism.Accordion).@styleguide {
+prototype(465M.Site:Component.Molecule.AccordionGroup).@styleguide {
     title = 'Accordion'
     props {
         content = Neos.Fusion:Loop {

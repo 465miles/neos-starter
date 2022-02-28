@@ -2,7 +2,7 @@ prototype(465M.Site:Component.Molecule.AccordionGroup) < prototype(Neos.Fusion:C
 
     @propTypes {
         @strict = true
-        content = ${PropTypes.any.isRequired}
+        content = ${PropTypes.string.isRequired}
     }
 
     renderer = afx`

@@ -3,10 +3,8 @@ prototype(465M.Site:Component.Page.Document) < prototype(Neos.Fusion:Component) 
     @propTypes {
         title = ${PropTypes.string.isRequired}
         content = ${PropTypes.string.isRequired}
-        template = ${PropTypes.string.isRequired}
+        template = ${PropTypes.oneOf([])}
     }
-
-    template = '465M.Site:Component.Template.Default'
 
     renderer = Neos.Neos:Page {
         head {
@@ -19,7 +17,11 @@ prototype(465M.Site:Component.Page.Document) < prototype(Neos.Fusion:Component) 
         }
 
         body = Neos.Fusion:Renderer {
-            type = ${props.template}
+            type = Neos.Fusion:Match {
+                @subject = ${props.template}
+                # foo = '465M.Site:Component.Template.Foo'
+                @default = '465M.Site:Component.Template.Default'
+            }
             element.content = ${props.content}
         }
     }

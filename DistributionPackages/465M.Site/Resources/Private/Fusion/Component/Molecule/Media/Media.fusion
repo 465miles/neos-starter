@@ -2,7 +2,7 @@ prototype(465M.Site:Component.Molecule.Media) < prototype(Neos.Fusion:Component)
 
     @propTypes {
         @strict = true
-        mediaType = ${PropTypes.string.isRequired}
+        mediaType = ${PropTypes.oneOf(['image', 'video', 'video-youtube', 'video-vimeo']).isRequired}
         imageSource = ${PropTypes.instanceOf('\\Sitegeist\\Kaleidoscope\\EelHelpers\\ImageSourceHelperInterface')}
         videoUri = ${PropTypes.string}
         videoId = ${PropTypes.string}

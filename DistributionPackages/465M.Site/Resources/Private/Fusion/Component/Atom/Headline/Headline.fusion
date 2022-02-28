@@ -30,6 +30,7 @@ prototype(465M.Site:Component.Atom.Headline) < prototype(Neos.Fusion:Component) 
             class.prose='prose'
             class.width="w-full"
             class.color={props.color ? props.color : "text-gray-700"}
+            class.gridArea="[grid-area:small-inner]"
             class.extra={props.extraClass}>
             <Neos.Fusion:Tag
                 tagName={props.tagName}

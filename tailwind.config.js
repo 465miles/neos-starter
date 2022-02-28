@@ -3,15 +3,6 @@ const content = require("./Build/Carbon.Pipeline/purge");
 module.exports = {
     content,
     theme: {
-        gridArea: {
-            'small-inner': '#fff',
-            'small': '#ff49db',
-            'orange': '#ff7849',
-            'green': '#13ce66',
-            'gray-dark': '#273444',
-            'gray': '#8492a6',
-            'gray-light': '#d3dce6',
-        },
         extend: {
             fontFamily: {
                 'sans': ['Outfit', 'ui-sans-serif', 'system-ui'],

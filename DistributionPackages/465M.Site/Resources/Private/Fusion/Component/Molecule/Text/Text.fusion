@@ -14,10 +14,13 @@ prototype(465M.Site:Component.Molecule.Text) < prototype(Neos.Fusion:Component) 
 
     renderer = afx`
         <div
-            class.main='text'
+            class.main="text"
+            class.gridArea="[grid-area:medium-inner]"
             class.extra={props.extraClass}
         >
-            <465M.Site:Component.Atom.Lead>
+            <465M.Site:Component.Atom.Lead
+                extraClass="mb-3"
+            >
                 {props.labelContent}
             </465M.Site:Component.Atom.Lead>
 

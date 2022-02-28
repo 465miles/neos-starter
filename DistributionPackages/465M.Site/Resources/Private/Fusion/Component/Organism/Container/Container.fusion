@@ -35,18 +35,13 @@ prototype(465M.Site:Component.Organism.Container) < prototype(Neos.Fusion:Compon
 
     renderer = afx`
         <div
-            class.main="w-full flex center middle px-5 md:px-10"
+            class.main="w-full"
             class.spacingTop={props.spacingTop}
             class.spacingBottom={props.spacingBottom}
-            class.grid="grid grid-cols-container-xs sm:grid-cols-container-sm md:grid-cols-container-md xl:grid-cols-container-lg 2xl:grid-cols-container-2xl"
+            class.grid={!props.isNested ? "grid grid-cols-container-xs sm:grid-cols-container-sm md:grid-cols-container-md xl:grid-cols-container-lg 2xl:grid-cols-container-2xl": ""}
             class.extra={props.extraClass}
         >
-            <div
-                class.main="w-full mx-auto px-5 md:px-10"
-                class.maxWidth={props.isNested ? 'bg-red-500' : 'max-w-7xl'}
-            >
-                {props.content}
-            </div>
+            {props.content}
         </div>
     `
 }

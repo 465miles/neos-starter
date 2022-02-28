@@ -1,6 +1,5 @@
 prototype(465M.Site:Content.Accordion.Item) < prototype(Neos.Neos:ContentComponent) {
-     id = ${node.identifier}
-//    id = ${iterator.index}
+    id = ${node.identifier}
 
     title = Neos.Neos:Editable {
         property = 'title'

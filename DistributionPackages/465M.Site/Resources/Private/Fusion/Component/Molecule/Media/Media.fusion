@@ -2,13 +2,11 @@ prototype(465M.Site:Component.Molecule.Media) < prototype(Neos.Fusion:Component)
 
     @propTypes {
         @strict = true
-        mediaType = ${PropTypes.string.isRequired}
+        mediaType = ${PropTypes.oneOf(['image', 'video', 'video-youtube', 'video-vimeo']).isRequired}
         imageSource = ${PropTypes.instanceOf('\\Sitegeist\\Kaleidoscope\\EelHelpers\\ImageSourceHelperInterface')}
         videoUri = ${PropTypes.string}
         videoId = ${PropTypes.string}
         caption = ${PropTypes.string}
-        spacingTop = ${PropTypes.string}
-        spacingBottom = ${PropTypes.string}
     }
 
     renderer = Neos.Fusion:Component {
@@ -50,15 +48,10 @@ prototype(465M.Site:Component.Molecule.Media) < prototype(Neos.Fusion:Component)
         }
 
         renderer = afx`
-            <465M.Site:Component.Organism.Container
-                spacingTop={props.spacingTop}
-                spacingBottom={props.spacingBottom}
-            >
-                <figure class.main="w-full flex flex-col gap-6">
-                    {props.media}
-                    <465M.Site:Component.Atom.MediaCaption content={props.caption} @if.has={props.caption} />
-                </figure>
-            </465M.Site:Component.Organism.Container>
+            <figure class.main="w-full flex flex-col gap-6">
+                {props.media}
+                <465M.Site:Component.Atom.MediaCaption content={props.caption} @if.has={props.caption} />
+            </figure>
         `
     }
 }

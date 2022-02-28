@@ -1,0 +1,20 @@
+prototype(465M.Site:Component.Molecule.AccordionGroup).@styleguide {
+    title = 'Accordion'
+    props {
+        content = Neos.Fusion:Loop {
+            items = Neos.Fusion:DataStructure {
+                0 {
+                    title = "Foo"
+                    content = "Hello world"
+                }
+                1 {
+                    title = "Bar"
+                    content = "Hello world"
+                }
+            }
+            itemRenderer = afx`
+                <465M.Site:Component.Atom.AccordionItem id={iterator.index} {...item} />
+            `
+        }
+    }
+}

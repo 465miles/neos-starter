@@ -1,0 +1,18 @@
+prototype(Neos.Neos:ContentComponent) {
+    @process.wrapWithWrapSuperTypes = 465M.Site:NodeType.Wrapper {
+        nodeTypes = ${Array.filter(node.nodeType.declaredSuperTypes, nodeSuperType => String.indexOf(nodeSuperType.name, '465M.Site:Wrap.') == 0)}
+    }
+}
+
+prototype(465M.Site:NodeType.Wrapper) < prototype(Neos.Fusion:Component) {
+    nodeTypes = ${[]}
+
+    @if.nodeTypesEmptySkipProcess = ${this.nodeTypes != []}
+
+    renderer = Neos.Fusion:Renderer {
+        type = ${Array.last(props.nodeTypes).name}
+        @process.recursiveWrapWithLeftNodeTypes = 465M.Site:NodeType.Wrapper {
+            nodeTypes = ${Array.pop(props.nodeTypes)}
+        }
+    }
+}

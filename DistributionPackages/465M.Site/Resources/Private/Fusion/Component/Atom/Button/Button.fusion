@@ -7,7 +7,7 @@ prototype(465M.Site:Component.Atom.Button) < prototype(Neos.Fusion:Component) {
 
     renderer = afx`
         <button
-            x-data="buttonData"
+            x-data="MI_Site_Component_Atom_Button"
             x-on:click="foo"
             class="bg-[#ff0]"
         >

@@ -1,14 +1,15 @@
 prototype(465M.Site:Component.Atom.Headline) < prototype(Neos.Fusion:Component) {
 
     @propTypes {
-        @strict = true
+//        @strict = true
         tagName = ${PropTypes.string.isRequired}
-        fontSize = ${PropTypes.string.isRequired}
+//        fontSize = ${PropTypes.oneOf([
+//            "base", "sm", "lg", "xl", "2xl", "3xl", "4xl", "5xl"
+//        ]).isRequired}
         color = ${PropTypes.string}
-        content = ${PropTypes.string.isRequired}
+        content = ${PropTypes.string}
         extraClass = ${PropTypes.string}
     }
-
 
     fontSize.@process.class = Neos.Fusion:Match {
         @subject = ${value}

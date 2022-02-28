@@ -2,6 +2,7 @@
   superTypes:
     '465M.Site:Content.Headline': true
     '465M.Site:Content.Paragraph': true
+    '465M.Site:Wrap.Container': true
   ui:
     icon: font
     label: 'Text'

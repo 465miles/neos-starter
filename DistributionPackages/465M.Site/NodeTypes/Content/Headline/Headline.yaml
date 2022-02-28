@@ -3,7 +3,7 @@
     'Neos.Neos:Content': true
     '465M.Site:Mixin.TitleHierarchy': true
     '465M.Site:Mixin.TitleSize': true
-    '465M.Site:Mixin.Spacing': true
+    '465M.Site:Wrap.Container': true
   ui:
     icon: heading
     label: 'Überschrift'

@@ -2,13 +2,12 @@ prototype(465M.Site:Content.Paragraph) < prototype(Neos.Neos:ContentComponent) {
 
     fontSize = ${q(node).property('text-size')}
     columns = ${q(node).property('text-columns')}
-    spacingTop = ${q(node).property('spacing-top')}
-    spacingBottom = ${q(node).property('spacing-bottom')}
+
     content = Neos.Neos:Editable {
         property = 'text'
     }
 
     renderer = afx`
-        <465M.Site:Component.Molecule.Paragraph {...props} />
+        <465M.Site:Component.Atom.Paragraph {...props} />
     `
 }

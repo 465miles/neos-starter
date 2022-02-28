@@ -14,8 +14,6 @@ prototype(465M.Site:Content.Text) < prototype(Neos.Neos:ContentComponent) {
     textContent = Neos.Neos:Editable {
         property = 'text'
     }
-    spacingTop = ${q(node).property('spacing-top')}
-    spacingBottom = ${q(node).property('spacing-bottom')}
 
     renderer = afx`
         <465M.Site:Component.Molecule.Text {...props} />

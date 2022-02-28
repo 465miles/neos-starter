@@ -1,15 +1,11 @@
 import Alpine from 'alpinejs'
 
-import * as ButtonData from './Component/Atom/Button/Button.js'
+import Button from './Component/Atom/Button/Button.alphine'
+import Video from './Component/Atom/Video/Video.alpine'
+import VideoExternal from './Component/Atom/VideoExternal/VideoExternal.alpine'
 
-const AlpineData = [
-    ButtonData
-]
-
-AlpineData.map(component => {
-    Object.entries(component).map(([key, value]) => {
-        Alpine.data(key, value)
-    })
-})
+Button(Alpine)
+Video(Alpine)
+VideoExternal(Alpine)
 
 Alpine.start()

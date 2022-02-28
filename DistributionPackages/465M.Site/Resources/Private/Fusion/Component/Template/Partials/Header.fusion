@@ -4,7 +4,7 @@ prototype(465M.Site:Component.Template.Partials.Header) < prototype(Neos.Fusion:
         <div class="relative bg-white border-b-2 border-gray-100">
             <465M.Site:Component.Organism.Container>
                 <div
-                    class="flex justify-between items-center py-6 md:justify-start md:space-x-10">
+                    class="w-full flex justify-between items-center py-6 md:justify-start md:space-x-10">
                     <div class="flex justify-start lg:w-0 lg:flex-1">
                         <a href="#">
                             <span class="sr-only">Workflow</span>

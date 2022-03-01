@@ -10,7 +10,6 @@ prototype(465M.Site:Component.Atom.Video) < prototype(Neos.Fusion:Component) {
         <video
             class.main="rounded-xl"
             x-data="MI_Site_Component_Atom_Video"
-            x-init="init($el)"
             playsinline
             controls
             data-poster={props.videoPoster.src()}

@@ -10,7 +10,6 @@ prototype(465M.Site:Component.Atom.VideoExternal) < prototype(Neos.Fusion:Compon
         <div
             class.main="rounded-xl"
             x-data="MI_Site_Component_Atom_VideoExternal"
-            x-init="init($el)"
             data-plyr-provider={props.provider}
             data-plyr-embed-id={props.videoId}
         ></div>

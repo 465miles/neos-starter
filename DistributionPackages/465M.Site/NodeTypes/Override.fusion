@@ -1,16 +1,30 @@
 prototype(Neos.Neos:ContentComponent) {
     @process.wrapWithWrapSuperTypes = 465M.Site:NodeType.Wrapper {
-        nodeTypes = ${Array.filter(node.nodeType.declaredSuperTypes, nodeSuperType => String.indexOf(nodeSuperType.name, '465M.Site:Wrap.') == 0)}
+        nodeTypes = ${
+            Array.filter(
+            node.nodeType.declaredSuperTypes,
+            nodeSuperType => nodeSuperType.localConfiguration.options.fusion.wrapAsProcessAroundInheritingContent == true
+            )
+        }
+
+        // Alternative
+        // nodeTypes = ${Array.filter(node.nodeType.declaredSuperTypes, nodeSuperType => String.indexOf(nodeSuperType.name, '465M.Site:Wrap.') == 0)}
     }
 }
 
 prototype(465M.Site:NodeType.Wrapper) < prototype(Neos.Fusion:Component) {
-    nodeTypes = ${[]}
+
+    @propTypes {
+        @strict = true
+        nodeTypes = ${PropTypes.arrayOf(PropTypes.instanceOf('\Neos\ContentRepository\Domain\Model\NodeType')).isRequired}
+    }
 
     @if.nodeTypesEmptySkipProcess = ${this.nodeTypes != []}
 
     renderer = Neos.Fusion:Renderer {
+        // render the last nodeTypeName of the array.
         type = ${Array.last(props.nodeTypes).name}
+        // recurse with the nodeTypes not rendererd yet. (If empty process will not be rendered.)
         @process.recursiveWrapWithLeftNodeTypes = 465M.Site:NodeType.Wrapper {
             nodeTypes = ${Array.pop(props.nodeTypes)}
         }

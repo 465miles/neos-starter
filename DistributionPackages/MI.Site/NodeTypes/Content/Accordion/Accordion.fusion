@@ -7,4 +7,6 @@ prototype(MI.Site:Content.Accordion) < prototype(Neos.Neos:ContentComponent) {
     renderer = afx`
         <MI.Site:Component.Molecule.Accordion {...props} />
     `
+
+    @process.wrapContainer = MI.Site:Wrap.Container
 }

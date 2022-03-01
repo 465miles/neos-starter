@@ -3,10 +3,11 @@
 
 module.exports = {
     files: [
-        "DistributionPackages/*/Public/**/*.js",
-        "DistributionPackages/*/Public/**/*.css",
-        "DistributionPackages/*/Private/**/*.fusion",
+        "DistributionPackages/*/Resources/Public/**/*.css",
+        "DistributionPackages/*/Resources/Public/**/*.js",
         "DistributionPackages/*/NodeTypes/**/*.fusion",
+        "DistributionPackages/*/NodeTypes/**/*.yaml",
+        "DistributionPackages/*/Resources/Private/Fusion/**/*.fusion",
     ],
     proxy: "http://127.0.0.1:8081/",
 };

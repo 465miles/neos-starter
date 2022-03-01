@@ -8,6 +8,7 @@ prototype(MI.Site:Component.Molecule.Media) < prototype(Neos.Fusion:Component) {
         videoId = ${PropTypes.string}
         caption = ${PropTypes.string}
         gridArea = ${PropTypes.string}
+        extraClass = ${PropTypes.string}
     }
 
     renderer = Neos.Fusion:Component {
@@ -52,6 +53,7 @@ prototype(MI.Site:Component.Molecule.Media) < prototype(Neos.Fusion:Component) {
             <figure
                 class.main="w-full flex flex-col gap-6"
                 class.gridArea={props.gridArea ? props.gridArea : "[grid-area:medium]"}
+                class.extra={props.extraClass}
             >
                 {props.media}
                 <MI.Site:Component.Atom.MediaCaption content={props.caption} @if.has={props.caption} />

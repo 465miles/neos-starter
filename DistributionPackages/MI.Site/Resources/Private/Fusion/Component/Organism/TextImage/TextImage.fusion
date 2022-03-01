@@ -18,23 +18,24 @@ prototype(MI.Site:Component.Organism.TextImage) < prototype(Neos.Fusion:Componen
     }
 
     renderer = afx`
-            <MI.Site:Component.Molecule.Text
-                labelContent={props.labelContent}
-                titleTagName={props.titleTagName}
-                titleFontSize={props.titleFontSize}
-                titleContent={props.titleContent}
-                textFontSize={props.textFontSize}
-                textColumns={props.textColumns}
-                textContent={props.textContent}
-                gridArea="col-[large-inner] lg:col-[large-inner_/_span_center-left]"
-            />
-            <MI.Site:Component.Molecule.Media
-                mediaType={props.mediaType}
-                imageSource={props.imageSource}
-                videoUri={props.videoUri}
-                videoId={props.videoId}
-                caption={props.caption}
-                gridArea="col-[large] lg:col-[center-right_/_span_large-end]"
-            />
+        <MI.Site:Component.Molecule.Text
+            labelContent={props.labelContent}
+            titleTagName={props.titleTagName}
+            titleFontSize={props.titleFontSize}
+            titleContent={props.titleContent}
+            textFontSize={props.textFontSize}
+            textColumns={props.textColumns}
+            textContent={props.textContent}
+            gridArea="col-[large-inner] lg:col-[large-inner-start/span_center-left]"
+        />
+        <MI.Site:Component.Molecule.Media
+            mediaType={props.mediaType}
+            imageSource={props.imageSource}
+            videoUri={props.videoUri}
+            videoId={props.videoId}
+            caption={props.caption}
+            gridArea="col-[large] lg:col-[center-right/span_large-end] -order-1 lg:order-[unset]"
+            extraClass="mb-6 lg:mb-0"
+        />
     `
 }

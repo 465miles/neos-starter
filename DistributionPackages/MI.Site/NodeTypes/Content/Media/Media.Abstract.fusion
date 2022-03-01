@@ -11,6 +11,7 @@ prototype(MI.Site:Content.Media.Abstract) < prototype(Neos.Neos:ContentComponent
     caption = Neos.Neos:Editable {
         property = 'caption'
     }
+    showCaption = ${q(node).property('showCaption')}
 
     renderer = afx`
         <MI.Site:Component.Molecule.Media {...props} />

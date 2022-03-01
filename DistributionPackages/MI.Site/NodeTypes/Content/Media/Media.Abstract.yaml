@@ -3,6 +3,7 @@
     'Neos.Neos:Content': true
   label: ${'Medium'}
   ui:
+    label: 'Medium'
     icon: photo-video
     group: abstract
     inspector:
@@ -18,6 +19,7 @@
       defaultValue: image
       ui:
         label: 'Medientyp'
+        showInCreationDialog: true
         reloadIfChanged: true
         inspector:
           group: media
@@ -65,3 +67,11 @@
     caption:
       options:
         preset: 'text.restricted'
+    showCaption:
+      type: boolean
+      defaultValue: true
+      ui:
+        label: 'Bildunterschrift anzeigen'
+        reloadIfChanged: true
+        inspector:
+          group: media

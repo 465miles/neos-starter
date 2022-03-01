@@ -11,15 +11,12 @@ prototype(MI.Site:Component.Molecule.Media) < prototype(Neos.Fusion:Component) {
         extraClass = ${PropTypes.string}
     }
 
+
     renderer = Neos.Fusion:Component {
         @apply.props = ${props}
 
         media = Neos.Fusion:Match {
             @subject = ${props.mediaType}
-
-            @default = afx`
-                <p class="text-lg text-red-500">Noch kein Medientyp gewählt.</p>
-            `
 
             image = afx`
                 <MI.Site:Component.Atom.Image

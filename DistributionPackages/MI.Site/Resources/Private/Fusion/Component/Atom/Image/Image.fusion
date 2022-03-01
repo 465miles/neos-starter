@@ -2,7 +2,7 @@ prototype(MI.Site:Component.Atom.Image) < prototype(Neos.Fusion:Component) {
 
     @propTypes {
         @strict = true
-        imageSource = ${PropTypes.instanceOf('\\Sitegeist\\Kaleidoscope\\EelHelpers\\ImageSourceHelperInterface')}
+        imageSource = ${PropTypes.instanceOf('\\Sitegeist\\Kaleidoscope\\EelHelpers\\ImageSourceHelperInterface').isRequired}
     }
 
     renderer = afx`

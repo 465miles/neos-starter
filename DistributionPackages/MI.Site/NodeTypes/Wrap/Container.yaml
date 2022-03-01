@@ -1,8 +1,3 @@
 'MI.Site:Wrap.Container':
   superTypes:
     'MI.Site:Mixin.Spacing': true
-  options:
-    'MI.Site':
-      wrapAsProcessAroundInheritingContent: true
-    'MI.Site.Wrap.Container':
-      gap: false

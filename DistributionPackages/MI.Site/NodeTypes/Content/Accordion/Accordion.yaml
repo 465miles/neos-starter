@@ -7,6 +7,3 @@
   ui:
     icon: stream
     label: 'Accordion'
-  options:
-    'MI.Site.Wrap.Container':
-      gap: true

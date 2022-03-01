@@ -2,36 +2,38 @@ prototype(MI.Site:Component.Organism.Container) < prototype(Neos.Fusion:Componen
 
     @propTypes {
         @strict = true
-        content = ${PropTypes.any}
+        align = ${PropTypes.string}
+        justify = ${PropTypes.string}
+        rowGap = ${PropTypes.string}
         spacingTop = ${PropTypes.string}
         spacingBottom = ${PropTypes.string}
         isNested = ${PropTypes.boolean}
-        gap = ${PropTypes.boolean}
         extraClass = ${PropTypes.string}
+        content = ${PropTypes.string}
     }
 
     spacingTop.@process.class = Neos.Fusion:Match {
         @subject = ${value}
         @default = ''
-        "none" = "mt-0"
-        "xs" = "mt-8"
-        "sm" = "mt-12"
-        "md" = "mt-16"
-        "lg" = "mt-24"
-        "xl" = "mt-36"
-        "2xl" = "mt-48"
+        none = "mt-0"
+        xs = "mt-8"
+        sm = "mt-12"
+        md = "mt-16"
+        lg = "mt-24"
+        xl = "mt-36"
+        2xl = "mt-48"
     }
 
     spacingBottom.@process.class = Neos.Fusion:Match {
         @subject = ${value}
         @default = ''
-        "none" = "mb-0"
-        "xs" = "mb-8"
-        "sm" = "mb-12"
-        "md" = "mb-16"
-        "lg" = "mb-24"
-        "xl" = "mb-36"
-        "2xl" = "mb-48"
+        none = "mb-0"
+        xs = "mb-8"
+        sm = "mb-12"
+        md = "mb-16"
+        lg = "mb-24"
+        xl = "mb-36"
+        2xl = "mb-48"
     }
 
     renderer = afx`
@@ -41,7 +43,6 @@ prototype(MI.Site:Component.Organism.Container) < prototype(Neos.Fusion:Componen
             class.spacingBottom={props.spacingBottom}
             class.grid={!props.isNested ? "grid grid-cols-container-xs sm:grid-cols-container-sm md:grid-cols-container-md xl:grid-cols-container-lg 2xl:grid-cols-container-2xl": ""}
             class.extra={props.extraClass}
-            class.gap={props.gap ? "bg-red-500" : "bg-green-500"}
         >
             {props.content}
         </div>

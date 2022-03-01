@@ -10,4 +10,6 @@ prototype(MI.Site:Content.Paragraph) < prototype(Neos.Neos:ContentComponent) {
     renderer = afx`
         <MI.Site:Component.Atom.Paragraph {...props} />
     `
+
+    @process.wrapContainer = MI.Site:Wrap.Container
 }

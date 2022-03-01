@@ -9,4 +9,6 @@ prototype(MI.Site:Content.Headline) < prototype(Neos.Neos:ContentComponent) {
     renderer = afx`
         <MI.Site:Component.Atom.Headline {...props} />
     `
+
+    @process.wrapContainer = MI.Site:Wrap.Container
 }

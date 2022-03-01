@@ -15,4 +15,6 @@ prototype(MI.Site:Content.Media) < prototype(Neos.Neos:ContentComponent) {
     renderer = afx`
         <MI.Site:Component.Molecule.Media {...props} />
     `
+
+    @process.wrapContainer = MI.Site:Wrap.Container
 }

@@ -18,4 +18,6 @@ prototype(MI.Site:Content.Text) < prototype(Neos.Neos:ContentComponent) {
     renderer = afx`
         <MI.Site:Component.Molecule.Text {...props} />
     `
+
+    @process.wrapContainer = MI.Site:Wrap.Container
 }

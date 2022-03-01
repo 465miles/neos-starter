@@ -32,3 +32,4 @@ composer.lock
 
 pnpm-lock.yaml
 browsersync.config.js
+jsconfig.json

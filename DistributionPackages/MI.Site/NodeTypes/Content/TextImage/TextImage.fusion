@@ -30,4 +30,8 @@ prototype(MI.Site:Content.TextImage) < prototype(Neos.Neos:ContentComponent) {
     renderer = afx`
         <MI.Site:Component.Organism.TextImage {...props} />
     `
+
+    @process.wrap = MI.Site:Wrap.Container {
+        gap = 'sm'
+    }
 }

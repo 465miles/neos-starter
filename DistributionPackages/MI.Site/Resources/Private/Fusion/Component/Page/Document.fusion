@@ -1,0 +1,28 @@
+prototype(MI.Site:Component.Page.Document) < prototype(Neos.Fusion:Component) {
+
+    @propTypes {
+        title = ${PropTypes.string.isRequired}
+        content = ${PropTypes.string.isRequired}
+        template = ${PropTypes.oneOf([])}
+    }
+
+    renderer = Neos.Neos:Page {
+        head {
+            headTags = afx`
+                <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            `
+
+            titleTag = afx`<title>{props.title}</title>`
+        }
+
+        body = Neos.Fusion:Renderer {
+            type = Neos.Fusion:Match {
+                @subject = ${props.template}
+                # foo = 'MI.Site:Component.Template.Foo'
+                @default = 'MI.Site:Component.Template.Default'
+            }
+            element.content = ${props.content}
+        }
+    }
+}

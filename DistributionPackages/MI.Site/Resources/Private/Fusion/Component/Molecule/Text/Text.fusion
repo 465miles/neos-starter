@@ -1,0 +1,44 @@
+prototype(MI.Site:Component.Molecule.Text) < prototype(Neos.Fusion:Component) {
+
+    @propTypes {
+        @strict = true
+        labelContent = ${PropTypes.string}
+        titleTagName = ${PropTypes.string.isRequired}
+        titleFontSize = ${PropTypes.string.isRequired}
+        titleContent = ${PropTypes.string.isRequired}
+        textFontSize = ${PropTypes.string.isRequired}
+        textColumns = ${PropTypes.string}
+        textContent = ${PropTypes.string.isRequired}
+        gridArea = ${PropTypes.string}
+        extraClass = ${PropTypes.string}
+    }
+
+    renderer = afx`
+        <div
+            class.main="text"
+            class.gridArea={props.gridArea ? props.gridArea : "[grid-area:medium-inner]"}
+            class.extra={props.extraClass}
+        >
+            <MI.Site:Component.Atom.Lead
+                extraClass="mb-3"
+            >
+                {props.labelContent}
+            </MI.Site:Component.Atom.Lead>
+
+            <MI.Site:Component.Atom.Headline
+                tagName={props.titleTagName}
+                fontSize={props.titleFontSize}
+                extraClass="mb-6"
+            >
+                {props.titleContent}
+            </MI.Site:Component.Atom.Headline>
+
+            <MI.Site:Component.Atom.Paragraph
+                fontSize={props.textFontSize}
+                columns={props.textColumns}
+            >
+                {props.textContent}
+            </MI.Site:Component.Atom.Paragraph>
+        </div>
+    `
+}

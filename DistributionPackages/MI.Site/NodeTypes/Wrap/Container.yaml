@@ -1,0 +1,6 @@
+'MI.Site:Wrap.Container':
+  superTypes:
+    'MI.Site:Mixin.Spacing': true
+  options:
+    fusion:
+      wrapAsProcessAroundInheritingContent: true

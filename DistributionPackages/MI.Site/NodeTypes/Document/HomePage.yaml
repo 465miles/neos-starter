@@ -1,0 +1,6 @@
+'MI.Site:Document.HomePage':
+  superTypes:
+    'MI.Site:Document.Page': true
+  ui:
+    icon: globe
+    label: 'Homepage'

@@ -1,0 +1,7 @@
+'MI.Site:Collection.Main':
+  superTypes:
+    'Neos.Neos:ContentCollection': true
+    'MI.Site:Constraint.Main': true
+  label: ${'Main'}
+  ui:
+    icon: icon-folder-open

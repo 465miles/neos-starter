@@ -1,0 +1,43 @@
+prototype(MI.Site:Component.Atom.Headline) < prototype(Neos.Fusion:Component) {
+
+    @propTypes {
+//        @strict = true
+        tagName = ${PropTypes.string.isRequired}
+//        fontSize = ${PropTypes.oneOf([
+//            "base", "sm", "lg", "xl", "2xl", "3xl", "4xl", "5xl"
+//        ]).isRequired}
+        color = ${PropTypes.string}
+        gridArea = ${PropTypes.string}
+        content = ${PropTypes.string}
+        extraClass = ${PropTypes.string}
+    }
+
+    fontSize.@process.class = Neos.Fusion:Match {
+        @subject = ${value}
+        @default = 'text-3xl'
+        "base" = "text-xl"
+        "sm" = "text-lg"
+        "lg" = "text-2xl"
+        "xl" = "text-3xl"
+        "2xl" = "text-4xl"
+        "3xl" = "text-5xl"
+        "4xl" = "text-6xl"
+        "5xl" = "text-7xl"
+    }
+
+    renderer = afx`
+        <div
+            class.main="headline"
+            class.prose='prose'
+            class.width="w-full"
+            class.color={props.color ? props.color : "text-gray-700"}
+            class.gridArea={props.gridArea ? props.gridArea : "[grid-area:small-inner]"}
+            class.extra={props.extraClass}>
+            <Neos.Fusion:Tag
+                tagName={props.tagName}
+                attributes.class.fontSize={props.fontSize}>
+                {props.content}
+            </Neos.Fusion:Tag>
+        </div>
+    `
+}

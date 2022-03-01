@@ -1,0 +1,69 @@
+prototype(MI.Site:Component.Template.Partials.Navigation.Default) < prototype(Neos.Fusion:Component) {
+    root = ${site}
+    home = false
+
+    @context.menuItems = Neos.Neos:MenuItems {
+        entryLevel = 1
+        maximumLevels = 2
+    }
+
+    items = Neos.Fusion:Loop {
+        items = ${menuItems}
+        itemName = 'item'
+        itemRenderer = MI.Site:Component.Template.Partials.Navigation.Default.Item
+    }
+
+    renderer = afx`
+        <ul class="flex space-x-5">
+            <MI.Site:Component.Template.Partials.Navigation.Default.HomeItem @if.has={props.home} />
+            {props.items}
+        </ul>
+    `
+}
+
+prototype(MI.Site:Component.Template.Partials.Navigation.Default.Item) < prototype(Neos.Fusion:Component) {
+    item = ${item}
+
+    url = Neos.Neos:NodeUri {
+        node = ${item.node}
+    }
+
+    label = ${item.label}
+
+    subItems = Neos.Fusion:Loop {
+        items = ${item.subItems}
+        itemName = 'item'
+        itemRenderer = MI.Site:Component.Template.Partials.Navigation.Default
+    }
+
+    classes = 'px-4 py-3 rounded-md'
+    classes.@process.state = ${item.state == 'current' ? value + ' bg-blue-600 text-white' : value}
+
+    renderer = afx`
+        <li role="menuitem">
+            <a href={props.url} class={props.classes}>{props.label}</a>
+            <ul class="navigation--default-sub" @if.has={props.subItems}>
+                {props.subItems}
+            </ul>
+        </li>
+    `
+}
+
+prototype(MI.Site:Component.Template.Partials.Navigation.Default.HomeItem) < prototype(Neos.Fusion:Component) {
+    url = Neos.Neos:NodeUri {
+        node = ${site}
+    }
+    label = ${q(site).property('title')}
+
+    classes = 'px-4 py-3 rounded-md'
+    classes.@process.state = ${site == documentNode ? value + ' bg-blue-600 text-white' : value}
+
+    renderer = afx`
+        <li role="menuitem">
+            <a href={props.url} class={props.classes}>{props.label}</a>
+            <ul class="navigation--default-sub" @if.has={props.subItems}>
+                {props.subItems}
+            </ul>
+        </li>
+    `
+}

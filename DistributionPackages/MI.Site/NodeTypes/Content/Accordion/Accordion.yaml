@@ -1,0 +1,9 @@
+'MI.Site:Content.Accordion':
+  superTypes:
+    'Neos.Neos:Content': true
+    'Neos.Neos:ContentCollection': true
+    'MI.Site:Constraint.Accordion': true
+    'MI.Site:Wrap.Container': true
+  ui:
+    icon: stream
+    label: 'Accordion'

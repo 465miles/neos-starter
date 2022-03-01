@@ -1,0 +1,9 @@
+'MI.Site:Document.Page':
+  superTypes:
+    'Neos.Neos:Document': true
+  ui:
+    icon: file-text
+    label: 'Page'
+  childNodes:
+    main:
+      type: 'MI.Site:Collection.Main'

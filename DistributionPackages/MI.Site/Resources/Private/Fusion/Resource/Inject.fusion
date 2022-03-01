@@ -1,0 +1,26 @@
+prototype(Neos.Neos:Page) {
+    head {
+        stylesheets.main = afx`
+            <link rel="stylesheet" href={StaticResource.uri('MI.Site', 'Public/Styles/Main.css')}/>
+        `
+        javascripts.main = afx`
+            <script defer src={StaticResource.uri('MI.Site', 'Public/Scripts/Main.js')}></script>
+        `
+    }
+
+//    bodyScripts  {
+//        @position = 'before closingBodyTag'
+//    }
+}
+
+
+prototype(Sitegeist.Monocle:Preview.Page) {
+    head {
+        stylesheets.main = afx`
+            <link rel="stylesheet" href={StaticResource.uri('MI.Site', 'Public/Styles/Main.css')}/>
+        `
+        javascripts.main = afx`
+            <script defer src={StaticResource.uri('MI.Site', 'Public/Scripts/Main.js')}></script>
+        `
+    }
+}

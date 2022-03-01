@@ -1,6 +1,0 @@
-'465M.Site:Wrap.Container':
-  superTypes:
-    '465M.Site:Mixin.Spacing': true
-  options:
-    fusion:
-      wrapAsProcessAroundInheritingContent: true

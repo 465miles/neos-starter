@@ -1,4 +1,0 @@
-'465M.Site:Constraint.Main':
-  constraints:
-    nodeTypes:
-      '*': true

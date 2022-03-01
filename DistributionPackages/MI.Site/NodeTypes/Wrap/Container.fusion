@@ -1,0 +1,12 @@
+prototype(MI.Site:Wrap.Container) < prototype(Neos.Fusion:Component) {
+
+    spacingTop = ${q(node).property('spacing-top')}
+    spacingBottom = ${q(node).property('spacing-bottom')}
+    isNested = ${q(node).parent().is('[!instanceof MI.Site:Collection.Main]')}
+    // isNested = ${Array.last(Array.pop(String.split(node.path, '/'))) != "main"}
+    content = ${value}
+
+    renderer = afx`
+        <MI.Site:Component.Organism.Container {...props} />
+    `
+}

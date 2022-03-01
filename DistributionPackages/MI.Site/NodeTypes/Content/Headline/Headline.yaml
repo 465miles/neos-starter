@@ -1,0 +1,20 @@
+'MI.Site:Content.Headline':
+  superTypes:
+    'Neos.Neos:Content': true
+    'MI.Site:Mixin.TitleHierarchy': true
+    'MI.Site:Mixin.TitleSize': true
+    'MI.Site:Wrap.Container': true
+  ui:
+    icon: heading
+    label: 'Überschrift'
+    inspector:
+      groups:
+        heading:
+          label: Überschrift
+          icon: heading
+          tab: default
+          position: 110
+  properties:
+    title:
+      options:
+        preset: 'headline.default'

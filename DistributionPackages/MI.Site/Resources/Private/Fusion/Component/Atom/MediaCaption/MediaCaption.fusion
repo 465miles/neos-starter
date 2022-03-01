@@ -1,0 +1,14 @@
+prototype(MI.Site:Component.Atom.MediaCaption) < prototype(Neos.Fusion:Component) {
+
+    @propTypes {
+        @strict = true
+        content = ${PropTypes.string.isRequired}
+        extraClass = ${PropTypes.string}
+    }
+
+    renderer = afx`
+        <figcaption class="text-base text-gray-500 italic">
+            {props.content}
+        </figcaption>
+    `
+}

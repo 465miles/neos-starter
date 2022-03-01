@@ -1,9 +1,0 @@
-'465M.Site:Content.Accordion':
-  superTypes:
-    'Neos.Neos:Content': true
-    'Neos.Neos:ContentCollection': true
-    '465M.Site:Constraint.Accordion': true
-    '465M.Site:Wrap.Container': true
-  ui:
-    icon: stream
-    label: 'Accordion'

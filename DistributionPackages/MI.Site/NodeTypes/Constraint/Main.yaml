@@ -1,0 +1,4 @@
+'MI.Site:Constraint.Main':
+  constraints:
+    nodeTypes:
+      '*': true

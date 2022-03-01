@@ -1,0 +1,21 @@
+prototype(MI.Site:Content.Text) < prototype(Neos.Neos:ContentComponent) {
+
+    labelContent = Neos.Neos:Editable {
+        property = 'label'
+    }
+    titleTagName = ${q(node).property('title-hierarchy')}
+    titleFontSize = ${q(node).property('title-size')}
+    titleContent = Neos.Neos:Editable {
+        property = 'title'
+    }
+
+    textFontSize = ${q(node).property('text-size')}
+    textColumns = ${q(node).property('text-columns')}
+    textContent = Neos.Neos:Editable {
+        property = 'text'
+    }
+
+    renderer = afx`
+        <MI.Site:Component.Molecule.Text {...props} />
+    `
+}

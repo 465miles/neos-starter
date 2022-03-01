@@ -1,0 +1,18 @@
+prototype(MI.Site:Content.Media) < prototype(Neos.Neos:ContentComponent) {
+
+    mediaType = ${q(node).property('mediaType')}
+    imageSource = Sitegeist.Kaleidoscope:AssetImageSource {
+        asset = ${q(node).property('image')}
+    }
+    videoUri = Neos.Fusion:ResourceUri {
+        resource = ${q(node).property('video').resource}
+    }
+    videoId = ${q(node).property('videoId')}
+    caption = Neos.Neos:Editable {
+        property = 'caption'
+    }
+
+    renderer = afx`
+        <MI.Site:Component.Molecule.Media {...props} />
+    `
+}

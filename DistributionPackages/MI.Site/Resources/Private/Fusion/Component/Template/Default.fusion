@@ -1,0 +1,15 @@
+prototype(MI.Site:Component.Template.Default) < prototype(Neos.Fusion:Component) {
+  # Property API
+  menu = ''
+  content = ''
+
+  # Template
+  renderer = afx`
+    <!-- change to your needs -->
+    <MI.Site:Component.Template.Partials.Header />
+    <main id="main">
+      {props.content}
+    </main>
+    <footer>Footer</footer>
+  `
+}

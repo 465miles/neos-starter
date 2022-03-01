@@ -1,0 +1,61 @@
+prototype(MI.Site:Component.Molecule.Media) < prototype(Neos.Fusion:Component) {
+
+    @propTypes {
+        @strict = true
+        mediaType = ${PropTypes.oneOf(['image', 'video', 'video-youtube', 'video-vimeo']).isRequired}
+        imageSource = ${PropTypes.instanceOf('\\Sitegeist\\Kaleidoscope\\EelHelpers\\ImageSourceHelperInterface')}
+        videoUri = ${PropTypes.string}
+        videoId = ${PropTypes.string}
+        caption = ${PropTypes.string}
+        gridArea = ${PropTypes.string}
+    }
+
+    renderer = Neos.Fusion:Component {
+        @apply.props = ${props}
+
+        media = Neos.Fusion:Match {
+            @subject = ${props.mediaType}
+
+            @default = afx`
+                <p class="text-lg text-red-500">Noch kein Medientyp gewählt.</p>
+            `
+
+            image = afx`
+                <MI.Site:Component.Atom.Image
+                    imageSource={props.imageSource}
+                />
+            `
+
+            video = afx`
+                <MI.Site:Component.Atom.Video
+                    videoPoster={props.imageSource}
+                    videoUri={props.videoUri}
+                />
+            `
+
+            video-youtube = afx`
+                <MI.Site:Component.Atom.VideoExternal
+                    provider="youtube"
+                    videoId={props.videoId}
+                />
+            `
+
+            video-vimeo = afx`
+                <MI.Site:Component.Atom.VideoExternal
+                    provider="vimeo"
+                    videoId={props.videoId}
+                />
+            `
+        }
+
+        renderer = afx`
+            <figure
+                class.main="w-full flex flex-col gap-6"
+                class.gridArea={props.gridArea ? props.gridArea : "[grid-area:medium]"}
+            >
+                {props.media}
+                <MI.Site:Component.Atom.MediaCaption content={props.caption} @if.has={props.caption} />
+            </figure>
+        `
+    }
+}

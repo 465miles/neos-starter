@@ -1,5 +1,0 @@
-'465M.Site:Constraint.Accordion':
-  constraints:
-    nodeTypes:
-      "*": false
-      "465M.Site:Content.Accordion.Item": true

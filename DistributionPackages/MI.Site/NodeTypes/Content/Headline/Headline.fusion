@@ -1,0 +1,12 @@
+prototype(MI.Site:Content.Headline) < prototype(Neos.Neos:ContentComponent) {
+
+    tagName = ${q(node).property('title-hierarchy')}
+    fontSize = ${q(node).property('title-size')}
+    content = Neos.Neos:Editable {
+        property = 'title'
+    }
+
+    renderer = afx`
+        <MI.Site:Component.Atom.Headline {...props} />
+    `
+}

@@ -1,0 +1,19 @@
+{
+    "description": "",
+    "type": "neos-site",
+    "name": "mi/site",
+    "require": {
+        "neos/flow": "*",
+        "sitegeist/kaleidoscope": "^6.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "MI\\Site\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "MI.Site"
+        }
+    }
+}

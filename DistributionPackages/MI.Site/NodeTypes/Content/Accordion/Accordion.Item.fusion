@@ -1,0 +1,16 @@
+prototype(MI.Site:Content.Accordion.Item) < prototype(Neos.Neos:ContentComponent) {
+    id = ${node.identifier}
+
+    title = Neos.Neos:Editable {
+        property = 'title'
+    }
+
+    content = Neos.Neos:ContentCollection {
+        nodePath = ''
+        @process.contentElementWrapping >
+    }
+
+    renderer = afx`
+        <MI.Site:Component.Atom.AccordionItem {...props} />
+    `
+}

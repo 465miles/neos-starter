@@ -1,0 +1,12 @@
+'MI.Site:Content.Text':
+  superTypes:
+    'MI.Site:Content.Headline': true
+    'MI.Site:Content.Paragraph': true
+    'MI.Site:Wrap.Container': true
+  ui:
+    icon: font
+    label: 'Text'
+  properties:
+    label:
+      options:
+        preset: 'text.restricted'

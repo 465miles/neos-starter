@@ -10,7 +10,7 @@
     "require": {
         "neos/neos": "~7.3.0",
         "neos/neos-ui": "~7.3.0",
-        "465m/site": "@dev",
+        "mi/site": "@dev",
         "neos/cli-setup": "~7.3.0",
         "sitegeist/monocle": "^7.5",
         "sitegeist/monocle-proptypes": "^1.0"

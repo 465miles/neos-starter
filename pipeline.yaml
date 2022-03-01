@@ -15,7 +15,7 @@
 # format                  <string>        (default: `iife`)
 
 packages:
-  - package: 465M.Site
+  - package: MI.Site
     files:
       - Main.scss
       - Main.js

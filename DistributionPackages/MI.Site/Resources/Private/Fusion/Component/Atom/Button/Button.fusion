@@ -1,0 +1,18 @@
+prototype(MI.Site:Component.Atom.Button) < prototype(Neos.Fusion:Component) {
+
+    @propTypes {
+        @strict = true
+        text = ${PropTypes.string.isRequired}
+    }
+
+    renderer = afx`
+        <button
+            x-data="MI_Site_Component_Atom_Button"
+            x-on:click="foo"
+            class="bg-[#ff0]"
+        >
+            wefewf
+            {props.text}
+        </button>
+    `
+}

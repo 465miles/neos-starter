@@ -1,0 +1,21 @@
+prototype(MI.Site:Component.Template.Partials.Header) < prototype(Neos.Fusion:Component) {
+
+    renderer = afx`
+        <div class="relative bg-white border-b-2 border-gray-100">
+            <MI.Site:Component.Organism.Container>
+                <div class="w-full flex justify-between items-center py-6 md:justify-start md:space-x-10 [grid-area:large]">
+                    <div class="flex justify-start lg:w-0 lg:flex-1">
+                        <a href="#">
+                            <span class="sr-only">465miles</span>
+                            <img class="h-6 w-auto"
+                                 src={StaticResource.uri('MI.Site', 'Public/Images/465miles_logo_text.svg')} alt="" />
+                        </a>
+                    </div>
+                    <nav>
+                        <MI.Site:Component.Template.Partials.Navigation.Default home='true' />
+                    </nav>
+                </div>
+            </MI.Site:Component.Organism.Container>
+        </div>
+    `
+}

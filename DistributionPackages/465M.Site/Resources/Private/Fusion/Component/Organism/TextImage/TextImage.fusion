@@ -1,0 +1,40 @@
+prototype(465M.Site:Component.Organism.TextImage) < prototype(Neos.Fusion:Component) {
+
+    @propTypes {
+        @strict = true
+        labelContent = ${PropTypes.string}
+        titleTagName = ${PropTypes.string.isRequired}
+        titleFontSize = ${PropTypes.string.isRequired}
+        titleContent = ${PropTypes.string.isRequired}
+        textFontSize = ${PropTypes.string.isRequired}
+        textColumns = ${PropTypes.string}
+        textContent = ${PropTypes.string.isRequired}
+        mediaType = ${PropTypes.oneOf(['image', 'video', 'video-youtube', 'video-vimeo']).isRequired}
+        imageSource = ${PropTypes.instanceOf('\\Sitegeist\\Kaleidoscope\\EelHelpers\\ImageSourceHelperInterface')}
+        videoUri = ${PropTypes.string}
+        videoId = ${PropTypes.string}
+        caption = ${PropTypes.string}
+        extraClass = ${PropTypes.string}
+    }
+
+    renderer = afx`
+            <465M.Site:Component.Molecule.Text
+                labelContent={props.labelContent}
+                titleTagName={props.titleTagName}
+                titleFontSize={props.titleFontSize}
+                titleContent={props.titleContent}
+                textFontSize={props.textFontSize}
+                textColumns={props.textColumns}
+                textContent={props.textContent}
+                gridArea="col-[large-inner] lg:col-[large-inner_/_span_center-left]"
+            />
+            <465M.Site:Component.Molecule.Media
+                mediaType={props.mediaType}
+                imageSource={props.imageSource}
+                videoUri={props.videoUri}
+                videoId={props.videoId}
+                caption={props.caption}
+                gridArea="col-[large] lg:col-[center-right_/_span_large-end]"
+            />
+    `
+}

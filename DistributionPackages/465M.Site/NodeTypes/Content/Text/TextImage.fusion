@@ -1,0 +1,33 @@
+prototype(465M.Site:Content.TextImage) < prototype(Neos.Neos:ContentComponent) {
+
+    labelContent = Neos.Neos:Editable {
+        property = 'label'
+    }
+    titleTagName = ${q(node).property('title-hierarchy')}
+    titleFontSize = ${q(node).property('title-size')}
+    titleContent = Neos.Neos:Editable {
+        property = 'title'
+    }
+
+    textFontSize = ${q(node).property('text-size')}
+    textColumns = ${q(node).property('text-columns')}
+    textContent = Neos.Neos:Editable {
+        property = 'text'
+    }
+
+    mediaType = ${q(node).property('mediaType')}
+    imageSource = Sitegeist.Kaleidoscope:AssetImageSource {
+        asset = ${q(node).property('image')}
+    }
+    videoUri = Neos.Fusion:ResourceUri {
+        resource = ${q(node).property('video').resource}
+    }
+    videoId = ${q(node).property('videoId')}
+    caption = Neos.Neos:Editable {
+        property = 'caption'
+    }
+
+    renderer = afx`
+        <465M.Site:Component.Organism.TextImage {...props} />
+    `
+}

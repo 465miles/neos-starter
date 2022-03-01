@@ -7,6 +7,7 @@ prototype(465M.Site:Component.Atom.Headline) < prototype(Neos.Fusion:Component) 
 //            "base", "sm", "lg", "xl", "2xl", "3xl", "4xl", "5xl"
 //        ]).isRequired}
         color = ${PropTypes.string}
+        gridArea = ${PropTypes.string}
         content = ${PropTypes.string}
         extraClass = ${PropTypes.string}
     }
@@ -30,7 +31,7 @@ prototype(465M.Site:Component.Atom.Headline) < prototype(Neos.Fusion:Component) 
             class.prose='prose'
             class.width="w-full"
             class.color={props.color ? props.color : "text-gray-700"}
-            class.gridArea="[grid-area:small-inner]"
+            class.gridArea={props.gridArea ? props.gridArea : "[grid-area:small-inner]"}
             class.extra={props.extraClass}>
             <Neos.Fusion:Tag
                 tagName={props.tagName}

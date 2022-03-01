@@ -9,13 +9,14 @@ prototype(465M.Site:Component.Molecule.Text) < prototype(Neos.Fusion:Component) 
         textFontSize = ${PropTypes.string.isRequired}
         textColumns = ${PropTypes.string}
         textContent = ${PropTypes.string.isRequired}
+        gridArea = ${PropTypes.string}
         extraClass = ${PropTypes.string}
     }
 
     renderer = afx`
         <div
             class.main="text"
-            class.gridArea="[grid-area:medium-inner]"
+            class.gridArea={props.gridArea ? props.gridArea : "[grid-area:medium-inner]"}
             class.extra={props.extraClass}
         >
             <465M.Site:Component.Atom.Lead

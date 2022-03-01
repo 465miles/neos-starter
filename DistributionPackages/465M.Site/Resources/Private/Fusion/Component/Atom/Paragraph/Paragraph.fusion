@@ -5,6 +5,7 @@ prototype(465M.Site:Component.Atom.Paragraph) < prototype(Neos.Fusion:Component)
         fontSize = ${PropTypes.string.isRequired}
         columns = ${PropTypes.string}
         color = ${PropTypes.string}
+        gridArea = ${PropTypes.string}
         content = ${PropTypes.string.isRequired}
         extraClass = ${PropTypes.string}
     }
@@ -37,7 +38,7 @@ prototype(465M.Site:Component.Atom.Paragraph) < prototype(Neos.Fusion:Component)
             class.columnGap="gap-8"
             class.color={props.color ? props.color : "text-gray-700"}
             class.width="w-full"
-            class.gridArea="[grid-area:small-inner]"
+            class.gridArea={props.gridArea ? props.gridArea : "[grid-area:small-inner]"}
             class.extra={props.extraClass}>
             {props.content}
         </div>

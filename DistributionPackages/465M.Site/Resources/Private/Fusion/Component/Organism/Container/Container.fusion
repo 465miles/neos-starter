@@ -6,6 +6,7 @@ prototype(465M.Site:Component.Organism.Container) < prototype(Neos.Fusion:Compon
         spacingTop = ${PropTypes.string}
         spacingBottom = ${PropTypes.string}
         isNested = ${PropTypes.boolean}
+        gap = ${PropTypes.boolean}
         extraClass = ${PropTypes.string}
     }
 

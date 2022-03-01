@@ -1,0 +1,10 @@
+'MI.Site:Document.Abstract':
+  superTypes:
+    'Neos.Neos:Document': true
+  abstract: true
+  ui:
+    icon: file-text
+    label: 'Page'
+  childNodes:
+    main:
+      type: 'MI.Site:Collection.Main'

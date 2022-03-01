@@ -1,21 +1,18 @@
 prototype(MI.Site:Component.Template.Partials.Navigation.Default) < prototype(Neos.Fusion:Component) {
     root = ${site}
-    home = false
-
-    @context.menuItems = Neos.Neos:MenuItems {
-        entryLevel = 1
-        maximumLevels = 2
-    }
+    showHome = false
 
     items = Neos.Fusion:Loop {
-        items = ${menuItems}
-        itemName = 'item'
+        items = Neos.Neos:MenuItems {
+            entryLevel = 1
+            maximumLevels = 2
+        }
         itemRenderer = MI.Site:Component.Template.Partials.Navigation.Default.Item
     }
 
     renderer = afx`
         <ul class="flex space-x-5">
-            <MI.Site:Component.Template.Partials.Navigation.Default.HomeItem @if.has={props.home} />
+            <MI.Site:Component.Template.Partials.Navigation.Default.HomeItem @if.has={props.showHome} />
             {props.items}
         </ul>
     `
@@ -36,12 +33,15 @@ prototype(MI.Site:Component.Template.Partials.Navigation.Default.Item) < prototy
         itemRenderer = MI.Site:Component.Template.Partials.Navigation.Default
     }
 
-    classes = 'px-4 py-3 rounded-md'
-    classes.@process.state = ${item.state == 'current' ? value + ' bg-blue-600 text-white' : value}
-
     renderer = afx`
-        <li role="menuitem">
-            <a href={props.url} class={props.classes}>{props.label}</a>
+        <li x-data role="menuitem">
+            <a
+                href={props.url}
+                class.main="px-4 py-3 rounded-md"
+                x-bind:class={"location.pathname === '" + props.url + "' && 'bg-blue-600 text-white'"}
+            >
+                {props.label}
+            </a>
             <ul class="navigation--default-sub" @if.has={props.subItems}>
                 {props.subItems}
             </ul>
@@ -55,15 +55,15 @@ prototype(MI.Site:Component.Template.Partials.Navigation.Default.HomeItem) < pro
     }
     label = ${q(site).property('title')}
 
-    classes = 'px-4 py-3 rounded-md'
-    classes.@process.state = ${site == documentNode ? value + ' bg-blue-600 text-white' : value}
-
     renderer = afx`
-        <li role="menuitem">
-            <a href={props.url} class={props.classes}>{props.label}</a>
-            <ul class="navigation--default-sub" @if.has={props.subItems}>
-                {props.subItems}
-            </ul>
+        <li x-data role="menuitem">
+            <a
+                href={props.url}
+                class.main="px-4 py-3 rounded-md"
+                x-bind:class={"location.pathname === '" + props.url + "' && 'bg-blue-600 text-white'"}
+            >
+                {props.label}
+            </a>
         </li>
     `
 }

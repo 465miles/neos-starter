@@ -15,21 +15,15 @@ prototype(MI.Site:Content.TextImage) < prototype(Neos.Neos:ContentComponent) {
         property = 'text'
     }
 
-    mediaType = ${q(node).property('mediaType')}
-    imageSource = Sitegeist.Kaleidoscope:AssetImageSource {
-        asset = ${q(node).property('image')}
+    mediaContent = Neos.Neos:ContentCase {
+        @context.node = ${q(node).children('media').get(0)}
     }
-    videoUri = Neos.Fusion:ResourceUri {
-        resource = ${q(node).property('video').resource}
-    }
-    videoId = ${q(node).property('videoId')}
-    caption = Neos.Neos:Editable {
-        property = 'caption'
-    }
-
+    
     renderer = afx`
         <MI.Site:Component.Organism.TextImage {...props} />
     `
 
-    @process.wrapContainer = MI.Site:Wrap.Container
+    @process.wrapContainer = MI.Site:Wrap.Container {
+        align = "center"
+    }
 }

@@ -11,6 +11,7 @@ prototype(MI.Site:Component.Atom.Paragraph) < prototype(Neos.Fusion:Component) {
     }
 
     renderer = Neos.Fusion:Component {
+        @apply.props = ${props}
 
         mappedFontSize = Neos.Fusion:Match {
             @subject = ${props.fontSize}

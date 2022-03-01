@@ -18,7 +18,7 @@
     "watch:css": "node Build/Carbon.Pipeline/postcss.mjs --watch",
     "pipeline:build": "concurrently -r $npm_package_config_packageManager:build:*",
     "pipeline": "$npm_package_config_packageManager install;concurrently -r $npm_package_config_packageManager:pipeline:*",
-    "watch:browsersync": "browser-sync start --config bs-config.js"
+    "watch:browsersync": "browser-sync start --config browsersync.config.js"
   },
   "devDependencies": {
     "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",

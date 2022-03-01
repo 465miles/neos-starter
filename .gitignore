@@ -31,4 +31,4 @@ composer.lock
 
 
 pnpm-lock.yaml
-bs-config.js
+browsersync.config.js

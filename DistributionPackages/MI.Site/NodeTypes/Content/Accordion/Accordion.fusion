@@ -5,6 +5,6 @@ prototype(MI.Site:Content.Accordion) < prototype(Neos.Neos:ContentComponent) {
     }
 
     renderer = afx`
-        <MI.Site:Component.Molecule.AccordionGroup {...props} />
+        <MI.Site:Component.Molecule.Accordion {...props} />
     `
 }

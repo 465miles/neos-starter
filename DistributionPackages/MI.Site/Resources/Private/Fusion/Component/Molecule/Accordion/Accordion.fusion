@@ -1,0 +1,17 @@
+prototype(MI.Site:Component.Molecule.Accordion) < prototype(Neos.Fusion:Component) {
+
+    @propTypes {
+        @strict = true
+        content = ${PropTypes.string.isRequired}
+    }
+
+    renderer = afx`
+        <div
+            class.main="w-full bg-white drop-shadow-md rounded-md"
+            class.gridArea="[grid-area:medium-inner]"
+            x-data="{selected:null}"
+        >
+            {props.content}
+        </div>
+    `
+}

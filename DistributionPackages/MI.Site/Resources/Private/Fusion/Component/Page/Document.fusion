@@ -1,6 +1,7 @@
 prototype(MI.Site:Component.Page.Document) < prototype(Neos.Fusion:Component) {
 
     @propTypes {
+        @strict = true
         title = ${PropTypes.string.isRequired}
         content = ${PropTypes.string.isRequired}
         template = ${PropTypes.oneOf([])}

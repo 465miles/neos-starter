@@ -1,0 +1,7 @@
+prototype(MI.Site:Component.Atom.Headline).@styleguide {
+    title = 'Headline'
+    props {
+        tagName = 'h2'
+        content = 'Lorem Ipsum'
+    }
+}

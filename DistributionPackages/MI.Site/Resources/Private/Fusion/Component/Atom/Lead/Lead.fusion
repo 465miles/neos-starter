@@ -8,13 +8,9 @@ prototype(MI.Site:Component.Atom.Lead) < prototype(Neos.Fusion:Component) {
 
     renderer = afx`
         <div
-            class.main="paragraph"
-            class.prose="prose"
-            class.color="text-blue-500"
-            class.textTramsform="uppercase"
-            class.fontWeight="font-bold"
-            class.fontSize="text-sm"
-            class.extra={props.extraClass}>
+            class.main="paragraph prose text-blue-500 uppercase font-bold text-sm"
+            class.extra={props.extraClass}
+        >
             {props.content}
         </div>
     `

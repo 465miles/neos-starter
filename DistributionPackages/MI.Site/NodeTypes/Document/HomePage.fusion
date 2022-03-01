@@ -1,4 +1,4 @@
-prototype(MI.Site:Document.HomePage) < prototype(MI.Site:Component.Page.Document) {
+prototype(MI.Site:Document.HomePage) < prototype(Neos.Neos:ContentComponent) {
 
     title = ${q(node).property('title')}
 

@@ -41,6 +41,7 @@ prototype(MI.Site:Component.Organism.Container) < prototype(Neos.Fusion:Componen
             class.spacingBottom={props.spacingBottom}
             class.grid={!props.isNested ? "grid grid-cols-container-xs sm:grid-cols-container-sm md:grid-cols-container-md xl:grid-cols-container-lg 2xl:grid-cols-container-2xl": ""}
             class.extra={props.extraClass}
+            class.gap={props.gap ? "bg-red-500" : "bg-green-500"}
         >
             {props.content}
         </div>

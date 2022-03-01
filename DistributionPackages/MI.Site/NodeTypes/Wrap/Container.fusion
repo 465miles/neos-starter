@@ -6,6 +6,8 @@ prototype(MI.Site:Wrap.Container) < prototype(Neos.Fusion:Component) {
     // isNested = ${Array.last(Array.pop(String.split(node.path, '/'))) != "main"}
     content = ${value}
 
+    gap = ${node.nodeType.options['MI.Site.Wrap.Container'].gap}
+
     renderer = afx`
         <MI.Site:Component.Organism.Container {...props} />
     `

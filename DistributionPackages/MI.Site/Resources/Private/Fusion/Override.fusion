@@ -3,7 +3,7 @@ prototype(Neos.Neos:ContentComponent) {
         nodeTypes = ${
             Array.filter(
             node.nodeType.declaredSuperTypes,
-            nodeSuperType => nodeSuperType.localConfiguration.options.fusion.wrapAsProcessAroundInheritingContent == true
+            nodeSuperType => nodeSuperType.localConfiguration.options['MI.Site'].wrapAsProcessAroundInheritingContent == true
             )
         }
 

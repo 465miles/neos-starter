@@ -11,6 +11,3 @@
     label:
       options:
         preset: 'text.restricted'
-  options:
-    MI_Site_Wrap_Container:
-      gap: sm

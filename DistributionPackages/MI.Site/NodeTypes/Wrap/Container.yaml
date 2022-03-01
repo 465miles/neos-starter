@@ -2,5 +2,7 @@
   superTypes:
     'MI.Site:Mixin.Spacing': true
   options:
-    fusion:
+    'MI.Site':
       wrapAsProcessAroundInheritingContent: true
+    'MI.Site.Wrap.Container':
+      gap: false

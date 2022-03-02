@@ -51,7 +51,7 @@
         label: 'ClientEval:({image: "Bild", video: "Video-Poster"})[node.properties.mediaType]'
         reloadIfChanged: true
         inspector:
-          hidden: 'ClientEval:["image", "video"].includes(node.properties.mediaType) === false'
+          hidden: 'ClientEval:!["image", "video"].includes(node.properties.mediaType)'
           group: media
     video:
       type: 'Neos\Media\Domain\Model\Asset'
@@ -67,7 +67,7 @@
         help:
           message: 'Video-ID von Youtube oder Vimeo.'
         inspector:
-          hidden: 'ClientEval:["video-youtube", "video-vimeo"].includes(node.properties.mediaType) === false'
+          hidden: 'ClientEval:!["video-youtube", "video-vimeo"].includes(node.properties.mediaType)'
           group: media
     showMeta:
       type: boolean

@@ -1,7 +1,7 @@
 prototype(MI.Site:Component.Molecule.Media) < prototype(Neos.Fusion:Component) {
 
     @propTypes {
-        @strict = true
+//        @strict = true
         mediaType = ${PropTypes.oneOf(['image', 'video', 'video-youtube', 'video-vimeo']).isRequired}
 
         imageSource = ${PropTypes.instanceOf('\\Sitegeist\\Kaleidoscope\\EelHelpers\\ImageSourceHelperInterface')}

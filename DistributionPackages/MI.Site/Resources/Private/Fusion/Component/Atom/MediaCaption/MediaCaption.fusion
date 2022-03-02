@@ -18,12 +18,12 @@ prototype(MI.Site:Component.Atom.MediaCaption) < prototype(Neos.Fusion:Component
                 @if={props.title}
                 class="font-bold"
             >
-                {props.title}
+                {String.nl2br(props.title)}
             </p>
             <p
                 @if={props.caption}
             >
-                {props.caption}
+                {String.nl2br(props.caption)}
             </p>
             <p
                 @if={props.copyright}

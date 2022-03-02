@@ -4,16 +4,10 @@
     'MI.Site:Mixin.TextSize': true
     'MI.Site:Mixin.TextColumns': true
     'MI.Site:Wrap.Container': true
+    'MI.Site:Mixin.InspectorGroups': true
   ui:
     icon: paragraph
     label: 'Absatz'
-    inspector:
-      groups:
-        paragraph:
-          label: Absatz
-          icon: paragraph
-          tab: default
-          position: 130
   properties:
     text:
       options:

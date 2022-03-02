@@ -1,6 +1,6 @@
 'MI.Site:Mixin.TextColumns':
   properties:
-    text-columns:
+    textColumns:
       type: string
       defaultValue: 1
       ui:

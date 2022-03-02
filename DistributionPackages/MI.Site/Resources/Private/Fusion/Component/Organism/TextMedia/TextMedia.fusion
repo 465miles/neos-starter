@@ -7,7 +7,6 @@ prototype(MI.Site:Component.Organism.TextMedia) < prototype(Neos.Fusion:Componen
         titleFontSize = ${PropTypes.string.isRequired}
         titleContent = ${PropTypes.string}
         textFontSize = ${PropTypes.string.isRequired}
-        textColumns = ${PropTypes.string}
         textContent = ${PropTypes.string.isRequired}
         mediaContent = ${PropTypes.string}
         mirrored = ${PropTypes.boolean}
@@ -21,7 +20,7 @@ prototype(MI.Site:Component.Organism.TextMedia) < prototype(Neos.Fusion:Componen
             titleFontSize={props.titleFontSize}
             titleContent={props.titleContent}
             textFontSize={props.textFontSize}
-            textColumns={props.textColumns}
+            textColumns='1'
             textContent={props.textContent}
             gridArea={props.mirrored ? 'col-[medium-inner] lg:col-[center-right/span_large-inner-end]' : 'col-[medium-inner] lg:col-[large-inner-start/span_center-left]'}
             extraClass={props.mirrored ? 'order-last lg:pl-10' : 'order-last lg:order-first lg:pr-10'}

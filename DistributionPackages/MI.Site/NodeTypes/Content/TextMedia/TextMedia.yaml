@@ -2,6 +2,8 @@
   superTypes:
     'MI.Site:Content.Text': true
     'MI.Site:Wrap.Container': true
+    'MI.Site:Mixin.InspectorGroups': true
+    'MI.Site:Mixin.TextColumns': false
   childNodes:
     media:
       type: 'MI.Site:Content.Media.Abstract'
@@ -11,15 +13,11 @@
     inspector:
       groups:
         options:
-          label: Überschrift
+          label: Optionen
           icon: tasks
           tab: default
           position: 50
   properties:
-    text-columns:
-      ui:
-        inspector:
-          hidden: true
     mirrored:
       type: boolean
       defaultValue: false

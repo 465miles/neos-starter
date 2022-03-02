@@ -1,7 +1,7 @@
 prototype(MI.Site:Content.Paragraph) < prototype(Neos.Neos:ContentComponent) {
 
-    fontSize = ${q(node).property('text-size')}
-    columns = ${q(node).property('text-columns')}
+    fontSize = ${q(node).property('textSize')}
+    columns = ${q(node).property('textColumns')}
 
     content = Neos.Neos:Editable {
         property = 'text'

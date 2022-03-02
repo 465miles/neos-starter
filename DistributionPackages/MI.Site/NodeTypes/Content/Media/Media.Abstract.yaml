@@ -1,23 +1,12 @@
 'MI.Site:Content.Media.Abstract':
   superTypes:
     'Neos.Neos:Content': true
+    'MI.Site:Mixin.InspectorGroups': true
   label: ${'Medium'}
   ui:
     label: 'Medium'
     icon: photo-video
     group: abstract
-    inspector:
-      groups:
-        media:
-          label: Medium
-          icon: photo-video
-          tab: default
-          position: 200
-        mediaMeta:
-          label: Meta-Daten
-          icon: info
-          tab: default
-          position: 210
   properties:
     mediaType:
       type: string

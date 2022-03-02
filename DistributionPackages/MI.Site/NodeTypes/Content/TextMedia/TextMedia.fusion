@@ -3,14 +3,13 @@ prototype(MI.Site:Content.TextMedia) < prototype(Neos.Neos:ContentComponent) {
     leadContent = Neos.Neos:Editable {
         property = 'lead'
     }
-    titleTagName = ${q(node).property('title-hierarchy')}
-    titleFontSize = ${q(node).property('title-size')}
+    titleTagName = ${q(node).property('titleHierarchy')}
+    titleFontSize = ${q(node).property('titleSize')}
     titleContent = Neos.Neos:Editable {
         property = 'title'
     }
 
-    textFontSize = ${q(node).property('text-size')}
-    textColumns = ${q(node).property('text-columns')}
+    textFontSize = ${q(node).property('textSize')}
     textContent = Neos.Neos:Editable {
         property = 'text'
     }

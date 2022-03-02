@@ -1,6 +1,6 @@
 'MI.Site:Mixin.TextSize':
   properties:
-    text-size:
+    textSize:
       type: string
       defaultValue: 3
       ui:

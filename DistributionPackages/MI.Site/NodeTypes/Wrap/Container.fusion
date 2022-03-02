@@ -6,8 +6,8 @@ prototype(MI.Site:Wrap.Container) < prototype(Neos.Fusion:Component) {
         rowGap = ${PropTypes.string}
     }
 
-    spacingTop = ${q(node).property('spacing-top')}
-    spacingBottom = ${q(node).property('spacing-bottom')}
+    spacingTop = ${q(node).property('spacingTop')}
+    spacingBottom = ${q(node).property('spacingBottom')}
     isNested = ${q(node).parent().is('[!instanceof MI.Site:Collection.Main]')}
     content = ${value}
 

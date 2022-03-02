@@ -1,6 +1,6 @@
 'MI.Site:Mixin.TitleSize':
   properties:
-    title-size:
+    titleSize:
       type: string
       defaultValue: 4
       ui:

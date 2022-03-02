@@ -1,6 +1,6 @@
 'MI.Site:Mixin.TitleHierarchy':
   properties:
-    title-hierarchy:
+    titleHierarchy:
       type: string
       defaultValue: h2
       ui:

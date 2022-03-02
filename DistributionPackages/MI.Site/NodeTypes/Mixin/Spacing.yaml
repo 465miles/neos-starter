@@ -1,15 +1,8 @@
 'MI.Site:Mixin.Spacing':
-  ui:
-    inspector:
-      groups:
-        spacing:
-          label: Abstände
-          icon: expand
-          tab: default
-          position: 400
+  abstract: true
   properties:
-    spacing-top:
-      type: integer
+    spacingTop:
+      type: string
       defaultValue: 4
       ui:
         label: 'Oberer Abstand'
@@ -24,8 +17,8 @@
             max: 7
             step: 1
             unit: 'Abstandseinheit(en)'
-    spacing-bottom:
-      type: integer
+    spacingBottom:
+      type: string
       defaultValue: 4
       ui:
         label: 'Unterer Abstand'

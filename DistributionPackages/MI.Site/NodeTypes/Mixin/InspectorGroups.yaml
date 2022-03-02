@@ -1,0 +1,29 @@
+'MI.Site:Mixin.InspectorGroups':
+  ui:
+    inspector:
+      groups:
+        heading:
+          label: Überschrift
+          icon: heading
+          tab: default
+          position: 110
+        paragraph:
+          label: Absatz
+          icon: paragraph
+          tab: default
+          position: 120
+        media:
+          label: Medium
+          icon: photo-video
+          tab: default
+          position: 200
+        mediaMeta:
+          label: Meta-Daten
+          icon: info
+          tab: default
+          position: 210
+        spacing:
+          label: Abstände
+          icon: expand
+          tab: default
+          position: 400

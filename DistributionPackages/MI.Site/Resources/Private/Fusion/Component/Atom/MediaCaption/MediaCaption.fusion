@@ -2,30 +2,32 @@ prototype(MI.Site:Component.Atom.MediaCaption) < prototype(Neos.Fusion:Component
 
     @propTypes {
         @strict = true
-        showTitle = ${PropTypes.boolean}
         title = ${PropTypes.string}
-        showCaption = ${PropTypes.boolean}
         caption = ${PropTypes.string}
-        showCopyright = ${PropTypes.boolean}
         copyright = ${PropTypes.string}
         extraClass = ${PropTypes.string}
     }
 
     renderer = afx`
         <figcaption
+            @if={props.title || props.caption || props.copyright}
             class.main="text-sm text-gray-500 flex flex-col gap-2.5"
             class.extra={props.extraClass}
         >
-            <p @if.has={props.showTitle}
-                class.main="font-bold"
+            <p
+                @if={props.title}
+                class="font-bold"
             >
                 {props.title}
             </p>
-            <p @if.has={props.showCaption}>
+            <p
+                @if={props.caption}
+            >
                 {props.caption}
             </p>
-            <p @if.has={props.showCopyright}
-               class.main="italic"
+            <p
+                @if={props.copyright}
+                class="italic"
             >
                 &copy; {props.copyright}
             </p>

@@ -22,37 +22,25 @@ prototype(MI.Site:Content.Media.Abstract) < prototype(Neos.Neos:ContentComponent
     renderer = Neos.Fusion:Component {
         @apply.props = ${props}
 
-        mediaTitle = Neos.Fusion:Case {
-            image {
-                condition = ${props.mediaType == 'image'}
-                renderer = ${q(node).property('image').title}
-            }
-            video {
-                condition = ${props.mediaType == 'video'}
-                renderer = ${q(node).property('video').title}
-            }
+        mediaTitle = Neos.Fusion:Match {
+            @subject = ${props.mediaType}
+            @default = ${null}
+            image = ${q(node).property('image').title}
+            video = ${q(node).property('video').title}
         }
 
-        mediaCaption = Neos.Fusion:Case {
-            image {
-                condition = ${props.mediaType == 'image'}
-                renderer = ${q(node).property('image').caption}
-            }
-            video {
-                condition = ${props.mediaType == 'video'}
-                renderer = ${q(node).property('video').caption}
-            }
+        mediaCaption = Neos.Fusion:Match {
+            @subject = ${props.mediaType}
+            @default = ${null}
+            image = ${q(node).property('image').caption}
+            video = ${q(node).property('video').caption}
         }
 
-        mediaCopyright = Neos.Fusion:Case {
-            image {
-                condition = ${props.mediaType == 'image'}
-                renderer = ${q(node).property('image').copyrightNotice}
-            }
-            video {
-                condition = ${props.mediaType == 'video'}
-                renderer = ${q(node).property('video').copyrightNotice}
-            }
+        mediaCopyright = Neos.Fusion:Match {
+            @subject = ${props.mediaType}
+            @default = ${null}
+            image = ${q(node).property('image').copyrightNotice}
+            video = ${q(node).property('video').copyrightNotice}
         }
 
         renderer = afx`

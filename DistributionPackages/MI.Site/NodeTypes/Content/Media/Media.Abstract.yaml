@@ -51,7 +51,7 @@
         label: 'ClientEval:({image: "Bild", video: "Video-Poster"})[node.properties.mediaType]'
         reloadIfChanged: true
         inspector:
-          hidden: 'ClientEval:["image", "video"].includes(node.properties.mediaType) === false'
+          hidden: 'ClientEval:!["image", "video"].includes(node.properties.mediaType)'
           group: media
     video:
       type: 'Neos\Media\Domain\Model\Asset'
@@ -67,7 +67,7 @@
         help:
           message: 'Video-ID von Youtube oder Vimeo.'
         inspector:
-          hidden: 'ClientEval:["video-youtube", "video-vimeo"].includes(node.properties.mediaType) === false'
+          hidden: 'ClientEval:!["video-youtube", "video-vimeo"].includes(node.properties.mediaType)'
           group: media
     showMeta:
       type: boolean
@@ -86,6 +86,7 @@
           message: 'Titel aus dem Media-Module wird angezeigt wenn kein alternativer Titel vergeben wurde.'
         reloadIfChanged: true
         inspector:
+          hidden: 'ClientEval:!node.properties.showMeta'
           group: mediaMeta
     alternativeTitle:
       type: 'string'
@@ -93,6 +94,7 @@
         label: 'Alternativer Titel'
         reloadIfChanged: true
         inspector:
+          hidden: 'ClientEval:!node.properties.showMeta || !node.properties.showTitle'
           group: mediaMeta
           editor: 'Neos.Neos/Inspector/Editors/TextAreaEditor'
     showCaption:
@@ -104,6 +106,7 @@
           message: 'Beschreibung aus dem Media-Module wird angezeigt wenn keine alternative Beschreibung vergeben wurde.'
         reloadIfChanged: true
         inspector:
+          hidden: 'ClientEval:!node.properties.showMeta'
           group: mediaMeta
     alternativeCaption:
       type: 'string'
@@ -111,6 +114,7 @@
         label: 'Alternative Bescheibung'
         reloadIfChanged: true
         inspector:
+          hidden: 'ClientEval:!node.properties.showMeta || !node.properties.showCaption'
           group: mediaMeta
           editor: 'Neos.Neos/Inspector/Editors/TextAreaEditor'
     showCopyright:
@@ -122,4 +126,5 @@
           message: 'Copyright aus dem Media-Module wird angezeigt.'
         reloadIfChanged: true
         inspector:
+          hidden: 'ClientEval:!node.properties.showMeta'
           group: mediaMeta

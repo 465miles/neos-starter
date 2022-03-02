@@ -5,10 +5,7 @@ prototype(MI.Site:Content.Accordion.Item) < prototype(Neos.Neos:ContentComponent
         property = 'title'
     }
 
-    content = Neos.Neos:ContentCollection {
-        nodePath = ''
-        @process.contentElementWrapping >
-    }
+    content = Neos.Neos:ContentCollectionRenderer
 
     renderer = afx`
         <MI.Site:Component.Atom.AccordionItem {...props} />

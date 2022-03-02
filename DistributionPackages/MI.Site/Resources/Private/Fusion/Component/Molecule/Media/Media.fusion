@@ -1,25 +1,30 @@
 prototype(MI.Site:Component.Molecule.Media) < prototype(Neos.Fusion:Component) {
 
     @propTypes {
-        @strict = true
+//        @strict = true
         mediaType = ${PropTypes.oneOf(['image', 'video', 'video-youtube', 'video-vimeo']).isRequired}
+
         imageSource = ${PropTypes.instanceOf('\\Sitegeist\\Kaleidoscope\\EelHelpers\\ImageSourceHelperInterface')}
+
         videoUri = ${PropTypes.string}
         videoId = ${PropTypes.string}
-        alternativeCaption = ${PropTypes.string}
+
         showMeta = ${PropTypes.boolean.isRequired}
+
         showTitle = ${PropTypes.boolean}
         mediaTitle = ${PropTypes.string}
         alternativeTitle = ${PropTypes.string}
+
         showCaption = ${PropTypes.boolean}
         mediaCaption = ${PropTypes.string}
         alternativeCaption = ${PropTypes.string}
+
         showCopyright = ${PropTypes.boolean}
         mediaCopyright = ${PropTypes.string}
+
         gridArea = ${PropTypes.string}
         extraClass = ${PropTypes.string}
     }
-
 
     renderer = Neos.Fusion:Component {
         @apply.props = ${props}
@@ -63,13 +68,16 @@ prototype(MI.Site:Component.Molecule.Media) < prototype(Neos.Fusion:Component) {
             >
                 {props.media}
                 <MI.Site:Component.Atom.MediaCaption
-                    @if.has={props.showMeta}
-                    showTitle={props.showTitle}
-                    title={props.alternativeTitle ? props.alternativeTitle : props.mediaTitle}
-                    showCaption={props.showCaption}
+                    @if={props.showMeta}
+
+                    title={props.showTitle && props.alternativeTitle ? props.alternativeTitle : props.mediaTitle}
+                    title.@if={props.showTitle}
+
                     caption={props.alternativeCaption ? props.alternativeCaption : props.mediaCaption}
-                    showCopyright={props.showCopyright}
+                    caption.@if={props.showCaption}
+
                     copyright={props.mediaCopyright}
+                    copyright.@if={props.showCopyright}
                 />
             </figure>
         `

@@ -15,9 +15,7 @@ prototype(MI.Site:Content.TextMedia) < prototype(Neos.Neos:ContentComponent) {
         property = 'text'
     }
 
-    mediaContent = Neos.Neos:ContentCase {
-        @context.node = ${q(node).children('media').get(0)}
-    }
+    mediaContent = Neos.Neos:ContentCollectionRenderer
 
     renderer = afx`
         <MI.Site:Component.Organism.TextMedia {...props} />

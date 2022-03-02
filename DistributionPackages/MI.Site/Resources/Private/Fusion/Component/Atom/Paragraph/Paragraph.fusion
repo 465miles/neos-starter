@@ -16,11 +16,11 @@ prototype(MI.Site:Component.Atom.Paragraph) < prototype(Neos.Fusion:Component) {
         mappedFontSize = Neos.Fusion:Match {
             @subject = ${props.fontSize}
             @default = ${this.sm}
-            base = 'text-lg'
-            xs = 'text-sm'
-            sm = 'text-base'
-            lg = 'text-xl'
-            xl = 'text-2xl'
+            1 = 'text-sm'
+            2 = 'text-base'
+            3 = 'text-lg'
+            4 = 'text-xl'
+            5 = 'text-2xl'
         }
 
         mappedColumns = Neos.Fusion:Match {
@@ -35,8 +35,8 @@ prototype(MI.Site:Component.Atom.Paragraph) < prototype(Neos.Fusion:Component) {
         renderer = afx`
             <div
                 class.main="paragraph prose gap-8 w-full"
-                class.fontSize={props.fontSize}
-                class.columns={props.columns}
+                class.fontSize={props.mappedFontSize}
+                class.columns={props.mappedColumns}
                 class.color={props.color ? props.color : "text-gray-700"}
                 class.gridArea={props.gridArea ? props.gridArea : "[grid-area:small-inner]"}
                 class.extra={props.extraClass}

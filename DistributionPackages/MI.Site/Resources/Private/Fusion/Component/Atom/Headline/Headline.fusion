@@ -4,7 +4,7 @@ prototype(MI.Site:Component.Atom.Headline) < prototype(Neos.Fusion:Component) {
         @strict = true
         tagName = ${PropTypes.string.isRequired}
         fontSize = ${PropTypes.oneOf([
-            'base', 'sm', 'lg', 'xl', '2xl', '3xl', '4xl', '5xl'
+            '1', '2', '3', '4', '5', '6', '7', '8'
         ])}
         color = ${PropTypes.string}
         gridArea = ${PropTypes.string}
@@ -18,14 +18,14 @@ prototype(MI.Site:Component.Atom.Headline) < prototype(Neos.Fusion:Component) {
         mappedFontSize = Neos.Fusion:Match {
             @subject = ${props.fontSize}
             @default = ${this.base}
-            base = 'text-xl'
-            sm = 'text-lg'
-            lg = 'text-2xl'
-            xl = 'text-3xl'
-            2xl = 'text-4xl'
-            3xl = 'text-5xl'
-            4xl = 'text-6xl'
-            5xl = 'text-7xl'
+            1 = 'text-lg'
+            2 = 'text-xl'
+            3 = 'text-2xl'
+            4 = 'text-3xl'
+            5 = 'text-4xl'
+            6 = 'text-5xl'
+            7 = 'text-6xl'
+            8 = 'text-7xl'
         }
 
         renderer = afx`

@@ -1,18 +1,18 @@
-'MI.Site:Mixin.TitleSize':
+'MI.Site:Mixin.TextSize':
   properties:
-    title-size:
+    text-size:
       type: string
-      defaultValue: 4
+      defaultValue: 3
       ui:
         label: 'Schriftgröße'
         reloadIfChanged: true
         inspector:
-          group: heading
+          group: paragraph
           editor: 'Neos.Neos/Inspector/Editors/RangeEditor'
           editorOptions:
             minLabel: 'Klein'
             maxLabel: 'Groß'
             min: 1
-            max: 8
+            max: 5
             step: 1
             unit: 'Größe'

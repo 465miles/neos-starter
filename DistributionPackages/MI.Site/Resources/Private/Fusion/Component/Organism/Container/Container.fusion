@@ -36,37 +36,27 @@ prototype(MI.Site:Component.Organism.Container) < prototype(Neos.Fusion:Componen
     spacingTop.@process.class = Neos.Fusion:Match {
         @subject = ${value}
         @default = ''
-        none = "mt-0"
-        xs = "mt-8"
-        sm = "mt-12"
-        md = "mt-16"
-        lg = "mt-24"
-        xl = "mt-36"
-        2xl = "mt-48"
-    }
-
-    spacingTop.@process.class = Neos.Fusion:Match {
-        @subject = ${value}
-        @default = ''
-        none = "mt-0"
-        xs = "mt-8"
-        sm = "mt-12"
-        md = "mt-16"
-        lg = "mt-24"
-        xl = "mt-36"
-        2xl = "mt-48"
+        0 = "mt-0"
+        1 = "mt-8"
+        2 = "mt-12"
+        3 = "mt-16"
+        4 = "mt-24"
+        5 = "mt-36"
+        6 = "mt-48"
+        7 = "mt-72"
     }
 
     spacingBottom.@process.class = Neos.Fusion:Match {
         @subject = ${value}
         @default = ''
-        none = "mb-0"
-        xs = "mb-8"
-        sm = "mb-12"
-        md = "mb-16"
-        lg = "mb-24"
-        xl = "mb-36"
-        2xl = "mb-48"
+        0 = "mb-0"
+        1 = "mb-8"
+        2 = "mb-12"
+        3 = "mb-16"
+        4 = "mb-24"
+        5 = "mb-36"
+        6 = "mb-48"
+        7 = "mb-72"
     }
 
     renderer = afx`
@@ -74,6 +64,7 @@ prototype(MI.Site:Component.Organism.Container) < prototype(Neos.Fusion:Componen
             class.main="w-full"
             class.align={props.align}
             class.justify={props.justify}
+            class.spacingTop={props.spacingTop}
             class.spacingBottom={props.spacingBottom}
             class.grid={!props.isNested ? "grid grid-cols-container-xs sm:grid-cols-container-sm md:grid-cols-container-md xl:grid-cols-container-lg 2xl:grid-cols-container-2xl": ""}
             class.extra={props.extraClass}

@@ -10,69 +10,33 @@
   properties:
     spacing-top:
       type: string
-      defaultValue: md
+      defaultValue: 4
       ui:
         label: 'Oberer Abstand'
         reloadIfChanged: true
         inspector:
           group: spacing
-          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editor: 'Neos.Neos/Inspector/Editors/RangeEditor'
           editorOptions:
-            allowEmpty: false
-            placeholder: 'Abstand wählen'
-            values:
-              none:
-                label: 'Kein Abstand'
-                icon: expand
-              xs:
-                label: 'Sehr klein'
-                icon: expand
-              sm:
-                label: 'Klein'
-                icon: expand
-              md:
-                label: 'Mittel'
-                icon: expand
-              lg:
-                label: 'Groß'
-                icon: expand
-              xl:
-                label: 'XL'
-                icon: expand
-              2xl:
-                label: '2XL'
-                icon: expand
+            minLabel: '0'
+            maxLabel: '7'
+            min: 0
+            max: 7
+            step: 1
+            unit: 'Abstandseinheit(en)'
     spacing-bottom:
       type: string
-      defaultValue: md
+      defaultValue: 4
       ui:
         label: 'Unterer Abstand'
         reloadIfChanged: true
         inspector:
           group: spacing
-          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editor: 'Neos.Neos/Inspector/Editors/RangeEditor'
           editorOptions:
-            allowEmpty: false
-            placeholder: 'Abstand wählen'
-            values:
-              none:
-                label: 'Kein Abstand'
-                icon: expand
-              xs:
-                label: 'Sehr klein'
-                icon: expand
-              sm:
-                label: 'Klein'
-                icon: expand
-              md:
-                label: 'Mittel'
-                icon: expand
-              lg:
-                label: 'Groß'
-                icon: expand
-              xl:
-                label: 'XL'
-                icon: expand
-              2xl:
-                label: '2XL'
-                icon: expand
+            minLabel: '0'
+            maxLabel: '7'
+            min: 0
+            max: 7
+            step: 1
+            unit: 'Abstandseinheit(en)'

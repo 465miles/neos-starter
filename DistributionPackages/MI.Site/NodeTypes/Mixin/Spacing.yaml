@@ -9,7 +9,7 @@
           position: 400
   properties:
     spacing-top:
-      type: string
+      type: integer
       defaultValue: 4
       ui:
         label: 'Oberer Abstand'
@@ -25,7 +25,7 @@
             step: 1
             unit: 'Abstandseinheit(en)'
     spacing-bottom:
-      type: string
+      type: integer
       defaultValue: 4
       ui:
         label: 'Unterer Abstand'

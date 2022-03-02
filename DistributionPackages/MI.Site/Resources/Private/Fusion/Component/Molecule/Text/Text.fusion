@@ -8,9 +8,8 @@ prototype(MI.Site:Component.Molecule.Text) < prototype(Neos.Fusion:Component) {
         titleContent = ${PropTypes.string}
         textFontSize = ${PropTypes.string.isRequired}
         textColumns = ${PropTypes.string}
-        textContent = ${PropTypes.string.isRequired}
+        textContent = ${PropTypes.string}
         gridArea = ${PropTypes.string}
-        isBackend = ${PropTypes.string}
         extraClass = ${PropTypes.string}
     }
 
@@ -21,14 +20,14 @@ prototype(MI.Site:Component.Molecule.Text) < prototype(Neos.Fusion:Component) {
             class.extra={props.extraClass}
         >
             <MI.Site:Component.Atom.Lead
-                @if.show={props.leadContent && props.titleContent || props.isBackend}
+                @if.show={props.leadContent && props.titleContent}
                 extraClass="mb-2.5"
             >
                 {props.leadContent}
             </MI.Site:Component.Atom.Lead>
 
             <MI.Site:Component.Atom.Headline
-                @if.show={props.titleContent || props.isBackend}
+                @if.show={props.titleContent}
                 tagName={props.titleTagName}
                 fontSize={props.titleFontSize}
                 extraClass="mb-5"

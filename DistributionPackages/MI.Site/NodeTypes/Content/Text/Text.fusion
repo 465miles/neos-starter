@@ -15,8 +15,6 @@ prototype(MI.Site:Content.Text) < prototype(Neos.Neos:ContentComponent) {
         property = 'text'
     }
 
-    isBackend = ${node.context.inBackend}
-
     renderer = afx`
         <MI.Site:Component.Molecule.Text {...props} />
     `

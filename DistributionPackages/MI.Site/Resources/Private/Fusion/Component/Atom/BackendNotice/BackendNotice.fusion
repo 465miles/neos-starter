@@ -1,0 +1,13 @@
+prototype(MI.Site:Component.Atom.BackendNotice) < prototype(Neos.Fusion:Component) {
+
+    @propType {
+        @strict = true
+        content = ${PropTypes.string}
+    }
+
+    renderer = afx`
+        <div class="bg-orange-100 text-orange-600 rounded-md p-4 my-4 col-[small]">
+            {props.content}
+        </div>
+    `
+}

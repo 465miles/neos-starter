@@ -1,25 +1,15 @@
 prototype(MI.Site:Component.Molecule.Media) < prototype(Neos.Fusion:Component) {
 
     @propTypes {
-//        @strict = true
+        @strict = true
         mediaType = ${PropTypes.oneOf(['image', 'video', 'video-youtube', 'video-vimeo']).isRequired}
 
         imageSource = ${PropTypes.instanceOf('\\Sitegeist\\Kaleidoscope\\EelHelpers\\ImageSourceHelperInterface')}
-
         videoUri = ${PropTypes.string}
         videoId = ${PropTypes.string}
 
-        showMeta = ${PropTypes.boolean.isRequired}
-
-        showTitle = ${PropTypes.boolean}
         mediaTitle = ${PropTypes.string}
-        alternativeTitle = ${PropTypes.string}
-
-        showCaption = ${PropTypes.boolean}
         mediaCaption = ${PropTypes.string}
-        alternativeCaption = ${PropTypes.string}
-
-        showCopyright = ${PropTypes.boolean}
         mediaCopyright = ${PropTypes.string}
 
         gridArea = ${PropTypes.string}
@@ -68,16 +58,9 @@ prototype(MI.Site:Component.Molecule.Media) < prototype(Neos.Fusion:Component) {
             >
                 {props.media}
                 <MI.Site:Component.Atom.MediaCaption
-                    @if={props.showMeta}
-
-                    title={props.showTitle && props.alternativeTitle ? props.alternativeTitle : props.mediaTitle}
-                    title.@if={props.showTitle}
-
-                    caption={props.alternativeCaption ? props.alternativeCaption : props.mediaCaption}
-                    caption.@if={props.showCaption}
-
+                    title={props.mediaTitle}
+                    caption={props.mediaCaption}
                     copyright={props.mediaCopyright}
-                    copyright.@if={props.showCopyright}
                 />
             </figure>
         `

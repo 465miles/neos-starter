@@ -8,3 +8,8 @@
   ui:
     icon: font
     label: 'Text + Medium'
+  properties:
+    text-columns:
+      ui: 
+        inspector:
+          hidden: true

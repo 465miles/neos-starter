@@ -2,6 +2,7 @@
   superTypes:
     'Neos.Neos:Content': true
     'MI.Site:Mixin.TextSize': true
+    'MI.Site:Mixin.TextColumns': true
     'MI.Site:Wrap.Container': true
   ui:
     icon: paragraph
@@ -17,28 +18,3 @@
     text:
       options:
         preset: 'text.default'
-    text-columns:
-      type: string
-      defaultValue: "0"
-      ui:
-        label: 'Textspalten'
-        reloadIfChanged: true
-        inspector:
-          group: paragraph
-          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
-          editorOptions:
-            allowEmpty: false
-            placeholder: 'Spaltenanzahl wählen'
-            values:
-              "0":
-                label: 'Keine Spalten'
-                icon: columns
-              "2":
-                label: '2 Spalten'
-                icon: columns
-              "3":
-                label: '3 Spalten'
-                icon: columns
-              "4":
-                label: '4 Spalten'
-                icon: columns

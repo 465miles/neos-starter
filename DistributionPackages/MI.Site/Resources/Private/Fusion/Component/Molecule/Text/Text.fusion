@@ -20,14 +20,14 @@ prototype(MI.Site:Component.Molecule.Text) < prototype(Neos.Fusion:Component) {
             class.extra={props.extraClass}
         >
             <MI.Site:Component.Atom.Lead
-                @if.show={props.leadContent && props.titleContent}
+                @if={props.leadContent && props.titleContent}
                 extraClass="mb-2.5"
             >
                 {props.leadContent}
             </MI.Site:Component.Atom.Lead>
 
             <MI.Site:Component.Atom.Headline
-                @if.show={props.titleContent}
+                @if={props.titleContent}
                 tagName={props.titleTagName}
                 fontSize={props.titleFontSize}
                 extraClass="mb-5"

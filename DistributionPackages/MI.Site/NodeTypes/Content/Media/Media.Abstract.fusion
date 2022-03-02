@@ -7,6 +7,7 @@ prototype(MI.Site:Content.Media.Abstract) < prototype(Neos.Neos:ContentComponent
     videoId = ${q(node).property('videoId')}
 
     showMeta = ${q(node).property('showMeta')}
+
     showTitle = ${q(node).property('showTitle')}
     alternativeTitle = ${q(node).property('alternativeTitle')}
 
@@ -26,14 +27,56 @@ prototype(MI.Site:Content.Media.Abstract) < prototype(Neos.Neos:ContentComponent
             resource = ${props.video.resource}
         }
 
-        mediaTitle = ${props[props.mediaType].title}
+        mediaMeta = Neos.Fusion:Match {
+            @subject = ${props.mediaType}
 
-        mediaCaption = ${props[props.mediaType].caption}
+            @default = ${[]}
 
-        mediaCopyright = ${props[props.mediaType].copyrightNotice}
+            image = Neos.Fusion:DataStructure {
+                title = ${props.image.title}
+                caption = ${props.image.caption}
+                copyrightNotice = ${props.image.copyrightNotice}
+            }
+
+            video = Neos.Fusion:DataStructure {
+                title = ${props.video.title}
+                caption = ${props.video.caption}
+                copyrightNotice = ${props.video.copyrightNotice}
+            }
+        }
+
+        canRender = Neos.Fusion:Match {
+            @subject = ${props.mediaType}
+            @default = false
+            image = ${!!props.image}
+            video = ${props.video && props.image}
+            video-youtube = ${!!props.videoId}
+            video-vimeo = ${!!props.videoId}
+        }
 
         renderer = afx`
-            <MI.Site:Component.Molecule.Media {...props} />
+            <MI.Site:Component.Molecule.Media
+                @if={props.canRender}
+
+                mediaType={props.mediaType}
+
+                imageSource={props.imageSource}
+                videoUri={props.videoUri}
+                videoId={props.videoId}
+
+                mediaTitle={props.alternativeTitle ? props.alternativeTitle : props.mediaMeta.title}
+                mediaTitle.@if={props.showMeta && props.showTitle}
+
+                mediaCaption={props.alternativeCaption ? props.alternativeCaption : props.mediaMeta.caption}
+                mediaCaption.@if={props.showMeta && props.showCaption}
+
+                mediaCopyright={props.mediaMeta.copyrightNotice}
+                mediaCopyright.@if={props.showMeta && props.showCopyright}
+            />
+
+            <MI.Site:Component.Atom.BackendNotice @if={!props.canRender && node.context.inBackend}>
+                Kann nicht gerendert werden.
+            </MI.Site:Component.Atom.BackendNotice>
         `
     }
 }

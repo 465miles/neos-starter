@@ -57,6 +57,7 @@
       type: 'Neos\Media\Domain\Model\Asset'
       ui:
         label: 'Video'
+        reloadIfChanged: true
         inspector:
           hidden: 'ClientEval:node.properties.mediaType !== "video"'
           group: media
@@ -64,6 +65,7 @@
       type: string
       ui:
         label: 'Video-ID'
+        reloadIfChanged: true
         help:
           message: 'Video-ID von Youtube oder Vimeo.'
         inspector:

@@ -1,4 +1,4 @@
-prototype(MI.Site:Content.TextImage) < prototype(Neos.Neos:ContentComponent) {
+prototype(MI.Site:Content.TextMedia) < prototype(Neos.Neos:ContentComponent) {
 
     leadContent = Neos.Neos:Editable {
         property = 'lead'
@@ -20,7 +20,7 @@ prototype(MI.Site:Content.TextImage) < prototype(Neos.Neos:ContentComponent) {
     }
 
     renderer = afx`
-        <MI.Site:Component.Organism.TextImage {...props} />
+        <MI.Site:Component.Organism.TextMedia {...props} />
     `
 
     @process.wrapContainer = MI.Site:Wrap.Container {

@@ -1,4 +1,4 @@
-'MI.Site:Content.TextImage':
+'MI.Site:Content.TextMedia':
   superTypes:
     'MI.Site:Content.Text': true
     'MI.Site:Wrap.Container': true

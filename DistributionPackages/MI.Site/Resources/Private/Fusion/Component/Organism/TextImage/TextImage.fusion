@@ -1,4 +1,4 @@
-prototype(MI.Site:Component.Organism.TextImage) < prototype(Neos.Fusion:Component) {
+prototype(MI.Site:Component.Organism.TextMedia) < prototype(Neos.Fusion:Component) {
 
     @propTypes {
         @strict = true

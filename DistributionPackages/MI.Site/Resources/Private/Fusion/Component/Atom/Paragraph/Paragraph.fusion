@@ -2,8 +2,12 @@ prototype(MI.Site:Component.Atom.Paragraph) < prototype(Neos.Fusion:Component) {
 
     @propTypes {
         @strict = true
-        fontSize = ${PropTypes.string.isRequired}
-        columns = ${PropTypes.string}
+        fontSize = ${PropTypes.oneOf([
+        '1', '2', '3', '4', '5', '6', '7', '8'
+        ]).isRequired}
+        columns = ${PropTypes.oneOf([
+        '1', '2', '3', '4', '5', '6', '7', '8'
+        ]).isRequired}
         color = ${PropTypes.string}
         gridArea = ${PropTypes.string}
         content = ${PropTypes.string.isRequired}
@@ -26,7 +30,7 @@ prototype(MI.Site:Component.Atom.Paragraph) < prototype(Neos.Fusion:Component) {
         mappedColumns = Neos.Fusion:Match {
             @subject = ${props.columns}
             @default = ''
-            0 = ''
+            1 = ''
             2 = 'md:columns-2'
             3 = 'md:columns-2 lg:columns-3'
             4 = 'md:columns-2 lg:columns-4'

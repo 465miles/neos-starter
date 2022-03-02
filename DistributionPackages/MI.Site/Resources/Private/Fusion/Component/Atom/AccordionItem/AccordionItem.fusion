@@ -16,16 +16,21 @@ prototype(MI.Site:Component.Atom.AccordionItem) < prototype(Neos.Fusion:Componen
             >
                 <MI.Site:Component.Atom.Headline
                     tagName='h3'
-                    fontSize='lg'
+                    fontSize='4'
                     color='text-inherit'
                 >
                     {props.title}
                 </MI.Site:Component.Atom.Headline>
             </button>
+
+            <!--            x-show={"selected == '" + props.id + "'"}
+            x-collapse
+            class="px-5 md:px-10"
+            -->
             <div
-                class="overflow-hidden px-5 md:px-10 transition-all duration-500 max-h-[0] my-0"
                 x-bind:style={"selected == '" + props.id + "' ? 'max-height: ' + $el.scrollHeight + 'px' : 'max-height: 0'"}
                 x-bind:class={"selected == '" + props.id + "' ? 'my-10' : 'my-0'"}
+                class="overflow-hidden px-5 md:px-10 transition-all duration-500 max-h-[0] my-0"
             >
                 {props.content}
             </div>

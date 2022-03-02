@@ -11,7 +11,7 @@ prototype(MI.Site:Component.Atom.MediaCaption) < prototype(Neos.Fusion:Component
     renderer = afx`
         <figcaption
             @if={props.title || props.caption || props.copyright}
-            class.main="text-sm text-gray-500 flex flex-col gap-2.5"
+            class.main="text-sm text-gray-500 flex flex-col gap-2.5 px-5 md:px-10"
             class.extra={props.extraClass}
         >
             <p

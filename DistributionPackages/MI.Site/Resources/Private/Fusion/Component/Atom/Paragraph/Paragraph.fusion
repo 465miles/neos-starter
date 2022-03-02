@@ -10,7 +10,7 @@ prototype(MI.Site:Component.Atom.Paragraph) < prototype(Neos.Fusion:Component) {
         ]).isRequired}
         color = ${PropTypes.string}
         gridArea = ${PropTypes.string}
-        content = ${PropTypes.string.isRequired}
+        content = ${PropTypes.string}
         extraClass = ${PropTypes.string}
     }
 

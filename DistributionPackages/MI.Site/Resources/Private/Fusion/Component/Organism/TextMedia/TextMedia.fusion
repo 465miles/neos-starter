@@ -23,11 +23,11 @@ prototype(MI.Site:Component.Organism.TextMedia) < prototype(Neos.Fusion:Componen
             textFontSize={props.textFontSize}
             textColumns={props.textColumns}
             textContent={props.textContent}
-            gridArea={props.mirrored ? 'col-[large-inner] lg:col-[center-right/span_large-inner-end]' : 'col-[large-inner] lg:col-[large-inner-start/span_center-left]'}
+            gridArea={props.mirrored ? 'col-[medium-inner] lg:col-[center-right/span_large-inner-end]' : 'col-[medium-inner] lg:col-[large-inner-start/span_center-left]'}
             extraClass={props.mirrored ? 'order-last' : 'order-last lg:order-first'}
         />
         <div
-            class.gridArea={props.mirrored ? 'col-[large] lg:col-[large-start/span_center-left]' : 'col-[large] lg:col-[center-right/span_large-end]'}
+            class.gridArea={props.mirrored ? 'col-[medium] lg:col-[large-start/span_center-left]' : 'col-[medium] lg:col-[center-right/span_large-end]'}
             class.order={props.mirrored ? 'order-first' : 'order-first lg:order-last'}
             class.spacing="mb-10 lg:mb-0"
         >

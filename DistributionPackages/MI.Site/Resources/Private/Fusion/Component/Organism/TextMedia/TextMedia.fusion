@@ -10,6 +10,7 @@ prototype(MI.Site:Component.Organism.TextMedia) < prototype(Neos.Fusion:Componen
         textColumns = ${PropTypes.string}
         textContent = ${PropTypes.string.isRequired}
         mediaContent = ${PropTypes.string}
+        mirrored = ${PropTypes.boolean}
         extraClass = ${PropTypes.string}
     }
 
@@ -22,11 +23,13 @@ prototype(MI.Site:Component.Organism.TextMedia) < prototype(Neos.Fusion:Componen
             textFontSize={props.textFontSize}
             textColumns={props.textColumns}
             textContent={props.textContent}
-            gridArea="col-[large-inner] lg:col-[large-inner-start/span_center-left] order-last lg:order-first"
+            gridArea={props.mirrored ? 'col-[large-inner] lg:col-[center-right/span_large-inner-end]' : 'col-[large-inner] lg:col-[large-inner-start/span_center-left]'}
+            extraClass={props.mirrored ? 'order-last' : 'order-last lg:order-first'}
         />
         <div
-            class.gridArea="col-[large] lg:col-[center-right/span_large-end] order-first lg:order-last"
-            class.spacing="mb-6 lg:mb-0"
+            class.gridArea={props.mirrored ? 'col-[large] lg:col-[large-start/span_center-left]' : 'col-[large] lg:col-[center-right/span_large-end]'}
+            class.order={props.mirrored ? 'order-first' : 'order-first lg:order-last'}
+            class.spacing="mb-10 lg:mb-0"
         >
             {props.mediaContent}
         </div>

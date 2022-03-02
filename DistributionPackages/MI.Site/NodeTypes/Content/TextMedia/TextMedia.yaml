@@ -10,6 +10,6 @@
     label: 'Text + Medium'
   properties:
     text-columns:
-      ui: 
+      ui:
         inspector:
           hidden: true

@@ -1,7 +1,7 @@
 prototype(MI.Site:Content.Text) < prototype(Neos.Neos:ContentComponent) {
 
-    labelContent = Neos.Neos:Editable {
-        property = 'label'
+    leadContent = Neos.Neos:Editable {
+        property = 'lead'
     }
     titleTagName = ${q(node).property('title-hierarchy')}
     titleFontSize = ${q(node).property('title-size')}
@@ -14,6 +14,8 @@ prototype(MI.Site:Content.Text) < prototype(Neos.Neos:ContentComponent) {
     textContent = Neos.Neos:Editable {
         property = 'text'
     }
+
+    isBackend = ${node.context.inBackend}
 
     renderer = afx`
         <MI.Site:Component.Molecule.Text {...props} />

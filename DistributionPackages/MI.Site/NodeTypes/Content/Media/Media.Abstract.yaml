@@ -13,6 +13,11 @@
           icon: photo-video
           tab: default
           position: 200
+        mediaMeta:
+          label: Meta-Daten
+          icon: info
+          tab: default
+          position: 210
   properties:
     mediaType:
       type: string
@@ -64,14 +69,57 @@
         inspector:
           hidden: 'ClientEval:["video-youtube", "video-vimeo"].includes(node.properties.mediaType) === false'
           group: media
-    caption:
-      options:
-        preset: 'text.restricted'
+    showMeta:
+      type: boolean
+      defaultValue: true
+      ui:
+        label: 'Metadaten anzeigen'
+        reloadIfChanged: true
+        inspector:
+          group: mediaMeta
+    showTitle:
+      type: boolean
+      defaultValue: false
+      ui:
+        label: 'Titel anzeigen'
+        help:
+          message: 'Titel aus dem Media-Module wird angezeigt wenn kein alternativer Titel vergeben wurde.'
+        reloadIfChanged: true
+        inspector:
+          group: mediaMeta
+    alternativeTitle:
+      type: 'string'
+      ui:
+        label: 'Alternativer Titel'
+        reloadIfChanged: true
+        inspector:
+          group: mediaMeta
+          editor: 'Neos.Neos/Inspector/Editors/TextAreaEditor'
     showCaption:
       type: boolean
       defaultValue: true
       ui:
-        label: 'Bildunterschrift anzeigen'
+        label: 'Beschreibung anzeigen'
+        help:
+          message: 'Beschreibung aus dem Media-Module wird angezeigt wenn keine alternative Beschreibung vergeben wurde.'
         reloadIfChanged: true
         inspector:
-          group: media
+          group: mediaMeta
+    alternativeCaption:
+      type: 'string'
+      ui:
+        label: 'Alternative Bescheibung'
+        reloadIfChanged: true
+        inspector:
+          group: mediaMeta
+          editor: 'Neos.Neos/Inspector/Editors/TextAreaEditor'
+    showCopyright:
+      type: boolean
+      defaultValue: true
+      ui:
+        label: 'Copyright anzeigen'
+        help:
+          message: 'Copyright aus dem Media-Module wird angezeigt.'
+        reloadIfChanged: true
+        inspector:
+          group: mediaMeta

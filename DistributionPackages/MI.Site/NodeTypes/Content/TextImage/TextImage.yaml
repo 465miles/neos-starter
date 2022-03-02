@@ -1,7 +1,6 @@
 'MI.Site:Content.TextImage':
   superTypes:
-    'MI.Site:Content.Headline': true
-    'MI.Site:Content.Paragraph': true
+    'MI.Site:Content.Text': true
     'MI.Site:Wrap.Container': true
   childNodes:
     media:
@@ -9,7 +8,3 @@
   ui:
     icon: font
     label: 'Text + Medium'
-  properties:
-    label:
-      options:
-        preset: 'text.restricted'

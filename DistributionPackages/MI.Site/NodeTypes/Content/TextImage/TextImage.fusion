@@ -1,7 +1,7 @@
 prototype(MI.Site:Content.TextImage) < prototype(Neos.Neos:ContentComponent) {
 
-    labelContent = Neos.Neos:Editable {
-        property = 'label'
+    leadContent = Neos.Neos:Editable {
+        property = 'lead'
     }
     titleTagName = ${q(node).property('title-hierarchy')}
     titleFontSize = ${q(node).property('title-size')}
@@ -18,7 +18,7 @@ prototype(MI.Site:Content.TextImage) < prototype(Neos.Neos:ContentComponent) {
     mediaContent = Neos.Neos:ContentCase {
         @context.node = ${q(node).children('media').get(0)}
     }
-    
+
     renderer = afx`
         <MI.Site:Component.Organism.TextImage {...props} />
     `

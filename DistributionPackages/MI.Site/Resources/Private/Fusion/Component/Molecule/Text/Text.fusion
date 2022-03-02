@@ -2,14 +2,15 @@ prototype(MI.Site:Component.Molecule.Text) < prototype(Neos.Fusion:Component) {
 
     @propTypes {
         @strict = true
-        labelContent = ${PropTypes.string}
+        leadContent = ${PropTypes.string}
         titleTagName = ${PropTypes.string.isRequired}
         titleFontSize = ${PropTypes.string.isRequired}
-        titleContent = ${PropTypes.string.isRequired}
+        titleContent = ${PropTypes.string}
         textFontSize = ${PropTypes.string.isRequired}
         textColumns = ${PropTypes.string}
         textContent = ${PropTypes.string.isRequired}
         gridArea = ${PropTypes.string}
+        isBackend = ${PropTypes.string}
         extraClass = ${PropTypes.string}
     }
 
@@ -20,15 +21,17 @@ prototype(MI.Site:Component.Molecule.Text) < prototype(Neos.Fusion:Component) {
             class.extra={props.extraClass}
         >
             <MI.Site:Component.Atom.Lead
-                extraClass="mb-3"
+                @if.show={props.leadContent && props.titleContent || props.isBackend}
+                extraClass="mb-2.5"
             >
-                {props.labelContent}
+                {props.leadContent}
             </MI.Site:Component.Atom.Lead>
 
             <MI.Site:Component.Atom.Headline
+                @if.show={props.titleContent || props.isBackend}
                 tagName={props.titleTagName}
                 fontSize={props.titleFontSize}
-                extraClass="mb-6"
+                extraClass="mb-5"
             >
                 {props.titleContent}
             </MI.Site:Component.Atom.Headline>

@@ -2,10 +2,10 @@ prototype(MI.Site:Component.Organism.TextImage) < prototype(Neos.Fusion:Componen
 
     @propTypes {
         @strict = true
-        labelContent = ${PropTypes.string}
+        leadContent = ${PropTypes.string}
         titleTagName = ${PropTypes.string.isRequired}
         titleFontSize = ${PropTypes.string.isRequired}
-        titleContent = ${PropTypes.string.isRequired}
+        titleContent = ${PropTypes.string}
         textFontSize = ${PropTypes.string.isRequired}
         textColumns = ${PropTypes.string}
         textContent = ${PropTypes.string.isRequired}
@@ -15,7 +15,7 @@ prototype(MI.Site:Component.Organism.TextImage) < prototype(Neos.Fusion:Componen
 
     renderer = afx`
         <MI.Site:Component.Molecule.Text
-            labelContent={props.labelContent}
+            leadContent={props.leadContent}
             titleTagName={props.titleTagName}
             titleFontSize={props.titleFontSize}
             titleContent={props.titleContent}

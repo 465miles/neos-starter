@@ -7,6 +7,6 @@
     icon: font
     label: 'Text'
   properties:
-    label:
+    lead:
       options:
-        preset: 'text.restricted'
+        preset: 'headline.lead'

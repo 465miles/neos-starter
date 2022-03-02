@@ -6,7 +6,16 @@ prototype(MI.Site:Component.Molecule.Media) < prototype(Neos.Fusion:Component) {
         imageSource = ${PropTypes.instanceOf('\\Sitegeist\\Kaleidoscope\\EelHelpers\\ImageSourceHelperInterface')}
         videoUri = ${PropTypes.string}
         videoId = ${PropTypes.string}
-        caption = ${PropTypes.string}
+        alternativeCaption = ${PropTypes.string}
+        showMeta = ${PropTypes.boolean.isRequired}
+        showTitle = ${PropTypes.boolean}
+        mediaTitle = ${PropTypes.string}
+        alternativeTitle = ${PropTypes.string}
+        showCaption = ${PropTypes.boolean}
+        mediaCaption = ${PropTypes.string}
+        alternativeCaption = ${PropTypes.string}
+        showCopyright = ${PropTypes.boolean}
+        mediaCopyright = ${PropTypes.string}
         gridArea = ${PropTypes.string}
         extraClass = ${PropTypes.string}
     }
@@ -48,12 +57,20 @@ prototype(MI.Site:Component.Molecule.Media) < prototype(Neos.Fusion:Component) {
 
         renderer = afx`
             <figure
-                class.main="w-full flex flex-col gap-6"
+                class.main="w-full flex flex-col gap-5"
                 class.gridArea={props.gridArea ? props.gridArea : "[grid-area:medium]"}
                 class.extra={props.extraClass}
             >
                 {props.media}
-                <MI.Site:Component.Atom.MediaCaption content={props.caption} @if.has={props.caption} />
+                <MI.Site:Component.Atom.MediaCaption
+                    @if.has={props.showMeta}
+                    showTitle={props.showTitle}
+                    title={props.alternativeTitle ? props.alternativeTitle : props.mediaTitle}
+                    showCaption={props.showCaption}
+                    caption={props.alternativeCaption ? props.alternativeCaption : props.mediaCaption}
+                    showCopyright={props.showCopyright}
+                    copyright={props.mediaCopyright}
+                />
             </figure>
         `
     }

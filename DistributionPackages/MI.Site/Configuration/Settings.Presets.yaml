@@ -6,12 +6,11 @@ Neos:
           headline:
             default:
               type: string
-              defaultValue: "Überschrift eingeben ..."
               ui:
                 inlineEditable: true
                 inline:
                   editorOptions:
-                    placeholder: ""
+                    placeholder: "Überschrift eingeben ..."
                     autoparagraph: false
                     formatting:
                       strong: true
@@ -45,6 +44,16 @@ Neos:
               type: string
               ui:
                 inlineEditable: true
+                inline:
+                  editorOptions:
+                    placeholder: "Überschrift eingeben ..."
+            lead:
+              type: string
+              ui:
+                inlineEditable: true
+                inline:
+                  editorOptions:
+                    placeholder: "Lead-Titel eingeben ..."
           text:
             default:
               type: string

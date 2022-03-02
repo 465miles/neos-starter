@@ -33,7 +33,7 @@ module.exports = {
 
                     'container-sm'
                 :
-                    area('page', theme('spacing.5'),
+                    area('page', theme('spacing.10'),
                         area('main large medium', theme('spacing.5'),
                             area('large-inner medium-inner', theme('spacing.5'),
                                 area('small', theme('spacing.5'),

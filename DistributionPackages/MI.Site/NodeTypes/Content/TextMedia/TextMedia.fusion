@@ -15,6 +15,8 @@ prototype(MI.Site:Content.TextMedia) < prototype(Neos.Neos:ContentComponent) {
         property = 'text'
     }
 
+    mirrored = ${q(node).property('mirrored')}
+
     mediaContent = Neos.Neos:ContentCollectionRenderer
 
     renderer = afx`

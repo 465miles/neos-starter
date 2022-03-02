@@ -8,8 +8,23 @@
   ui:
     icon: font
     label: 'Text + Medium'
+    inspector:
+      groups:
+        options:
+          label: Überschrift
+          icon: tasks
+          tab: default
+          position: 50
   properties:
     text-columns:
       ui:
         inspector:
           hidden: true
+    mirrored:
+      type: boolean
+      defaultValue: false
+      ui:
+        label: 'Gespiegelt'
+        reloadIfChanged: true
+        inspector:
+          group: options

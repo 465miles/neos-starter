@@ -1,6 +1,6 @@
 prototype(MI.Site:Trait.Page.Fragment.Footer) < prototype(Neos.Fusion:Component) {
 
     renderer = afx`
-        <MI.Site:Component.Organism.Footer {...props} />
+        <MI.Site:Component.Template.Fragment.Footer {...props} />
     `
 }

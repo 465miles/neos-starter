@@ -14,7 +14,7 @@ prototype(MI.Site:Trait.Page.Fragment.Header) < prototype(Neos.Fusion:Component)
     }
 
     renderer = afx`
-        <MI.Site:Component.Organism.Header {...props} />
+        <MI.Site:Component.Template.Fragment.Header {...props} />
     `
 }
 

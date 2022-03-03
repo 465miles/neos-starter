@@ -1,4 +1,4 @@
-'MI.Site:Trait.Page':
+'MI.Site:Trait.Document':
   abstract: true
   childNodes:
     main:

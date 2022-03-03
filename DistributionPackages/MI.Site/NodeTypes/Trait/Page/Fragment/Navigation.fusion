@@ -9,7 +9,7 @@ prototype(MI.Site:Trait.Page.Fragment.Navigation) < prototype(Neos.Fusion:Compon
     }
 
     renderer = afx`
-        <MI.Site:Component.Organism.Navigation {...props} />
+        <MI.Site:Component.Template.Fragment.Navigation {...props} />
     `
 
     @cache {

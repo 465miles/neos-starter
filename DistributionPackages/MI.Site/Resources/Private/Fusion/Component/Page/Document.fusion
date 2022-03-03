@@ -3,6 +3,8 @@ prototype(MI.Site:Component.Page.Document) < prototype(Neos.Fusion:Component) {
     @propTypes {
         @strict = true
         title = ${PropTypes.string.isRequired}
+        header = ${PropTypes.string.isRequired}
+        footer = ${PropTypes.string.isRequired}
         content = ${PropTypes.string.isRequired}
         template = ${PropTypes.oneOf([])}
     }
@@ -21,7 +23,7 @@ prototype(MI.Site:Component.Page.Document) < prototype(Neos.Fusion:Component) {
             type = Neos.Fusion:Match {
                 @subject = ${props.template}
                 # foo = 'MI.Site:Component.Template.Foo'
-                @default = 'MI.Site:Component.Template.Default'
+                @default = 'MI.Site:Component.Template.Page'
             }
             element.content = ${props.content}
         }

@@ -1,4 +1,4 @@
-prototype(MI.Site:Component.Template.Partials.Navigation.Default) < prototype(Neos.Fusion:Component) {
+prototype(MI.Site:Component.Template.Fragment.NavigationOLD) < prototype(Neos.Fusion:Component) {
     root = ${site}
     showHome = false
 
@@ -7,18 +7,18 @@ prototype(MI.Site:Component.Template.Partials.Navigation.Default) < prototype(Ne
             entryLevel = 1
             maximumLevels = 2
         }
-        itemRenderer = MI.Site:Component.Template.Partials.Navigation.Default.Item
+        itemRenderer = MI.Site:Component.Template.Fragment.NavigationOLD.Item
     }
 
     renderer = afx`
         <ul class="flex space-x-5">
-            <MI.Site:Component.Template.Partials.Navigation.Default.HomeItem @if.has={props.showHome} />
+            <MI.Site:Component.Template.Fragment.NavigationOLD.HomeItem @if.has={props.showHome} />
             {props.items}
         </ul>
     `
 }
 
-prototype(MI.Site:Component.Template.Partials.Navigation.Default.Item) < prototype(Neos.Fusion:Component) {
+prototype(MI.Site:Component.Template.Fragment.NavigationOLD.Item) < prototype(Neos.Fusion:Component) {
     item = ${item}
 
     url = Neos.Neos:NodeUri {
@@ -30,7 +30,7 @@ prototype(MI.Site:Component.Template.Partials.Navigation.Default.Item) < prototy
     subItems = Neos.Fusion:Loop {
         items = ${item.subItems}
         itemName = 'item'
-        itemRenderer = MI.Site:Component.Template.Partials.Navigation.Default
+        itemRenderer = MI.Site:Component.Template.Fragment.NavigationOLD
     }
 
     renderer = afx`
@@ -49,7 +49,7 @@ prototype(MI.Site:Component.Template.Partials.Navigation.Default.Item) < prototy
     `
 }
 
-prototype(MI.Site:Component.Template.Partials.Navigation.Default.HomeItem) < prototype(Neos.Fusion:Component) {
+prototype(MI.Site:Component.Template.Fragment.NavigationOLD.HomeItem) < prototype(Neos.Fusion:Component) {
     url = Neos.Neos:NodeUri {
         node = ${site}
     }

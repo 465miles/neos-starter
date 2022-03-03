@@ -1,4 +1,6 @@
-prototype(MI.Site:Trait.Page) < prototype(Neos.Fusion:DataStructure) {
+prototype(MI.Site:Trait.Document) < prototype(Neos.Fusion:DataStructure) {
+
+    title = ${q(node).property('title')}
 
     header = MI.Site:Trait.Page.Fragment.Header
 

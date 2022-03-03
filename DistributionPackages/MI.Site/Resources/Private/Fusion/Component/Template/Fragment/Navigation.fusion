@@ -1,0 +1,8 @@
+prototype(MI.Site:Component.Template.Fragment.Navigation) < prototype(Neos.Fusion:Component) {
+
+    renderer = afx`
+        <div class="relative bg-white border-b-2 border-gray-100">
+
+        </div>
+    `
+}

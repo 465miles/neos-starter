@@ -8,4 +8,4 @@
   ui:
     label: 'Medium'
     icon: photo-video
-    group: no-group
+    group: hidden

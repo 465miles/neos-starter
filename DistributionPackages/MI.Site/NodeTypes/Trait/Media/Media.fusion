@@ -27,21 +27,18 @@ prototype(MI.Site:Trait.Media) < prototype(Neos.Fusion:Component) {
             resource = ${props.video.resource}
         }
 
-        mediaMeta = Neos.Fusion:Match {
-            @subject = ${props.mediaType}
-            @default = ''
+        mediaMeta = Neos.Fusion:DataStructure {
+            @if.show = ${props.showMeta}
+            @if.isImageOrVideo = ${props.mediaType == 'image' || props.mediaType == 'video'}
 
-            image = Neos.Fusion:DataStructure {
-                title = ${props.image.title}
-                caption = ${props.image.caption}
-                copyrightNotice = ${props.image.copyrightNotice}
-            }
+            title = ${props.alternativeTitle ? props.alternativeTitle : props[props.mediaType].title}
+            title.@if.show = ${props.showTitle}
 
-            video = Neos.Fusion:DataStructure {
-                title = ${props.video.title}
-                caption = ${props.video.caption}
-                copyrightNotice = ${props.video.copyrightNotice}
-            }
+            caption = ${props.alternativeCaption ? props.alternativeCaption : props[props.mediaType].caption}
+            caption.@if.show = ${props.showCaption}
+
+            copyrightNotice = ${props[props.mediaType].copyrightNotice}
+            copyrightNotice.@if.show = ${props.showCopyright}
         }
 
         canRender = Neos.Fusion:Match {
@@ -61,14 +58,9 @@ prototype(MI.Site:Trait.Media) < prototype(Neos.Fusion:Component) {
             videoUri = ${props.videoUri}
             videoId = ${props.videoId}
 
-            mediaTitle = ${props.alternativeTitle ? props.alternativeTitle : props.mediaMeta.title}
-            mediaTitle.@if.has = ${props.showMeta && props.showTitle}
-
-            mediaCaption = ${props.alternativeCaption ? props.alternativeCaption : props.mediaMeta.caption}
-            mediaCaption.@if.has = ${props.showMeta && props.showCaption}
-
+            mediaTitle = ${props.mediaMeta.title}
+            mediaCaption = ${props.mediaMeta.caption}
             mediaCopyright = ${props.mediaMeta.copyrightNotice}
-            mediaCopyright.@if.has = ${props.showMeta && props.showCopyright}
         }
     }
 }

@@ -2,11 +2,10 @@ prototype(MI.Site:Component.Page.Document) < prototype(Neos.Fusion:Component) {
 
     @propTypes {
         @strict = true
-        title = ${PropTypes.string.isRequired}
-        header = ${PropTypes.string.isRequired}
-        footer = ${PropTypes.string.isRequired}
-        content = ${PropTypes.string.isRequired}
-        template = ${PropTypes.oneOf([])}
+        title = ${PropTypes.string}
+        header = ${PropTypes.string}
+        footer = ${PropTypes.string}
+        content = ${PropTypes.string}
     }
 
     renderer = Neos.Neos:Page {
@@ -19,13 +18,13 @@ prototype(MI.Site:Component.Page.Document) < prototype(Neos.Fusion:Component) {
             titleTag = afx`<title>{props.title}</title>`
         }
 
-        body = Neos.Fusion:Renderer {
-            type = Neos.Fusion:Match {
-                @subject = ${props.template}
-                # foo = 'MI.Site:Component.Template.Foo'
-                @default = 'MI.Site:Component.Template.Page'
-            }
-            element.content = ${props.content}
-        }
+        body >
+        body = afx`
+            {props.header}
+            <main>
+                {props.content}
+            </main>
+            {props.footer}
+        `
     }
 }

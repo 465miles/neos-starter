@@ -1,4 +1,4 @@
-prototype(MI.Site:Trait.Page.Fragment.ConvertMenuItems) < prototype(Neos.Fusion:Map) {
+prototype(MI.Site:Document.Page.Fragment.ConvertMenuItems) < prototype(Neos.Fusion:Map) {
 
     items = ${[]}
 
@@ -14,7 +14,10 @@ prototype(MI.Site:Trait.Page.Fragment.ConvertMenuItems) < prototype(Neos.Fusion:
             node = ${item.node}
         }
 
-        subItems = MI.Site:Trait.Page.Fragment.ConvertMenuItems {
+
+        icon = ${q(node).property()}
+
+        subItems = MI.Site:Document.Page.Fragment.ConvertMenuItems {
             items = ${item.subItems}
         }
     }

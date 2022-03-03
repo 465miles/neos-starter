@@ -1,4 +1,4 @@
-prototype(MI.Site:Trait.Page.Fragment.Header) < prototype(Neos.Fusion:Component) {
+prototype(MI.Site:Document.Page.Fragment.Header) < prototype(Neos.Fusion:Component) {
 
     navigation = Neos.Fusion:Renderer {
         renderPath = '/MI_Site_Menu'

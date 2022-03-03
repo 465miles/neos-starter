@@ -2,7 +2,9 @@
   final: true
   superTypes:
     'Neos.Neos:Document': true
-    'MI.Site:Trait.Document': true
   ui:
     icon: globe
     label: 'Homepage'
+  childNodes:
+    main:
+      type: 'MI.Site:Collection.Main'

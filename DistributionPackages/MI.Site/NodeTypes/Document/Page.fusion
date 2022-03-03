@@ -1,13 +1,18 @@
 prototype(MI.Site:Document.Page) < prototype(Neos.Fusion:Component) {
 
-    documentTrait = MI.Site:Trait.Document
+    title = ${q(node).property('title')}
+
+    header = MI.Site:Document.Page.Fragment.Header
+
+    footer =  MI.Site:Document.Page.Fragment.Footer
+
+    content = Neos.Neos:ContentCollection {
+        nodePath = 'main'
+    }
 
     renderer = afx`
         <MI.Site:Component.Page.Document
-            title={props.documentTrait.title}
-            header={props.documentTrait.header}
-            footer={props.documentTrait.footer}
-            content={props.documentTrait.content}
+            {...props}
         />
     `
 }

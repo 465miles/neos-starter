@@ -1,5 +1,0 @@
-'MI.Site:Trait.Document':
-  abstract: true
-  childNodes:
-    main:
-      type: 'MI.Site:Collection.Main'

@@ -1,4 +1,4 @@
-prototype(MI.Site:Trait.Page.Fragment.Navigation) < prototype(Neos.Fusion:Component) {
+prototype(MI.Site:Document.Page.Fragment.Navigation) < prototype(Neos.Fusion:Component) {
 
     menuItems = MI.Site:Trait.Page.Fragment.ConvertMenuItems {
         items = Neos.Neos:MenuItems {

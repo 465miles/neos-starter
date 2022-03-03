@@ -3,8 +3,8 @@
   superTypes:
     'Neos.Neos:Content': true
     'MI.Site:Mixin.InspectorGroups': true
-    MI.Site:Mixin.Property.TitleHierarchy: true
-    MI.Site:Mixin.Property.TitleSize: true
+    'MI.Site:Mixin.Property.TitleHierarchy': true
+    'MI.Site:Mixin.Property.TitleSize': true
     'MI.Site:Wrap.Container': true
   ui:
     icon: heading

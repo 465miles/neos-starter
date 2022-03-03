@@ -3,8 +3,8 @@
   superTypes:
     'Neos.Neos:Content': true
     'MI.Site:Mixin.InspectorGroups': true
-    MI.Site:Mixin.Property.TextSize: true
-    MI.Site:Mixin.Property.TextColumns: true
+    'MI.Site:Mixin.Property.TextSize': true
+    'MI.Site:Mixin.Property.TextColumns': true
     'MI.Site:Wrap.Container': true
   ui:
     icon: paragraph

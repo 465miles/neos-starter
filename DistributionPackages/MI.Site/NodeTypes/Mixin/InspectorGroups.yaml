@@ -1,4 +1,5 @@
 'MI.Site:Mixin.InspectorGroups':
+  abstract: true
   ui:
     inspector:
       groups:

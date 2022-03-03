@@ -1,5 +1,5 @@
 'MI.Site:Wrap.Container':
   abstract: true
   superTypes:
-    MI.Site:Mixin.Property.SpacingTop: true
-    MI.Site:Mixin.Property.SpacingBottom: true
+    'MI.Site:Mixin.Property.SpacingTop': true
+    'MI.Site:Mixin.Property.SpacingBottom': true

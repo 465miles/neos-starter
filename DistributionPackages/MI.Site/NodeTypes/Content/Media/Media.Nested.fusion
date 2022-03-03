@@ -1,0 +1,3 @@
+prototype(MI.Site:Content.Media.Nested) < prototype(Neos.Neos:ContentComponent) {
+    renderer = MI.Site:Trait.Media
+}

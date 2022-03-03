@@ -1,11 +1,11 @@
-'MI.Site:Content.Media':
+'MI.Site:Content.Media.Nested':
   final: true
   superTypes:
     'Neos.Neos:Content': true
     'MI.Site:Mixin.InspectorGroups': true
     'MI.Site:Trait.Media': true
-    'MI.Site:Wrap.Container': true
+  label: ${'Medium'}
   ui:
     label: 'Medium'
     icon: photo-video
-    group: general
+    group: no-group

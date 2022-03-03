@@ -1,4 +1,4 @@
-prototype(MI.Site:Content.Media.Abstract) < prototype(Neos.Neos:ContentComponent) {
+prototype(MI.Site:Trait.Media) < prototype(Neos.Fusion:Component) {
 
     mediaType = ${q(node).property('mediaType')}
     image = ${q(node).property('image')}
@@ -29,8 +29,7 @@ prototype(MI.Site:Content.Media.Abstract) < prototype(Neos.Neos:ContentComponent
 
         mediaMeta = Neos.Fusion:Match {
             @subject = ${props.mediaType}
-
-            @default = ${[]}
+            @default = ''
 
             image = Neos.Fusion:DataStructure {
                 title = ${props.image.title}

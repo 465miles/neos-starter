@@ -1,3 +1,4 @@
-prototype(MI.Site:Content.Media) < prototype(MI.Site:Content.Media.Abstract) {
+prototype(MI.Site:Content.Media) < prototype(Neos.Neos:ContentComponent) {
+    renderer = MI.Site:Trait.Media
     @process.wrapContainer = MI.Site:Wrap.Container
 }

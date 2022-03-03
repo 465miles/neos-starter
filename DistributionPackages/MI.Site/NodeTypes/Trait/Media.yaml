@@ -1,12 +1,5 @@
-'MI.Site:Content.Media.Abstract':
-  superTypes:
-    'Neos.Neos:Content': true
-    'MI.Site:Mixin.InspectorGroups': true
-  label: ${'Medium'}
-  ui:
-    label: 'Medium'
-    icon: photo-video
-    group: abstract
+'MI.Site:Trait.Media':
+  abstract: true
   properties:
     mediaType:
       type: string

@@ -9,7 +9,7 @@
     'MI.Site:Wrap.Container': true
   childNodes:
     media:
-      type: 'MI.Site:Content.Media.Abstract'
+      type: 'MI.Site:Content.Media.Nested'
   ui:
     icon: font
     label: 'Text + Medium'

@@ -1,4 +1,5 @@
 prototype(MI.Site:Content.Media.Nested) < prototype(Neos.Neos:ContentComponent) {
+
     traitMedia = MI.Site:Trait.Media
 
     renderer = afx`

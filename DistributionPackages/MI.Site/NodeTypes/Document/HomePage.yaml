@@ -1,6 +1,8 @@
 'MI.Site:Document.HomePage':
+  final: true
   superTypes:
-    'MI.Site:Document.Abstract': true
+    'Neos.Neos:Document': true
+    'MI.Site:Trait.Page': true
   ui:
     icon: globe
     label: 'Homepage'

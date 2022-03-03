@@ -1,3 +1,8 @@
 'MI.Site:Document.Page':
+  final: true
   superTypes:
-    'MI.Site:Document.Abstract': true
+    'Neos.Neos:Document': true
+    'MI.Site:Trait.Page': true
+  ui:
+    icon: file-text
+    label: 'Page'

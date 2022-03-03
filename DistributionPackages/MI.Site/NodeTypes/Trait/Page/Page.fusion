@@ -1,0 +1,7 @@
+prototype(MI.Site:Trait.Page) < prototype(Neos.Fusion:DataStructure) {
+    title = ${q(node).property('title')}
+
+    content = Neos.Neos:ContentCollection {
+        nodePath = 'main'
+    }
+}

@@ -1,2 +1,11 @@
-prototype(MI.Site:Document.Page) < prototype(MI.Site:Document.Abstract) {
+prototype(MI.Site:Document.Page) < prototype(Neos.Fusion:Component) {
+
+    pageTrait = MI.Site:Trait.Page
+
+    renderer = afx`
+        <MI.Site:Component.Page.Document
+            title={props.pageTrait.title}
+            content={props.pageTrait.content}
+        />
+    `
 }

@@ -1,0 +1,5 @@
+'MI.Site:Trait.Page':
+  abstract: true
+  childNodes:
+    main:
+      type: 'MI.Site:Collection.Main'

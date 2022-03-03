@@ -53,25 +53,22 @@ prototype(MI.Site:Trait.Media) < prototype(Neos.Fusion:Component) {
             video-vimeo = ${!!props.videoId}
         }
 
-        renderer = afx`
-            <Neos.Fusion:DataStructure
-                @if={props.canRender}
+        renderer = Neos.Fusion:DataStructure {
+            @if.has = ${props.canRender}
 
-                mediaType={props.mediaType}
+            mediaType = ${props.mediaType}
+            imageSource = ${props.imageSource}
+            videoUri = ${props.videoUri}
+            videoId = ${props.videoId}
 
-                imageSource={props.imageSource}
-                videoUri={props.videoUri}
-                videoId={props.videoId}
+            mediaTitle = ${props.alternativeTitle ? props.alternativeTitle : props.mediaMeta.title}
+            mediaTitle.@if.has = ${props.showMeta && props.showTitle}
 
-                mediaTitle={props.alternativeTitle ? props.alternativeTitle : props.mediaMeta.title}
-                mediaTitle.@if={props.showMeta && props.showTitle}
+            mediaCaption = ${props.alternativeCaption ? props.alternativeCaption : props.mediaMeta.caption}
+            mediaCaption.@if.has = ${props.showMeta && props.showCaption}
 
-                mediaCaption={props.alternativeCaption ? props.alternativeCaption : props.mediaMeta.caption}
-                mediaCaption.@if={props.showMeta && props.showCaption}
-
-                mediaCopyright={props.mediaMeta.copyrightNotice}
-                mediaCopyright.@if={props.showMeta && props.showCopyright}
-            />
-        `
+            mediaCopyright = ${props.mediaMeta.copyrightNotice}
+            mediaCopyright.@if.has = ${props.showMeta && props.showCopyright}
+        }
     }
 }

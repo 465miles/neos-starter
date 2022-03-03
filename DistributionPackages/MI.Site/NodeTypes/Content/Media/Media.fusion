@@ -11,8 +11,8 @@ prototype(MI.Site:Content.Media) < prototype(Neos.Neos:ContentComponent) {
             videoUri={props.traitMedia.videoUri}
             videoId={props.traitMedia.videoId}
             mediaTitle={props.traitMedia.mediaTitle}
-            mediaTitle={props.traitMedia.mediaCaption}
-            mediaTitle={props.traitMedia.mediaCopyright}
+            mediaCaption={props.traitMedia.mediaCaption}
+            mediaCopyright={props.traitMedia.mediaCopyright}
         />
 
         <MI.Site:Component.Atom.BackendNotice @if={!props.traitMedia && node.context.inBackend}>

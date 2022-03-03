@@ -4,6 +4,34 @@ module.exports = {
     content,
     theme: {
         extend: {
+            colors: {
+                primary: {
+                    DEFAULT: '#EF233C',
+                    '50': '#FBCED4',
+                    '100': '#FABBC3',
+                    '200': '#F795A1',
+                    '300': '#F56F7F',
+                    '400': '#F2495E',
+                    '500': '#EF233C',
+                    '600': '#CB0F26',
+                    '700': '#970B1C',
+                    '800': '#630712',
+                    '900': '#2E0309'
+                },
+                secondary: {
+                    DEFAULT: '#8D99AE',
+                    '50': '#F8F9FA',
+                    '100': '#ECEEF2',
+                    '200': '#D5D9E1',
+                    '300': '#BDC4D0',
+                    '400': '#A5AEBF',
+                    '500': '#8D99AE',
+                    '600': '#6C7C97',
+                    '700': '#546177',
+                    '800': '#3D4656',
+                    '900': '#262B35'
+                },
+            }
             fontFamily: {
                 'sans': ['Outfit', 'ui-sans-serif', 'system-ui'],
                 'body': ['Outfit', 'ui-sans-serif', 'system-ui'],

@@ -31,7 +31,7 @@ prototype(MI.Site:Component.Atom.Headline) < prototype(Neos.Fusion:Component) {
         renderer = afx`
             <div
                 class.main="headline prose w-full"
-                class.color={props.color ? props.color : "text-gray-700"}
+                class.color={props.color ? props.color : "text-secondary-700"}
                 class.gridArea={props.gridArea ? props.gridArea : "[grid-area:small-inner]"}
                 class.extra={props.extraClass}
             >

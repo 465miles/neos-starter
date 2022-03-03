@@ -41,7 +41,7 @@ prototype(MI.Site:Component.Atom.Paragraph) < prototype(Neos.Fusion:Component) {
                 class.main="paragraph prose gap-8 w-full"
                 class.fontSize={props.mappedFontSize}
                 class.columns={props.mappedColumns}
-                class.color={props.color ? props.color : "text-gray-700"}
+                class.color={props.color ? props.color : "text-secondary-700"}
                 class.gridArea={props.gridArea ? props.gridArea : "[grid-area:small-inner]"}
                 class.extra={props.extraClass}
             >

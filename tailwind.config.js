@@ -31,7 +31,7 @@ module.exports = {
                     '800': '#3D4656',
                     '900': '#262B35'
                 },
-            }
+            },
             fontFamily: {
                 'sans': ['Outfit', 'ui-sans-serif', 'system-ui'],
                 'body': ['Outfit', 'ui-sans-serif', 'system-ui'],
@@ -135,7 +135,7 @@ module.exports = {
                 DEFAULT: {
                     css: {
                         maxWidth: '100%',
-                        color: theme('colors.gray.700'),
+                        color: theme('colors.secondary.700'),
                         h1: {
                             color: 'inherit',
                             fontWeight: theme('fontWeight.semibold'),

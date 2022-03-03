@@ -8,7 +8,7 @@ prototype(MI.Site:Component.Atom.Lead) < prototype(Neos.Fusion:Component) {
 
     renderer = afx`
         <div
-            class.main="paragraph prose text-blue-500 uppercase font-bold text-sm"
+            class.main="paragraph prose text-primary uppercase font-bold text-sm"
             class.extra={props.extraClass}
         >
             {props.content}

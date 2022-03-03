@@ -2,27 +2,22 @@ prototype(MI.Site:Component.Template.Fragment.Navigation.Item) < prototype(Neos.
 
     url = ''
     label = ''
-    icon = ''
 
     renderer = afx`
         <li
             x-data
             role="menuitem"
-            class.main="group">
+            class.main="group relative">
             <a
                 href={props.url}
-                class.main="px-5 py-10 flex gap-2.5 justify-center items-center relative transition-colors duration-250"
+                class.main="px-5 py-10 flex gap-2.5 justify-center items-center relative text-secondary-700 transition-colors duration-250"
                 class.hover="group-hover:text-primary"
                 x-bind:class={"location.pathname === '" + props.url + "' && 'text-primary'"}
             >
                 <span
-                    @if={props.icon}
-                    class="w-[24px]"
-                >
-                    <img src={props.icon}/>
+                 class="text-lg">
+                    {props.label}
                 </span>
-                <span
-                class="text-lg">{props.label}</span>
             </a>
             <MI.Site:Component.Template.Fragment.Navigation.Dropdown />
         </li>

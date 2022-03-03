@@ -3,11 +3,11 @@ prototype(MI.Site:Component.Template.Fragment.Navigation) < prototype(Neos.Fusio
     renderer = afx`
         <nav>
             <ul class="flex">
-                <MI.Site:Component.Template.Fragment.Navigation.Item url="https://google.com" label="Home" icon={StaticResource.uri('MI.Site', 'Public/Images/rocket.svg')} />
-                <MI.Site:Component.Template.Fragment.Navigation.Item url="https://google.com" label="Solutions" icon={StaticResource.uri('MI.Site', 'Public/Images/rocket.svg')} />
-                <MI.Site:Component.Template.Fragment.Navigation.Item url="komponenten.html" label="Examples" icon={StaticResource.uri('MI.Site', 'Public/Images/rocket.svg')} />
-                <MI.Site:Component.Template.Fragment.Navigation.Item url="https://google.com" label="Pricing" icon={StaticResource.uri('MI.Site', 'Public/Images/rocket.svg')} />
-                <MI.Site:Component.Template.Fragment.Navigation.Item url="https://google.com" label="Contact" icon={StaticResource.uri('MI.Site', 'Public/Images/rocket.svg')} />
+                <MI.Site:Component.Template.Fragment.Navigation.Item url="https://google.com" label="Home" />
+                <MI.Site:Component.Template.Fragment.Navigation.Item url="https://google.com" label="Solutions" />
+                <MI.Site:Component.Template.Fragment.Navigation.Item url="komponenten.html" label="Examples" />
+                <MI.Site:Component.Template.Fragment.Navigation.Item url="https://google.com" label="Pricing" />
+                <MI.Site:Component.Template.Fragment.Navigation.Item url="https://google.com" label="Contact" />
             </ul>
         </nav>
     `

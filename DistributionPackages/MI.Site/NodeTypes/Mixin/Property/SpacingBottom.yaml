@@ -1,22 +1,6 @@
-'MI.Site:Mixin.Spacing':
+MI.Site:Mixin.Property.SpacingBottom:
   abstract: true
   properties:
-    spacingTop:
-      type: string
-      defaultValue: 4
-      ui:
-        label: 'Oberer Abstand'
-        reloadIfChanged: true
-        inspector:
-          group: spacing
-          editor: 'Neos.Neos/Inspector/Editors/RangeEditor'
-          editorOptions:
-            minLabel: '0'
-            maxLabel: '7'
-            min: 0
-            max: 7
-            step: 1
-            unit: 'Abstandseinheit(en)'
     spacingBottom:
       type: string
       defaultValue: 4

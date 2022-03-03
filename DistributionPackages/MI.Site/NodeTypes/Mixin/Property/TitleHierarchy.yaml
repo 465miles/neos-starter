@@ -1,4 +1,4 @@
-'MI.Site:Mixin.TitleHierarchy':
+MI.Site:Mixin.Property.TitleHierarchy:
   abstract: true
   properties:
     titleHierarchy:

@@ -1,19 +1,19 @@
-'MI.Site:Mixin.TextColumns':
+MI.Site:Mixin.Property.TextSize:
   abstract: true
   properties:
-    textColumns:
+    textSize:
       type: string
-      defaultValue: 1
+      defaultValue: 3
       ui:
-        label: 'Textspalten'
+        label: 'Schriftgröße'
         reloadIfChanged: true
         inspector:
           group: paragraph
           editor: 'Neos.Neos/Inspector/Editors/RangeEditor'
           editorOptions:
-            minLabel: '1'
-            maxLabel: '4'
+            minLabel: 'Klein'
+            maxLabel: 'Groß'
             min: 1
-            max: 4
+            max: 5
             step: 1
-            unit: 'Spalte(n)'
+            unit: 'Größe'

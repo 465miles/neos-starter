@@ -1,9 +1,9 @@
 prototype(MI.Site:Component.Template.Fragment.Header) < prototype(Neos.Fusion:Component) {
 
     renderer = afx`
-        <div class="relative bg-white border-b-2 border-gray-100">
+        <div class="bg-white border-b-2 border-gray-100 sticky top-0">
             <MI.Site:Component.Organism.Container>
-                <div class="w-full flex justify-between items-center py-6 md:space-x-10 [grid-area:large]">
+                <div class="w-full flex justify-between items-center md:space-x-10 [grid-area:large]">
                     <div class="flex justify-start lg:w-0 lg:flex-1">
                         <a href="/">
                             <span class="sr-only">465miles</span>

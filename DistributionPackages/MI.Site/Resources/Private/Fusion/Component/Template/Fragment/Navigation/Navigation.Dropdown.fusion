@@ -1,0 +1,16 @@
+prototype(MI.Site:Component.Template.Fragment.Navigation.Dropdown) < prototype(Neos.Fusion:Component) {
+
+    renderer = afx`
+        <div
+            class.main="absolute left-0 w-full top-[100%] opacity-0 pointer-events-none transition-all duration-250"
+            class.show="group-hover:top-[85%] group-hover:opacity-100 group-hover:pointer-events-auto"
+        >
+
+            <MI.Site:Component.Organism.Container>
+                <div class="bg-white shadow-lg p-10 rounded-xl col-[large] border-t-2 border-secondary">
+                    Test
+                </div>
+            </MI.Site:Component.Organism.Container>
+        </div>
+    `
+}

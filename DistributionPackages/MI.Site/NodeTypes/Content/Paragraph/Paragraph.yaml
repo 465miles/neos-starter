@@ -1,10 +1,11 @@
 'MI.Site:Content.Paragraph':
+  final: true
   superTypes:
     'Neos.Neos:Content': true
+    'MI.Site:Mixin.InspectorGroups': true
     'MI.Site:Mixin.TextSize': true
     'MI.Site:Mixin.TextColumns': true
     'MI.Site:Wrap.Container': true
-    'MI.Site:Mixin.InspectorGroups': true
   ui:
     icon: paragraph
     label: 'Absatz'

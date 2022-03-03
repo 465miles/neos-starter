@@ -1,4 +1,5 @@
 'MI.Site:Mixin.TextColumns':
+  abstract: true
   properties:
     textColumns:
       type: string

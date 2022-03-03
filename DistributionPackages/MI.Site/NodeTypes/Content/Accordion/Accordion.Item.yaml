@@ -1,4 +1,5 @@
 'MI.Site:Content.Accordion.Item':
+  final: true
   superTypes:
     'Neos.Neos:Content': true
     'Neos.Neos:ContentCollection': true
@@ -15,3 +16,5 @@
           editorOptions:
             placeholder: 'Enter title here...'
             autoparagraph: false
+      validation:
+        Neos.Neos/Validation/NotEmptyValidator: null

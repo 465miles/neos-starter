@@ -1,10 +1,11 @@
 'MI.Site:Content.Headline':
+  final: true
   superTypes:
     'Neos.Neos:Content': true
+    'MI.Site:Mixin.InspectorGroups': true
     'MI.Site:Mixin.TitleHierarchy': true
     'MI.Site:Mixin.TitleSize': true
     'MI.Site:Wrap.Container': true
-    'MI.Site:Mixin.InspectorGroups': true
   ui:
     icon: heading
     label: 'Überschrift'

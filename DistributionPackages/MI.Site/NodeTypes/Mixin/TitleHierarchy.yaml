@@ -1,4 +1,5 @@
 'MI.Site:Mixin.TitleHierarchy':
+  abstract: true
   properties:
     titleHierarchy:
       type: string

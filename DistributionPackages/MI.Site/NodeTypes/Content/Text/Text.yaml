@@ -1,7 +1,12 @@
 'MI.Site:Content.Text':
+  final: true
   superTypes:
-    'MI.Site:Content.Headline': true
-    'MI.Site:Content.Paragraph': true
+    'Neos.Neos:Content': true
+    'MI.Site:Mixin.InspectorGroups': true
+    'MI.Site:Mixin.TextSize': true
+    'MI.Site:Mixin.TextColumns': true
+    'MI.Site:Mixin.TitleHierarchy': true
+    'MI.Site:Mixin.TitleSize': true
     'MI.Site:Wrap.Container': true
   ui:
     icon: font
@@ -10,3 +15,9 @@
     lead:
       options:
         preset: 'headline.lead'
+    title:
+      options:
+        preset: 'headline.default'
+    text:
+      options:
+        preset: 'text.default'

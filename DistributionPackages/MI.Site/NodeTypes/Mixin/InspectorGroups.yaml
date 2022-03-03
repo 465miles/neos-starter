@@ -27,3 +27,8 @@
           icon: expand
           tab: default
           position: 400
+        options:
+          label: Optionen
+          icon: tasks
+          tab: default
+          position: 50

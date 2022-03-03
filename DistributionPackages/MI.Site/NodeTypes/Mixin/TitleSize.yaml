@@ -1,4 +1,5 @@
 'MI.Site:Mixin.TitleSize':
+  abstract: true
   properties:
     titleSize:
       type: string

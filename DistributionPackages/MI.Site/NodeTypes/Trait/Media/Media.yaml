@@ -21,10 +21,10 @@
               video:
                 label: 'Video'
                 icon: film
-              video-youtube:
+              videoYoutube:
                 label: 'Youtube'
                 icon: youtube
-              video-vimeo:
+              videoVimeo:
                 label: 'Vimeo'
                 icon: vimeo-v
     image:
@@ -51,7 +51,7 @@
         help:
           message: 'Video-ID von Youtube oder Vimeo.'
         inspector:
-          hidden: 'ClientEval:!["video-youtube", "video-vimeo"].includes(node.properties.mediaType)'
+          hidden: 'ClientEval:!["videoYoutube", "videoVimeo"].includes(node.properties.mediaType)'
           group: media
     showMeta:
       type: boolean

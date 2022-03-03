@@ -2,7 +2,7 @@ prototype(MI.Site:Component.Molecule.Media) < prototype(Neos.Fusion:Component) {
 
     @propTypes {
         @strict = true
-        mediaType = ${PropTypes.oneOf(['image', 'video', 'video-youtube', 'video-vimeo']).isRequired}
+        mediaType = ${PropTypes.oneOf(['image', 'video', 'videoYoutube', 'videoVimeo']).isRequired}
 
         imageSource = ${PropTypes.instanceOf('\\Sitegeist\\Kaleidoscope\\EelHelpers\\ImageSourceHelperInterface')}
         videoUri = ${PropTypes.string}
@@ -35,14 +35,14 @@ prototype(MI.Site:Component.Molecule.Media) < prototype(Neos.Fusion:Component) {
                 />
             `
 
-            video-youtube = afx`
+            videoYoutube = afx`
                 <MI.Site:Component.Atom.VideoExternal
                     provider="youtube"
                     videoId={props.videoId}
                 />
             `
 
-            video-vimeo = afx`
+            videoVimeo = afx`
                 <MI.Site:Component.Atom.VideoExternal
                     provider="vimeo"
                     videoId={props.videoId}

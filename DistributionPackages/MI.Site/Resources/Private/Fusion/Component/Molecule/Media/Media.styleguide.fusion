@@ -16,7 +16,7 @@ prototype(MI.Site:Component.Molecule.Media).@styleguide {
         youtube {
             title = "Video Youtube"
             props {
-                mediaType = 'video-youtube'
+                mediaType = 'videoYoutube'
                 videoId = "NyU0_uKtwvs"
             }
         }

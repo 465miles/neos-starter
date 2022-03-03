@@ -46,8 +46,8 @@ prototype(MI.Site:Trait.Media) < prototype(Neos.Fusion:Component) {
             @default = false
             image = ${!!props.image}
             video = ${props.video && props.image}
-            video-youtube = ${!!props.videoId}
-            video-vimeo = ${!!props.videoId}
+            videoYoutube = ${!!props.videoId}
+            videoVimeo = ${!!props.videoId}
         }
 
         renderer = Neos.Fusion:DataStructure {

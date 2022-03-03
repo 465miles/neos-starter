@@ -1,0 +1,25 @@
+prototype(MI.Site:Trait.Page.Fragment.Navigation) < prototype(Neos.Fusion:Component) {
+
+    menuItems = MI.Site:Trait.Page.Fragment.ConvertMenuItems {
+        items = Neos.Neos:MenuItems {
+            startingPoint = ${site}
+//            entryLevel = 1
+            maximumLevels = 2
+        }
+    }
+
+    renderer = afx`
+        <MI.Site:Component.Organism.Navigation {...props} />
+    `
+
+    @cache {
+        mode = 'cached'
+        entryIdentifier {
+            static = 'MI_Site_Menu'
+            site = ${site}
+        }
+        entryTags {
+            1 = ${Neos.Caching.nodeTypeTag('Neos.Neos:Document', site)}
+        }
+    }
+}

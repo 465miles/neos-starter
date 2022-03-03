@@ -1,0 +1,21 @@
+prototype(MI.Site:Trait.Page.Fragment.ConvertMenuItems) < prototype(Neos.Fusion:Map) {
+
+    items = ${[]}
+
+    @if.has = ${this.items}
+
+    itemRenderer = Neos.Fusion:DataStructure {
+
+        label = ${item.label}
+
+        menuLevel = ${item.menuLevel}
+
+        uri = Neos.Neos:NodeUri {
+            node = ${item.node}
+        }
+
+        subItems = MI.Site:Trait.Page.Fragment.ConvertMenuItems {
+            items = ${item.subItems}
+        }
+    }
+}

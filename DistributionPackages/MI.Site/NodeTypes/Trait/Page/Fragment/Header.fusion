@@ -1,0 +1,21 @@
+prototype(MI.Site:Trait.Page.Fragment.Header) < prototype(Neos.Fusion:Component) {
+
+    navigation = Neos.Fusion:Renderer {
+        renderPath = '/MI_Site_Menu'
+    }
+
+//    languageMenu = My.Site:Component.LanguageMenu
+    logoSrc = Neos.Neos:ImageUri {
+        asset = ${q(site).property('headerlogo')}
+    }
+    homeUri = Neos.Neos:NodeUri {
+        node = ${q(site).get(0)}
+        absolute = true
+    }
+
+    renderer = afx`
+        <MI.Site:Component.Organism.Header {...props} />
+    `
+}
+
+MI_Site_Menu = MI.Site:Trait.Page.Fragment.Navigation

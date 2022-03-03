@@ -4,7 +4,8 @@ prototype(MI.Site:Document.Page) < prototype(Neos.Fusion:Component) {
 
     renderer = afx`
         <MI.Site:Component.Page.Document
-            title={props.pageTrait.title}
+            header={props.pageTrait.header}
+            footer={props.pageTrait.footer}
             content={props.pageTrait.content}
         />
     `

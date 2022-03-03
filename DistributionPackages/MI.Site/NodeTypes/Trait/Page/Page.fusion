@@ -1,7 +1,11 @@
 prototype(MI.Site:Trait.Page) < prototype(Neos.Fusion:DataStructure) {
-    title = ${q(node).property('title')}
+
+    header = MI.Site:Trait.Page.Fragment.Header
+
+    footer =  MI.Site:Trait.Page.Fragment.Footer
 
     content = Neos.Neos:ContentCollection {
         nodePath = 'main'
     }
+
 }

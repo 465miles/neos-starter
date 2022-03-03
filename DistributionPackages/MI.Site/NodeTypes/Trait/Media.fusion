@@ -54,7 +54,7 @@ prototype(MI.Site:Trait.Media) < prototype(Neos.Fusion:Component) {
         }
 
         renderer = afx`
-            <MI.Site:Component.Molecule.Media
+            <Neos.Fusion:DataStructure
                 @if={props.canRender}
 
                 mediaType={props.mediaType}
@@ -72,10 +72,6 @@ prototype(MI.Site:Trait.Media) < prototype(Neos.Fusion:Component) {
                 mediaCopyright={props.mediaMeta.copyrightNotice}
                 mediaCopyright.@if={props.showMeta && props.showCopyright}
             />
-
-            <MI.Site:Component.Atom.BackendNotice @if={!props.canRender && node.context.inBackend}>
-                Kann nicht gerendert werden.
-            </MI.Site:Component.Atom.BackendNotice>
         `
     }
 }

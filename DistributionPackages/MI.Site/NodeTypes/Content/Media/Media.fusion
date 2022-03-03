@@ -1,4 +1,23 @@
 prototype(MI.Site:Content.Media) < prototype(Neos.Neos:ContentComponent) {
-    renderer = MI.Site:Trait.Media
+    traitMedia = MI.Site:Trait.Media
+
+    renderer = afx`
+        <MI.Site:Component.Molecule.Media
+            @if={props.traitMedia}
+
+            mediaType={props.traitMedia.mediaType}
+            imageSource={props.traitMedia.imageSource}
+            videoUri={props.traitMedia.videoUri}
+            videoId={props.traitMedia.videoId}
+            mediaTitle={props.traitMedia.mediaTitle}
+            mediaTitle={props.traitMedia.mediaCaption}
+            mediaTitle={props.traitMedia.mediaCopyright}
+        />
+
+        <MI.Site:Component.Atom.BackendNotice @if={!props.traitMedia && node.context.inBackend}>
+            Kann nicht gerendert werden.
+        </MI.Site:Component.Atom.BackendNotice>
+    `
+
     @process.wrapContainer = MI.Site:Wrap.Container
 }

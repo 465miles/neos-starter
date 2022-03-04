@@ -13,13 +13,16 @@ prototype(MI.Site:Component.Template.Fragment.Navigation.Item) < prototype(Neos.
                 class.main="px-5 py-10 flex gap-2.5 justify-center items-center relative text-secondary-700 transition-colors duration-250"
                 class.hover="group-hover:text-primary"
                 x-bind:class={"location.pathname === '" + props.url + "' && 'text-primary'"}
+                x-on:mouseover="show($refs.dropdown)"
             >
                 <span
                  class="text-lg">
                     {props.label}
                 </span>
             </a>
-            <MI.Site:Component.Template.Fragment.Navigation.Dropdown />
+            <template x-ref="dropdown">
+                <MI.Site:Component.Template.Fragment.Navigation.Dropdown />
+            </template>
         </li>
     `
 }

@@ -2,12 +2,10 @@ prototype(MI.Site:Component.Template.Fragment.Navigation.Dropdown) < prototype(N
 
     renderer = afx`
         <ul
-            class.main="absolute left-1/2 -translate-x-1/2 w-64 px-5 top-[100%] opacity-0 pointer-events-none transition-all duration-250 z-100 w-full bg-white border-[1px] border-secondary-100 shadow-lg rounded-xl overflow-hidden"
-            class.show="group-hover:top-[80%] group-hover:opacity-100 group-hover:pointer-events-auto"
         >
-            <MI.Site:Component.Template.Fragment.Navigation.Dropdown.Item url="https://google.com" label="Home" />
-            <MI.Site:Component.Template.Fragment.Navigation.Dropdown.Item url="https://google.com" label="Home" />
-            <MI.Site:Component.Template.Fragment.Navigation.Dropdown.Item url="https://google.com" label="Home" />
+            <MI.Site:Component.Template.Fragment.Navigation.Dropdown.Item url="https://google.com" label={Math.randomInt(5, 30) + " Foo"} />
+            <MI.Site:Component.Template.Fragment.Navigation.Dropdown.Item url="https://google.com" label={Math.randomInt(5, 30) + " Foo"} />
+            <MI.Site:Component.Template.Fragment.Navigation.Dropdown.Item url="https://google.com" label={Math.randomInt(5, 30) + " Foo"} />
         </ul>
     `
 }

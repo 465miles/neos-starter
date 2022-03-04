@@ -1,14 +1,32 @@
 prototype(MI.Site:Component.Template.Fragment.Navigation) < prototype(Neos.Fusion:Component) {
 
     renderer = afx`
-        <nav>
-            <ul class="flex">
+        <nav
+            x-data='MI_Site_Component_Template_Fragment_Navigation'
+            '@mouseleave'='close'
+        >
+            <ul class="flex" x-ref="main">
                 <MI.Site:Component.Template.Fragment.Navigation.Item url="https://google.com" label="Home" />
                 <MI.Site:Component.Template.Fragment.Navigation.Item url="https://google.com" label="Solutions" />
                 <MI.Site:Component.Template.Fragment.Navigation.Item url="komponenten.html" label="Examples" />
                 <MI.Site:Component.Template.Fragment.Navigation.Item url="https://google.com" label="Pricing" />
                 <MI.Site:Component.Template.Fragment.Navigation.Item url="https://google.com" label="Contact" />
             </ul>
+            <div
+                x-cloak
+                x-show="open"
+                x-transition
+                class.main="absolute left-0 w-full top-[100%]"
+            >
+                <MI.Site:Component.Organism.Container>
+                    <div
+                        x-html="megaContent"
+                        class="bg-white shadow-lg p-10 rounded-xl col-[large] border-t-2 border-secondary"
+                        '@mouseleave.debounce'='$refs.main.contains($event.toElement) === false && close($event)'
+                    >
+                    </div>
+                </MI.Site:Component.Organism.Container>
+            </div>
         </nav>
     `
 }

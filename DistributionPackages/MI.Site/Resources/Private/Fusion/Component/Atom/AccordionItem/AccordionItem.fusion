@@ -9,13 +9,14 @@ prototype(MI.Site:Component.Atom.AccordionItem) < prototype(Neos.Fusion:Componen
 
     renderer = afx`
         <div
-            class="border-b border-gray-200"
             x-data={"MI_Site_Component_Atom_AccordionItem('" + props.id + "')"}
+            class="transition-[border]"
+            x-bind:class="open && 'border-b border-gray-200'"
         >
             <button
-                class="w-full px-5 md:px-10 py-3 md:py-5 text-lg text-left font-bold transition-color duration-500"
                 x-on:click="toggle"
-                x-bind:class="open && 'text-blue-500 border-b border-gray-100'"
+                class="w-full px-5 md:px-10 py-3 md:py-5 text-lg text-left font-bold transition-color border-b border-gray-100 duration-500"
+                x-bind:class="open && 'text-blue-500'"
             >
                 <MI.Site:Component.Atom.Headline
                     tagName='h3'

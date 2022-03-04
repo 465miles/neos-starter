@@ -1,0 +1,7 @@
+# Add anchor for the Neos Ui to tell where to insert content in a collection
+# to be added as @process
+# https://github.com/neos/neos-ui/pull/2609
+prototype(MI.Site:ContentHelper.CollectionAnchor) < prototype(Neos.Fusion:Augmenter) {
+    @if.inBackend = ${node.context.inBackend}
+    data-__neos-insertion-anchor = true
+}

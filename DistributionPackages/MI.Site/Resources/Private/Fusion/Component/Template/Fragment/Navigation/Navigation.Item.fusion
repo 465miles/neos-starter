@@ -10,8 +10,8 @@ prototype(MI.Site:Component.Template.Fragment.Navigation.Item) < prototype(Neos.
             class.main="group relative">
             <a
                 href={props.url}
-                class.main="px-5 py-10 flex gap-2.5 justify-center items-center relative text-secondary-700 transition-colors duration-250"
-                class.hover="group-hover:text-primary"
+                class.main="px-5 py-2.5 flex gap-2.5 justify-center items-center relative text-secondary-700 transition-colors duration-250 rounded-xl"
+                class.hover="group-hover:bg-primary-50"
                 x-bind:class={"location.pathname === '" + props.url + "' && 'text-primary'"}
                 x-on:mouseover="show($refs.dropdown)"
             >
@@ -21,7 +21,9 @@ prototype(MI.Site:Component.Template.Fragment.Navigation.Item) < prototype(Neos.
                 </span>
             </a>
             <template x-ref="dropdown">
-                <MI.Site:Component.Template.Fragment.Navigation.Dropdown />
+                <MI.Site:Component.Template.Fragment.Navigation.Megamenu.Column />
+                <MI.Site:Component.Template.Fragment.Navigation.Megamenu.Column />
+                <MI.Site:Component.Template.Fragment.Navigation.Megamenu.Column />
             </template>
         </li>
     `

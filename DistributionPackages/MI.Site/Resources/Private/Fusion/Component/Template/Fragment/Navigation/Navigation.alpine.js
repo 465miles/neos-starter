@@ -16,7 +16,7 @@ export default Alpine => (
         },
 
         close() {
-            this.isOpen = false;
+            this.isOpen = false
         },
 
         init() {

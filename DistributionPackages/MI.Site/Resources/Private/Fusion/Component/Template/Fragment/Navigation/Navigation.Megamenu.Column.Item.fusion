@@ -1,0 +1,23 @@
+prototype(MI.Site:Component.Template.Fragment.Navigation.Megamenu.Column.Item) < prototype(Neos.Fusion:Component) {
+
+    url = ''
+    label = ''
+
+    renderer = afx`
+        <li
+            x-data
+            role="menuitem"
+            class.main="w-full">
+            <a
+                href={props.url}
+                class.main="w-full block px-5 py-2.5 text-secondary-700 text-base relative rounded-lg"
+                class.hover="hover:bg-primary-50"
+                x-bind:class={"location.pathname === '" + props.url + "' && 'text-primary'"}
+            >
+                <span>
+                    {props.label}
+                </span>
+            </a>
+        </li>
+    `
+}

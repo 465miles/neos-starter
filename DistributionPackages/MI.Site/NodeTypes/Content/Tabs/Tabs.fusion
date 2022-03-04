@@ -1,11 +1,11 @@
-prototype(MI.Site:Content.Accordion) < prototype(Neos.Neos:ContentComponent) {
+prototype(MI.Site:Content.Tabs) < prototype(Neos.Neos:ContentComponent) {
     content = Neos.Neos:ContentCollection {
         nodePath = ''
         @process.contentElementWrapping >
     }
 
     renderer = afx`
-        <MI.Site:Component.Molecule.Accordion {...props} />
+        <MI.Site:Component.Molecule.Tabs {...props} />
     `
 
     @process.wrapContainer = MI.Site:Wrap.Container

@@ -1,11 +1,11 @@
-'MI.Site:Content.Accordion.Item':
+'MI.Site:Content.Tabs.Item':
   final: true
   superTypes:
     'Neos.Neos:Content': true
     'Neos.Neos:ContentCollection': true
   ui:
-    icon: chevron-down
-    label: 'Accordion Item'
+    icon: window-minimize
+    label: 'Tab Item'
   properties:
     title:
       type: string

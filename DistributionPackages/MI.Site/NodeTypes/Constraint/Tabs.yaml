@@ -1,5 +1,5 @@
-'MI.Site:Constraint.Accordion':
+'MI.Site:Constraint.Tabs':
   constraints:
     nodeTypes:
       "*": false
-      "MI.Site:Content.Accordion.Item": true
+      "MI.Site:Content.Tabs.Item": true

@@ -1,4 +1,4 @@
-prototype(MI.Site:Content.Accordion.Item) < prototype(Neos.Neos:ContentComponent) {
+prototype(MI.Site:Content.Tabs.Item) < prototype(Neos.Neos:ContentComponent) {
     id = ${node.identifier}
 
     title = Neos.Neos:Editable {
@@ -10,6 +10,6 @@ prototype(MI.Site:Content.Accordion.Item) < prototype(Neos.Neos:ContentComponent
     }
 
     renderer = afx`
-        <MI.Site:Component.Atom.AccordionItem {...props} />
+        <MI.Site:Component.Atom.TabsItem {...props} />
     `
 }

@@ -1,10 +1,10 @@
-'MI.Site:Content.Accordion':
+'MI.Site:Content.Tabs':
   final: true
   superTypes:
     'Neos.Neos:Content': true
     'Neos.Neos:ContentCollection': true
-    'MI.Site:Constraint.Accordion': true
+    'MI.Site:Constraint.Tabs': true
     'MI.Site:Wrap.Container': true
   ui:
-    icon: stream
-    label: 'Accordion'
+    icon: window-maximize
+    label: 'Tabs'

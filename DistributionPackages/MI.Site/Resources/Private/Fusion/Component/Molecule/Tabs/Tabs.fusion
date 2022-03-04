@@ -9,9 +9,14 @@ prototype(MI.Site:Component.Molecule.Tabs) < prototype(Neos.Fusion:Component) {
         <div
             class.main="w-full bg-white drop-shadow-md rounded-md min-h-[60px]"
             class.gridArea="[grid-area:medium-inner]"
-            x-data="{selected:null}"
+            x-data="{selected:1}"
         >
-            {props.content}
+            <div class="w-full bg-red-500">
+                {props.labels}
+            </div>
+            <div class="w-full bg-blue-500">
+                {props.contents}
+            </div>
         </div>
     `
 }

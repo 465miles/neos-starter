@@ -1,4 +1,4 @@
-prototype(MI.Site:Component.Molecule.Accordion).@styleguide {
+prototype(MI.Site:Component.Molecule.Tabs).@styleguide {
     title = 'Accordion'
     props {
         content = Neos.Fusion:Loop {
@@ -13,7 +13,7 @@ prototype(MI.Site:Component.Molecule.Accordion).@styleguide {
                 }
             }
             itemRenderer = afx`
-                <MI.Site:Component.Atom.AccordionItem id={iterator.index} {...item} />
+                <MI.Site:Component.Atom.TabsItem id={iterator.index} {...item} />
             `
         }
     }

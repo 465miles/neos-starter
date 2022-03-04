@@ -1,0 +1,38 @@
+prototype(MI.Site:Component.Atom.TabsItem) < prototype(Neos.Fusion:Component) {
+
+    @propTypes {
+        @strict = true
+        id = ${PropTypes.anyOf(PropTypes.string, PropTypes.integer).isRequired}
+        title = ${PropTypes.string.isRequired}
+        content = ${PropTypes.string}
+    }
+
+    renderer = afx`
+        <div
+            class="border-b border-gray-200"
+            x-data={"MI_Site_Component_Atom_AccordionItem('" + props.id + "')"}
+        >
+            <button
+                class="w-full px-5 md:px-10 py-3 md:py-5 text-lg text-left font-bold transition-color duration-500"
+                x-on:click="toggle"
+                x-bind:class="open && 'text-blue-500 border-b border-gray-100'"
+            >
+                <MI.Site:Component.Atom.Headline
+                    tagName='h3'
+                    fontSize='4'
+                    color='text-inherit'
+                >
+                    {props.title}
+                </MI.Site:Component.Atom.Headline>
+            </button>
+            <div
+                x-show="open"
+                x-collapse
+            >
+                <div class="w-full px-5 md:px-10 py-10">
+                    {props.content}
+                </div>
+            </div>
+        </div>
+    `
+}

@@ -1,0 +1,5 @@
+'MI.Site:Constraint.Accordion':
+  constraints:
+    nodeTypes:
+      "*": false
+      "MI.Site:Content.Accordion.Item": true

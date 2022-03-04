@@ -1,0 +1,17 @@
+prototype(MI.Site:Component.Molecule.Tabs) < prototype(Neos.Fusion:Component) {
+
+    @propTypes {
+        @strict = true
+        content = ${PropTypes.string}
+    }
+
+    renderer = afx`
+        <div
+            class.main="w-full bg-white drop-shadow-md rounded-md min-h-[60px]"
+            class.gridArea="[grid-area:medium-inner]"
+            x-data="{selected:null}"
+        >
+            {props.content}
+        </div>
+    `
+}

@@ -13,8 +13,8 @@ prototype(MI.Site:Component.Template.Fragment.Navigation.Megamenu) < prototype(N
                     class="flex gap-10 flex-wrap w-full bg-white shadow-lg p-10 rounded-xl col-[large] border-[1px] border-secondary-200"
                 '@mouseleave.debounce'='$refs.main.contains($event.toElement) === false && close($event)'
                 >
-        </div>
-        </MI.Site:Component.Organism.Container>
+                </div>
+            </MI.Site:Component.Organism.Container>
         </div>
     `
 }

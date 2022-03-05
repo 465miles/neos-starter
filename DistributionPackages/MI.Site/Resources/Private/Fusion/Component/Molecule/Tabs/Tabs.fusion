@@ -8,14 +8,20 @@ prototype(MI.Site:Component.Molecule.Tabs) < prototype(Neos.Fusion:Component) {
 
     renderer = afx`
         <div
-            class.main="w-full bg-white drop-shadow-md rounded-md min-h-[60px]"
+            class.main="w-full min-h-[60px]"
             class.gridArea="[grid-area:medium-inner]"
             x-data="{selected:null}"
         >
-            <div class="flex border-b border-gray-100">
-                {props.tabList}
+            <div
+                class.main="w-full overflow-hidden relative"
+                class.before="before:content-[''] before:absolute before:top-0 before:-left-0 before:h-full before:w-5 before:bg-gradient-to-r before:from-white before:to-transparent"
+                class.after="after:content-[''] after:absolute after:top-0 after:-right-0 after:h-full after:w-5 after:bg-gradient-to-l after:from-white after:to-transparent"
+            >
+                <div class="overflow-auto px-2.5 md:px-5 scroll-px-2.5 md:scroll-px-5 snap-mandatory snap-x whitespace-nowrap">
+                    {props.tabList}
+                </div>
             </div>
-            <div class="w-full px-5 md:px-10 py-10">
+            <div class="w-full rounded-xl border-[1px] border-secondary-100 p-5 md:p-10">
                 {props.tabPanels}
             </div>
         </div>

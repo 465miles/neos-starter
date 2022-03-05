@@ -23,4 +23,6 @@ prototype(Sitegeist.Monocle:Preview.Page) {
             <script defer src={StaticResource.uri('MI.Site', 'Public/Scripts/Main.js')}></script>
         `
     }
+
+    bodyTag.attributes.class = 'bg-white'
 }

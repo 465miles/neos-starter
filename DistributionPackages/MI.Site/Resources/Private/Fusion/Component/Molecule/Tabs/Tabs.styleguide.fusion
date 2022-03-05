@@ -1,20 +1,55 @@
 prototype(MI.Site:Component.Molecule.Tabs).@styleguide {
-    title = 'Accordion'
+    title = 'Tabs'
     props {
-        content = Neos.Fusion:Loop {
-            items = Neos.Fusion:DataStructure {
-                0 {
-                    title = "Foo"
-                    content = "Hello world"
-                }
-                1 {
-                    title = "Bar"
-                    content = "Hello world"
-                }
-            }
-            itemRenderer = afx`
-                <MI.Site:Component.Atom.TabsItem id={iterator.index} {...item} />
-            `
-        }
+
+        tabList = afx`
+            <MI.Site:Component.Atom.TabLabel id='0' title='Foo' />
+            <MI.Site:Component.Atom.TabLabel id='1' title='Bar' />
+            <MI.Site:Component.Atom.TabLabel id='2' title='Baz' />
+        `
+
+        tabPanels = afx`
+            <MI.Site:Component.Atom.TabPanel id='0' >
+                <MI.Site:Component.Atom.Headline
+                    tagName='h2'
+                    fontSize='5'
+                >
+                    hello
+                </MI.Site:Component.Atom.Headline>
+                <MI.Site:Component.Atom.Headline
+                    tagName='h2'
+                    fontSize='5'
+                >
+                    hello
+                </MI.Site:Component.Atom.Headline>
+            </MI.Site:Component.Atom.TabPanel>
+
+            <MI.Site:Component.Atom.TabPanel id='1' >
+                <MI.Site:Component.Atom.Headline
+                    tagName='h2'
+                    fontSize='5'
+                >
+                    fooo baar
+                </MI.Site:Component.Atom.Headline>
+            </MI.Site:Component.Atom.TabPanel>
+
+            <MI.Site:Component.Atom.TabPanel id='2' >
+                <MI.Site:Component.Atom.Headline
+                    tagName='h2'
+                    fontSize='5'
+                >
+                    hello
+                    <br />
+                    <br />
+                    fewfwe
+                </MI.Site:Component.Atom.Headline>
+            </MI.Site:Component.Atom.TabPanel>
+        `
+    }
+
+    container = MI.Site:Component.Organism.Container {
+        spacingTop = '2'
+        spacingBottom = '2'
+        content = ${value}
     }
 }

@@ -2,20 +2,21 @@ prototype(MI.Site:Component.Molecule.Tabs) < prototype(Neos.Fusion:Component) {
 
     @propTypes {
         @strict = true
-        content = ${PropTypes.string}
+        tabList = ${PropTypes.string}
+        tabPanels = ${PropTypes.string}
     }
 
     renderer = afx`
         <div
             class.main="w-full bg-white drop-shadow-md rounded-md min-h-[60px]"
             class.gridArea="[grid-area:medium-inner]"
-            x-data="{selected:1}"
+            x-data="{selected:null}"
         >
-            <div class="w-full bg-red-500">
-                {props.labels}
+            <div class="flex border-b border-gray-100">
+                {props.tabList}
             </div>
-            <div class="w-full bg-blue-500">
-                {props.contents}
+            <div class="w-full px-5 md:px-10 py-10">
+                {props.tabPanels}
             </div>
         </div>
     `

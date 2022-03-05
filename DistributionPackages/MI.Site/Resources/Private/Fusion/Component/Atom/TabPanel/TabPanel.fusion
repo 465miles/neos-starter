@@ -1,16 +1,16 @@
-prototype(MI.Site:Component.Atom.TabsItem) < prototype(Neos.Fusion:Component) {
+prototype(MI.Site:Component.Atom.TabPanel) < prototype(Neos.Fusion:Component) {
 
     @propTypes {
         @strict = true
         id = ${PropTypes.anyOf(PropTypes.string, PropTypes.integer).isRequired}
-        title = ${PropTypes.string.isRequired}
         content = ${PropTypes.string}
     }
 
     renderer = afx`
         <div
-            class="border-b border-gray-200"
-            x-data={"MI_Site_Component_Atom_AccordionItem('" + props.id + "')"}
+            x-data={"MI_Site_Component_Atom_TabLabel('" + props.id + "')"}
+            x-show="open"
+            x-collapse
         >
             {props.content}
         </div>

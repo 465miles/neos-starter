@@ -1,15 +1,13 @@
 prototype(MI.Site:Content.Tabs.Item) < prototype(Neos.Neos:ContentComponent) {
     id = ${node.identifier}
 
-    title = Neos.Neos:Editable {
-        property = 'title'
-    }
-
-    content = Neos.Neos:ContentCollection {
-        @process.contentElementWrapping >
-    }
+    content = Neos.Neos:ContentCollectionRenderer
+    content.@process.addAnchor = MI.Site:ContentHelper.CollectionAnchor
 
     renderer = afx`
-        <MI.Site:Component.Atom.TabsItem {...props} />
+        <MI.Site:Component.Atom.TabPanel
+            id={props.id}
+            content={props.content}
+        />
     `
 }

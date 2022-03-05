@@ -1,12 +1,29 @@
 prototype(MI.Site:Content.Tabs) < prototype(Neos.Neos:ContentComponent) {
-    content = Neos.Neos:ContentCollection {
-        nodePath = ''
-        @process.contentElementWrapping >
-    }
 
-    renderer = afx`
-        <MI.Site:Component.Molecule.Tabs {...props} />
-    `
+    children = ${q(node).children()}
+
+    renderer = Neos.Fusion:Component {
+
+        tabList = Neos.Fusion:Loop {
+            items = ${props.children}
+            itemName = 'node'
+            itemRenderer = Neos.Fusion:Renderer {
+                type = ${node.nodeType.name + '.Label'}
+            }
+        }
+        tabList.@process.addAnchor = MI.Site:ContentHelper.CollectionAnchor
+
+        tabPanels = Neos.Neos:ContentCollectionRenderer {
+            items = ${props.children}
+        }
+
+        renderer = afx`
+            <MI.Site:Component.Molecule.Tabs
+                tabList={props.tabList}
+                tabPanels={props.tabPanels}
+            />
+        `
+    }
 
     @process.wrapContainer = MI.Site:Wrap.Container
 }

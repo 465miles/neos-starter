@@ -9,9 +9,9 @@ prototype(MI.Site:Component.Atom.TabLabel) < prototype(Neos.Fusion:Component) {
     renderer = afx`
         <button
             x-data={"MI_Site_Component_Atom_TabLabel('" + props.id + "')"}
-            class="snap-start min-w-[0] max-w-[50%] mx-2.5 inline-block px-2.5 md:px-5 py-3 transition-[background,color] duration-500 rounded-t-xl text-secondary-700 hover:bg-primary-50"
+            class="snap-start min-w-[0] max-w-[50%] mx-2.5 inline-block px-2.5 md:px-5 py-3 transition-[background,color] duration-500 rounded-t-xl"
             x-on:click="show"
-            x-bind:class="open && 'text-primary bg-primary-50'"
+            x-bind:class="open ? 'text-primary bg-primary-50' : 'text-secondary-700 hover:bg-primary-50'"
         >
             <span class="w-full text-base font-bold">
                 {props.title}

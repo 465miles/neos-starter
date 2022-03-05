@@ -9,7 +9,7 @@ prototype(MI.Site:Component.Molecule.Tabs) < prototype(Neos.Fusion:Component) {
     renderer = afx`
         <div
             class.main="w-full min-h-[60px]"
-            class.gridArea="[grid-area:medium-inner]"
+            class.gridArea="[grid-area:medium]"
             x-data="{selected:null}"
         >
             <div

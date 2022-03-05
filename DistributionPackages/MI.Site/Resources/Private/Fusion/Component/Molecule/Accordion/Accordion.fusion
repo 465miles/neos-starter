@@ -8,7 +8,7 @@ prototype(MI.Site:Component.Molecule.Accordion) < prototype(Neos.Fusion:Componen
     renderer = afx`
         <div
             class.main="w-full min-h-[60px]"
-            class.gridArea="[grid-area:medium-inner]"
+            class.gridArea="[grid-area:medium]"
             x-data="{selected:null}"
         >
             {props.content}

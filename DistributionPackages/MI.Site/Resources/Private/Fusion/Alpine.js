@@ -19,8 +19,26 @@ TabLabel(Alpine)
 TabPanel(Alpine)
 Navigation(Alpine)
 
-Alpine.magic('inBackend', () => {
-    return Boolean(window?.neos)
+Alpine.magic('inBackendWaitForInlineEditing', el => callback => {
+
+    if (window.neos === undefined) {
+        callback()
+        return
+    }
+
+    const inlineEditorWrap = el.querySelector('.neos-inline-editable')
+
+    if (inlineEditorWrap === null) {
+        callback()
+        return
+    }
+
+    new MutationObserver((mutations, self) => {
+        if (mutations.some(mutation => mutation.attributeName === 'data-neos-inline-editor-is-initialized')) {
+            self.disconnect()
+            callback()
+        }
+    }).observe(inlineEditorWrap, {attributes: true})
 })
 
 Alpine.start()

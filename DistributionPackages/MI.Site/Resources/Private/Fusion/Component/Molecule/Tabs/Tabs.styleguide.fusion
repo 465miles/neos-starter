@@ -3,46 +3,41 @@ prototype(MI.Site:Component.Molecule.Tabs).@styleguide {
     props {
 
         tabList = afx`
-            <MI.Site:Component.Atom.TabLabel id='0' title='Foo' />
-            <MI.Site:Component.Atom.TabLabel id='1' title='Bar' />
-            <MI.Site:Component.Atom.TabLabel id='2' title='Baz' />
+            <MI.Site:Component.Atom.TabLabel id='0' title='Curabitur' />
+            <MI.Site:Component.Atom.TabLabel id='1' title='Etiam' />
+            <MI.Site:Component.Atom.TabLabel id='2' title='Phasellus' />
         `
+
+        prototype(MI.Site:Component.Molecule.Text) {
+            titleTagName = 'h2'
+            titleFontSize = '5'
+            textFontSize = '2'
+            textColumns = '1'
+        }
 
         tabPanels = afx`
             <MI.Site:Component.Atom.TabPanel id='0' >
-                <MI.Site:Component.Atom.Headline
-                    tagName='h2'
-                    fontSize='5'
-                >
-                    hello
-                </MI.Site:Component.Atom.Headline>
-                <MI.Site:Component.Atom.Headline
-                    tagName='h2'
-                    fontSize='5'
-                >
-                    hello
-                </MI.Site:Component.Atom.Headline>
+                <MI.Site:Component.Molecule.Text
+                    leadContent='iquet nec, vulputate'
+                    titleContent='Lorem ipsum dolor sit amet.'
+                    textContent='Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.'
+                />
             </MI.Site:Component.Atom.TabPanel>
 
             <MI.Site:Component.Atom.TabPanel id='1' >
-                <MI.Site:Component.Atom.Headline
-                    tagName='h2'
-                    fontSize='5'
-                >
-                    fooo baar
-                </MI.Site:Component.Atom.Headline>
+                <MI.Site:Component.Molecule.Text
+                    leadContent='honcus ut, imperdiet a, venenati'
+                    titleContent='Consectetuer adipiscing elit.'
+                    textContent='Aenean ut eros et nisl sagittis vestibulum. Nullam nulla eros, ultricies sit amet, nonummy id.'
+                />
             </MI.Site:Component.Atom.TabPanel>
 
             <MI.Site:Component.Atom.TabPanel id='2' >
-                <MI.Site:Component.Atom.Headline
-                    tagName='h2'
-                    fontSize='5'
-                >
-                    hello
-                    <br />
-                    <br />
-                    fewfwe
-                </MI.Site:Component.Atom.Headline>
+                <MI.Site:Component.Molecule.Text
+                    leadContent='Vestibulum purus quam'
+                    titleContent='Dolor sit amet, consectetuer elit.'
+                    textContent='In turpis. Pellentesque posuere. Praesent turpis. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis. Nullam sagittis. Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce id purus. Ut varius tincidunt libero. Phasellus dolor. Maecenas vestibulum mollis'
+                />
             </MI.Site:Component.Atom.TabPanel>
         `
     }

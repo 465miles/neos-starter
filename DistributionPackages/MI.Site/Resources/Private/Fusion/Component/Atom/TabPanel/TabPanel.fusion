@@ -10,7 +10,6 @@ prototype(MI.Site:Component.Atom.TabPanel) < prototype(Neos.Fusion:Component) {
         <div
             x-data={"MI_Site_Component_Atom_TabLabel('" + props.id + "')"}
             x-show="open"
-            x-collapse
             class="w-full"
         >
             {props.content}

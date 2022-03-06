@@ -1,0 +1,117 @@
+prototype(MI.Site:Component.Template.Fragment.Header).@styleguide {
+
+    props {
+        homeUri = '#'
+        navigation = MI.Site:Component.Template.Fragment.Navigation {
+            menuItems = Neos.Fusion:DataStructure {
+                0 {
+                    label = 'Home'
+                    uri = '#'
+                    children = null
+                }
+                1 {
+                    label = 'Products'
+                    uri = '#'
+                    children {
+                        0 {
+                            label = 'Do la amet'
+                            uri = '#'
+                            children = null
+                        }
+                        1 {
+                            label = 'Funga set'
+                            uri = '#'
+                            children = null
+                        }
+                    }
+                }
+                2 {
+                    label = 'Tertere'
+                    uri = '#'
+                    children = null
+                }
+                3 {
+                    label = 'Borum ella'
+                    uri = '#'
+                    children {
+                        0 {
+                            label = 'Via Lorem et'
+                            uri = '#'
+                            children {
+                                0 {
+                                    label = 'Dolor'
+                                    uri = '#'
+                                    children = null
+                                }
+                                1 {
+                                    label = 'Sit imus'
+                                    uri = '#'
+                                    children = null
+                                }
+                            }
+                        }
+                        1 {
+                            label = 'Ipsum'
+                            uri = '#'
+                            children {
+                                0 {
+                                    label = 'Lumenta'
+                                    uri = '#'
+                                    children = null
+                                }
+                                1 {
+                                    label = 'Gi sedom'
+                                    uri = '#'
+                                    children = null
+                                }
+                            }
+                        }
+                        2 {
+                            label = 'Ipsum'
+                            uri = '#'
+                            children {
+                                0 {
+                                    label = 'Lumenta'
+                                    uri = '#'
+                                    children = null
+                                }
+                                1 {
+                                    label = 'Gi sedom'
+                                    uri = '#'
+                                    children = null
+                                }
+                            }
+                        }
+                    }
+                }
+                4 {
+                    label = 'Hui Hokus'
+                    uri = '#'
+                    children {
+                        0 {
+                            label = 'Via Lorem et'
+                            uri = '#'
+                            children {
+                                0 {
+                                    label = 'Dolor'
+                                    uri = '#'
+                                    children = null
+                                }
+                                1 {
+                                    label = 'Sit imus'
+                                    uri = '#'
+                                    children = null
+                                }
+                            }
+                        }
+                        1 {
+                            label = 'Ipsum'
+                            uri = '#'
+                            children = null
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

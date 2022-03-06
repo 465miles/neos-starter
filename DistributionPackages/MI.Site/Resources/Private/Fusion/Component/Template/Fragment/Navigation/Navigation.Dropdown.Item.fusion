@@ -1,6 +1,6 @@
 prototype(MI.Site:Component.Template.Fragment.Navigation.Dropdown.Item) < prototype(Neos.Fusion:Component) {
 
-    url = ''
+    uri = ''
     label = ''
 
     renderer = afx`
@@ -9,10 +9,10 @@ prototype(MI.Site:Component.Template.Fragment.Navigation.Dropdown.Item) < protot
             role="menuitem"
             class.main="w-full border-b-[1px] border-secondary-100 last:border-none">
             <a
-                href={props.url}
-                class.main="w-full block py-4 text-secondary-700 relative"
+                href={props.uri}
+                class.main="w-full block py-4 relative"
                 class.hover="hover:text-primary"
-                x-bind:class={"location.pathname === '" + props.url + "' && 'text-primary'"}
+                x-bind:class={"location.pathname === '" + props.uri + "' ? 'text-primary' : 'text-secondary-700'"}
             >
                 <span
                  class="text-base">

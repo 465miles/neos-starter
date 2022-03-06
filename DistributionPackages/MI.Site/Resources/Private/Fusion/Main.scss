@@ -7,6 +7,15 @@
 @import "node_modules/plyr/src/sass/plyr.scss";
 @import 'Plyr';
 
+@layer utilities {
+    // https://kulturbanause.de/blog/flexbox-responsive-layouts-ohne-media-queries/
+    .flex-item-distribute-responsive {
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: calc(960px * 999 - 100% * 999);
+    }
+}
+
 [x-cloak] {
     display: none!important;
 }

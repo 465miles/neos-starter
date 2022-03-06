@@ -1,16 +1,19 @@
 prototype(MI.Site:Component.Template.Fragment.Navigation) < prototype(Neos.Fusion:Component) {
 
+    @propTypes {
+        @strict = true
+        menuItems = ${PropTypes.any.isRequired}
+    }
+
     renderer = afx`
         <nav
             x-data='MI_Site_Component_Template_Fragment_Navigation'
             '@mouseleave'='close'
         >
             <ul class="flex items-center py-5" x-ref="main">
-                <MI.Site:Component.Template.Fragment.Navigation.Item url="https://google.com" label="Home" />
-                <MI.Site:Component.Template.Fragment.Navigation.Item url="https://google.com" label="Solutions" />
-                <MI.Site:Component.Template.Fragment.Navigation.Item url="komponenten.html" label="Examples" />
-                <MI.Site:Component.Template.Fragment.Navigation.Item url="https://google.com" label="Pricing" />
-                <MI.Site:Component.Template.Fragment.Navigation.Item url="https://google.com" label="Contact" />
+                <Neos.Fusion:Loop items={props.menuItems}>
+                    <MI.Site:Component.Template.Fragment.Navigation.Item {...item} />
+                </Neos.Fusion:Loop>
             </ul>
             <MI.Site:Component.Template.Fragment.Navigation.Megamenu />
         </nav>

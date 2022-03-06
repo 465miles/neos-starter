@@ -1,6 +1,6 @@
 prototype(MI.Site:Component.Template.Fragment.Navigation.Megamenu.Column.Title) < prototype(Neos.Fusion:Component) {
 
-    url = ''
+    uri = ''
     label = ''
 
     renderer = afx`
@@ -8,7 +8,7 @@ prototype(MI.Site:Component.Template.Fragment.Navigation.Megamenu.Column.Title) 
             href={props.url}
             class.main="w-full block px-5 py-2.5 rounded-lg"
             class.hover="hover:bg-primary-50"
-            x-bind:class={"location.pathname === '" + props.url + "' ? 'text-primary' : 'text-secondary-700'"}
+            x-bind:class={"location.pathname === '" + props.uri + "' ? 'text-primary' : 'text-secondary-700'"}
         >
             <span class="text-sm font-bold">
                 {props.label}

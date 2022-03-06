@@ -1,15 +1,28 @@
 prototype(MI.Site:Component.Template.Fragment.Navigation.Megamenu.Column) < prototype(Neos.Fusion:Component) {
 
+    @propTypes {
+        uri = ${PropTypes.string.isRequired}
+        label = ${PropTypes.string.isRequired}
+        children = ${PropTypes.any}
+    }
+
     renderer = afx`
-        <div class="flex-1 min-w-[100%] sm:min-w-[40%] lg:min-w-[20%]"
+        <div
+            class="flex-item-distribute-responsive"
+            @if={!!props.children}
         >
-            <MI.Site:Component.Template.Fragment.Navigation.Megamenu.Column.Title url="https://google.com" label={Math.randomInt(5, 30) + " Foo"} />
+            <MI.Site:Component.Template.Fragment.Navigation.Megamenu.Column.Title uri={props.uri} label={props.label} />
             <ul>
-                <MI.Site:Component.Template.Fragment.Navigation.Megamenu.Column.Item url="https://google.com" label={Math.randomInt(5, 30) + " Foo"} />
-                <MI.Site:Component.Template.Fragment.Navigation.Megamenu.Column.Item url="https://google.com" label={Math.randomInt(5, 30) + " Foo"} />
-                <MI.Site:Component.Template.Fragment.Navigation.Megamenu.Column.Item url="https://google.com" label={Math.randomInt(5, 30) + " Foo"} />
-                <MI.Site:Component.Template.Fragment.Navigation.Megamenu.Column.Item url="https://google.com" label={Math.randomInt(5, 30) + " Foo"} />
+                <Neos.Fusion:Loop items={props.children}>
+                    <MI.Site:Component.Template.Fragment.Navigation.Megamenu.Column.Item {...item} />
+                </Neos.Fusion:Loop>
             </ul>
+        </div>
+        <div
+            @if={!props.children}
+            class="bg-red-100"
+        >
+            {props.label}
         </div>
     `
 }

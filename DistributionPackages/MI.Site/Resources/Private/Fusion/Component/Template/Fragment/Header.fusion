@@ -1,17 +1,22 @@
 prototype(MI.Site:Component.Template.Fragment.Header) < prototype(Neos.Fusion:Component) {
 
+    @propTypes {
+        homeUri = ${PropTypes.string.isRequired}
+        navigation = ${PropTypes.string.isRequired}
+    }
+
     renderer = afx`
         <div class="bg-white border-b-[1px] border-secondary-100 sticky top-0 z-[1000]">
             <MI.Site:Component.Organism.Container>
                 <div class="w-full flex justify-between items-center md:space-x-10 [grid-area:large]">
                     <div class="flex justify-start lg:w-0 lg:flex-1">
-                        <a href="/">
+                        <a href={props.homeUri}>
                             <span class="sr-only">465miles</span>
                             <img class="h-6 w-auto"
                                  src={StaticResource.uri('MI.Site', 'Public/Images/465miles_logo_text.svg')} alt="" />
                         </a>
                     </div>
-                    <MI.Site:Component.Template.Fragment.Navigation />
+                    {props.navigation}
                 </div>
             </MI.Site:Component.Organism.Container>
         </div>

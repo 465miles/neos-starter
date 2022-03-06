@@ -1,7 +1,10 @@
 prototype(MI.Site:Component.Template.Fragment.Navigation.Item) < prototype(Neos.Fusion:Component) {
 
-    url = ''
-    label = ''
+    @propTypes {
+        uri = ${PropTypes.string.isRequired}
+        label = ${PropTypes.string.isRequired}
+        children = ${PropTypes.any}
+    }
 
     renderer = afx`
         <li
@@ -9,21 +12,20 @@ prototype(MI.Site:Component.Template.Fragment.Navigation.Item) < prototype(Neos.
             role="menuitem"
             class.main="group relative">
             <a
-                href={props.url}
+                href={props.uri}
                 class.main="px-5 py-2.5 flex gap-2.5 justify-center items-center relative text-secondary-700 transition-colors duration-250 rounded-xl"
                 class.hover="group-hover:bg-primary-50"
-                x-bind:class={"location.pathname === '" + props.url + "' ? 'text-primary' : 'text-secondary-700'"}
-                x-on:mouseover="show($refs.dropdown)"
+                x-bind:class={"location.pathname === '" + props.uri + "' ? 'text-primary' : 'text-secondary-700'"}
+                x-on:mouseover={!!props.children ? "show($refs.dropdown)" : "close()"}
             >
-                <span
-                 class="text-lg">
+                <span class="text-lg">
                     {props.label}
                 </span>
             </a>
-            <template x-ref="dropdown">
-                <MI.Site:Component.Template.Fragment.Navigation.Megamenu.Column />
-                <MI.Site:Component.Template.Fragment.Navigation.Megamenu.Column />
-                <MI.Site:Component.Template.Fragment.Navigation.Megamenu.Column />
+            <template x-ref="dropdown" @if={!!props.children}>
+                <Neos.Fusion:Loop items={props.children}>
+                    <MI.Site:Component.Template.Fragment.Navigation.Megamenu.Column {...item} />
+                </Neos.Fusion:Loop>
             </template>
         </li>
     `

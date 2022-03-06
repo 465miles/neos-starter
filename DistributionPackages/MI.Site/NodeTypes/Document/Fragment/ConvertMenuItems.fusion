@@ -14,8 +14,6 @@ prototype(MI.Site:Document.Page.Fragment.ConvertMenuItems) < prototype(Neos.Fusi
             node = ${item.node}
         }
 
-        icon = ${q(node).property()}
-
         children = MI.Site:Document.Page.Fragment.ConvertMenuItems {
             items = ${item.subItems}
         }

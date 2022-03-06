@@ -1,10 +1,10 @@
 prototype(MI.Site:Document.Page.Fragment.Navigation) < prototype(Neos.Fusion:Component) {
 
-    menuItems = MI.Site:Trait.Page.Fragment.ConvertMenuItems {
-        items = Neos.Neos:MenuItems {
-            startingPoint = ${site}
-//            entryLevel = 1
-            maximumLevels = 2
+    menuItems = Neos.Neos:MenuItems {
+        startingPoint = ${site}
+        maximumLevels = 3
+        @process.convert = MI.Site:Document.Page.Fragment.ConvertMenuItems {
+            items = ${value}
         }
     }
 

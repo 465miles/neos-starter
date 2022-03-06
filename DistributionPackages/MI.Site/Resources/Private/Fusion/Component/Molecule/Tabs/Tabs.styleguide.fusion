@@ -1,13 +1,6 @@
 prototype(MI.Site:Component.Molecule.Tabs).@styleguide {
     title = 'Tabs'
     props {
-
-        tabList = afx`
-            <MI.Site:Component.Atom.TabLabel id='0' title='Curabitur' />
-            <MI.Site:Component.Atom.TabLabel id='1' title='Etiam' />
-            <MI.Site:Component.Atom.TabLabel id='2' title='Phasellus' />
-        `
-
         prototype(MI.Site:Component.Molecule.Text) {
             titleTagName = 'h2'
             titleFontSize = '5'
@@ -15,7 +8,8 @@ prototype(MI.Site:Component.Molecule.Tabs).@styleguide {
             textColumns = '1'
         }
 
-        tabPanels = afx`
+        tabs = afx`
+            <MI.Site:Component.Atom.TabLabel id='0' title='Curabitur' />
             <MI.Site:Component.Atom.TabPanel id='0' >
                 <MI.Site:Component.Molecule.Text
                     leadContent='iquet nec, vulputate'
@@ -24,6 +18,7 @@ prototype(MI.Site:Component.Molecule.Tabs).@styleguide {
                 />
             </MI.Site:Component.Atom.TabPanel>
 
+            <MI.Site:Component.Atom.TabLabel id='1' title='Etiam' />
             <MI.Site:Component.Atom.TabPanel id='1' >
                 <MI.Site:Component.Molecule.Text
                     leadContent='honcus ut, imperdiet a, venenati'
@@ -32,6 +27,7 @@ prototype(MI.Site:Component.Molecule.Tabs).@styleguide {
                 />
             </MI.Site:Component.Atom.TabPanel>
 
+            <MI.Site:Component.Atom.TabLabel id='2' title='Phasellus' />
             <MI.Site:Component.Atom.TabPanel id='2' >
                 <MI.Site:Component.Molecule.Text
                     leadContent='Vestibulum purus quam'

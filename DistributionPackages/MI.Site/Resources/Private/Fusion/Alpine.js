@@ -19,4 +19,8 @@ TabLabel(Alpine)
 TabPanel(Alpine)
 Navigation(Alpine)
 
+Alpine.magic('inBackend', () => {
+    return Boolean(window?.neos)
+})
+
 Alpine.start()

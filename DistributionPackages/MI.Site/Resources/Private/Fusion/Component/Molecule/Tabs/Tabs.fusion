@@ -2,8 +2,7 @@ prototype(MI.Site:Component.Molecule.Tabs) < prototype(Neos.Fusion:Component) {
 
     @propTypes {
         @strict = true
-        tabList = ${PropTypes.string}
-        tabPanels = ${PropTypes.string}
+        tabs = ${PropTypes.string}
     }
 
     renderer = afx`
@@ -17,12 +16,11 @@ prototype(MI.Site:Component.Molecule.Tabs) < prototype(Neos.Fusion:Component) {
                 class.before="before:content-[''] before:absolute before:top-0 before:-left-0 before:h-full before:w-5 before:bg-gradient-to-r before:from-white before:to-transparent"
                 class.after="after:content-[''] after:absolute after:top-0 after:-right-0 after:h-full after:w-5 after:bg-gradient-to-l after:from-white after:to-transparent"
             >
-                <div class="overflow-auto px-2.5 md:px-5 scroll-px-2.5 md:scroll-px-5 snap-mandatory snap-x whitespace-nowrap">
-                    {props.tabList}
+                <div x-ref='tabList' class="overflow-auto px-2.5 md:px-5 scroll-px-2.5 md:scroll-px-5 snap-mandatory snap-x whitespace-nowrap">
                 </div>
             </div>
             <div class="w-full rounded-xl border-[1px] border-secondary-100 p-5 md:p-10">
-                {props.tabPanels}
+                {props.tabs}
             </div>
         </div>
     `

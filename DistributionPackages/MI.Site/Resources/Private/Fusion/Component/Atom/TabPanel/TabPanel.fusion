@@ -8,7 +8,7 @@ prototype(MI.Site:Component.Atom.TabPanel) < prototype(Neos.Fusion:Component) {
 
     renderer = afx`
         <div
-            x-data={"MI_Site_Component_Atom_TabLabel('" + props.id + "')"}
+            x-data={"MI_Site_Component_Atom_TabPanel('" + props.id + "')"}
             x-show="open"
             class="w-full"
         >

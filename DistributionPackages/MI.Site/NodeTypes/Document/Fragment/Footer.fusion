@@ -1,5 +1,7 @@
 prototype(MI.Site:Document.Page.Fragment.Footer) < prototype(Neos.Fusion:Component) {
 
+    menuItems = ${q(site).property('footerNavigation')}
+
     renderer = afx`
         <MI.Site:Component.Template.Fragment.Footer {...props} />
     `

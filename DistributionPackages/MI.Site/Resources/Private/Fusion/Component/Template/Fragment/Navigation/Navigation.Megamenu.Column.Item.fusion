@@ -10,11 +10,11 @@ prototype(MI.Site:Component.Template.Fragment.Navigation.Megamenu.Column.Item) <
             class.main="w-full">
             <a
                 href={props.url}
-                class.main="w-full block px-5 py-2.5 text-secondary-700 text-base relative rounded-lg"
+                class.main="w-full block px-5 py-2.5 rounded-lg"
                 class.hover="hover:bg-primary-50"
-                x-bind:class={"location.pathname === '" + props.url + "' && 'text-primary'"}
+                x-bind:class={"location.pathname === '" + props.url + "' ? 'text-primary' : 'text-secondary-700'"}
             >
-                <span>
+                <span class="text-sm">
                     {props.label}
                 </span>
             </a>

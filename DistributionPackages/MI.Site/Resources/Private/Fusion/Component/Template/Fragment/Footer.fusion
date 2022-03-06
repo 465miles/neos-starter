@@ -1,9 +1,25 @@
 prototype(MI.Site:Component.Template.Fragment.Footer) < prototype(Neos.Fusion:Component) {
 
+    @propTypes {
+        menuItems = ${PropTypes.string}
+    }
+
     renderer = afx`
-        <div class="relative bg-white border-b-2 border-gray-100">
+        <div class="relative bg-white">
             <MI.Site:Component.Organism.Container>
-                Footer
+                <div class="w-full flex justify-between items-center md:space-x-10 [grid-area:large] border-t-[1px] border-gray-100 py-10">
+                    <div class="flex justify-start lg:w-0 lg:flex-1">
+                        <a href="/">
+                            <span class="sr-only">465miles</span>
+                            <img class="h-4 w-auto"
+                                 src={StaticResource.uri('MI.Site', 'Public/Images/465miles_logo_text.svg')} alt="" />
+                        </a>
+                    </div>
+                    <ul class="flex gap-5">
+                        <li><a class="text-sm text-secondary-700" href="#">Datenschutz</a></li>
+                        <li><a class="text-sm text-secondary-700" href="#">Impressum</a></li>
+                    </ul>
+                </div>
             </MI.Site:Component.Organism.Container>
         </div>
     `

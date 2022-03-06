@@ -8,3 +8,12 @@
   childNodes:
     main:
       type: 'MI.Site:Collection.Main'
+  properties:
+    footerNavigation:
+      type: references
+      ui:
+        label: 'Footer Navigation'
+        inspector:
+          group: document
+          editorOptions:
+            nodeTypes: [ 'MI.Site:Document.Page' ]

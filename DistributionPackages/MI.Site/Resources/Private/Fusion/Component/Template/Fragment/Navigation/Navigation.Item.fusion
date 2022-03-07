@@ -16,7 +16,8 @@ prototype(MI.Site:Component.Template.Fragment.Navigation.Item) < prototype(Neos.
         <li
             x-data
             role="menuitem"
-            class.main="group relative">
+            data-menutype={props.menuType}
+            class.main="group relative py-5">
             <a
                 href={props.uri}
                 class.main="px-5 py-2.5 flex gap-2.5 justify-center items-center relative text-secondary-700 transition-colors duration-250 rounded-xl"
@@ -33,7 +34,7 @@ prototype(MI.Site:Component.Template.Fragment.Navigation.Item) < prototype(Neos.
                     <MI.Site:Component.Template.Fragment.Navigation.Megamenu.Column {...item} />
                 </Neos.Fusion:Loop>
             </template>
-            <MI.Site:Component.Template.Fragment.Navigation.Dropdown @if={props.menuType == 'dropdown'} />
+            <MI.Site:Component.Template.Fragment.Navigation.Dropdown @if={props.children && props.menuType == 'dropdown'} children={props.children} />
         </li>
     `
 }

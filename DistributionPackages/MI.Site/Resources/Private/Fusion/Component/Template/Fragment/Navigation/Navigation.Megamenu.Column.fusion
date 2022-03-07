@@ -14,7 +14,7 @@ prototype(MI.Site:Component.Template.Fragment.Navigation.Megamenu.Column) < prot
             <MI.Site:Component.Template.Fragment.Navigation.Megamenu.Column.Title uri={props.uri} label={props.label} />
             <ul>
                 <Neos.Fusion:Loop items={props.children}>
-                    <MI.Site:Component.Template.Fragment.Navigation.Megamenu.Column.Item {...item} />
+                    <MI.Site:Component.Template.Fragment.Navigation.Item.Sub {...item} />
                 </Neos.Fusion:Loop>
             </ul>
         </div>

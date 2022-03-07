@@ -1,11 +1,19 @@
 prototype(MI.Site:Component.Template.Fragment.Navigation.Dropdown) < prototype(Neos.Fusion:Component) {
+    @propTypes {
+        children = ${PropTypes.any}
+    }
 
     renderer = afx`
-        <ul class="absolute"
-        >
-            <MI.Site:Component.Template.Fragment.Navigation.Dropdown.Item uri="https://google.com" label={Math.randomInt(5, 30) + " Foo"} />
-            <MI.Site:Component.Template.Fragment.Navigation.Dropdown.Item uri="https://google.com" label={Math.randomInt(5, 30) + " Foo"} />
-            <MI.Site:Component.Template.Fragment.Navigation.Dropdown.Item uri="https://google.com" label={Math.randomInt(5, 30) + " Foo"} />
-        </ul>
+        <div class="absolute bottom-0 right-0 min-w-full top-[85%]">
+                <ul
+                    class.main="bg-white shadow-lg p-5 rounded-xl border-[1px] border-secondary-100"
+                    class.hide="opacity-0 pointer-events-none"
+                    class.show="group-hover:opacity-100 group-hover:pointer-events-auto"
+                >
+                    <Neos.Fusion:Loop items={props.children}>
+                        <MI.Site:Component.Template.Fragment.Navigation.Item.Sub {...item} />
+                    </Neos.Fusion:Loop>
+                </ul>
+        </div>
     `
 }

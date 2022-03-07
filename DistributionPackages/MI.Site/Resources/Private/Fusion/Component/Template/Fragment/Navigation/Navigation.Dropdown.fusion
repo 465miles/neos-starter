@@ -1,25 +1,7 @@
 prototype(MI.Site:Component.Template.Fragment.Navigation.Dropdown) < prototype(Neos.Fusion:Component) {
 
     renderer = afx`
-        <ul class="flex-1 min-w-[100%] sm:min-w-[40%] lg:min-w-[20%]"
-        >
-            <MI.Site:Component.Template.Fragment.Navigation.Dropdown.Item uri="https://google.com" label={Math.randomInt(5, 30) + " Foo"} />
-            <MI.Site:Component.Template.Fragment.Navigation.Dropdown.Item uri="https://google.com" label={Math.randomInt(5, 30) + " Foo"} />
-            <MI.Site:Component.Template.Fragment.Navigation.Dropdown.Item uri="https://google.com" label={Math.randomInt(5, 30) + " Foo"} />
-        </ul>
-        <ul class="flex-1 min-w-[100%] sm:min-w-[40%] lg:min-w-[20%]"
-        >
-            <MI.Site:Component.Template.Fragment.Navigation.Dropdown.Item uri="https://google.com" label={Math.randomInt(5, 30) + " Foo"} />
-            <MI.Site:Component.Template.Fragment.Navigation.Dropdown.Item uri="https://google.com" label={Math.randomInt(5, 30) + " Foo"} />
-            <MI.Site:Component.Template.Fragment.Navigation.Dropdown.Item uri="https://google.com" label={Math.randomInt(5, 30) + " Foo"} />
-        </ul>
-        <ul class="flex-1 min-w-[100%] sm:min-w-[40%] lg:min-w-[20%]"
-        >
-            <MI.Site:Component.Template.Fragment.Navigation.Dropdown.Item uri="https://google.com" label={Math.randomInt(5, 30) + " Foo"} />
-            <MI.Site:Component.Template.Fragment.Navigation.Dropdown.Item uri="https://google.com" label={Math.randomInt(5, 30) + " Foo"} />
-            <MI.Site:Component.Template.Fragment.Navigation.Dropdown.Item uri="https://google.com" label={Math.randomInt(5, 30) + " Foo"} />
-        </ul>
-        <ul class="flex-1 min-w-[100%] sm:min-w-[40%] lg:min-w-[20%]"
+        <ul class="absolute"
         >
             <MI.Site:Component.Template.Fragment.Navigation.Dropdown.Item uri="https://google.com" label={Math.randomInt(5, 30) + " Foo"} />
             <MI.Site:Component.Template.Fragment.Navigation.Dropdown.Item uri="https://google.com" label={Math.randomInt(5, 30) + " Foo"} />

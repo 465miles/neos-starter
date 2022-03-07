@@ -7,11 +7,13 @@ prototype(MI.Site:Component.Template.Fragment.Header).@styleguide {
                 0 {
                     label = 'Home'
                     uri = '#'
+                    menuType = 'dropdown'
                     children = null
                 }
                 1 {
                     label = 'Products'
                     uri = '#'
+                    menuType = 'megamenu'
                     children {
                         0 {
                             label = 'Do la amet'
@@ -28,11 +30,13 @@ prototype(MI.Site:Component.Template.Fragment.Header).@styleguide {
                 2 {
                     label = 'Tertere'
                     uri = '#'
+                    menuType = 'megamenu'
                     children = null
                 }
                 3 {
                     label = 'Borum ella'
                     uri = '#'
+                    menuType = 'megamenu'
                     children {
                         0 {
                             label = 'Via Lorem et'
@@ -87,6 +91,7 @@ prototype(MI.Site:Component.Template.Fragment.Header).@styleguide {
                 4 {
                     label = 'Hui Hokus'
                     uri = '#'
+                    menuType = 'megamenu'
                     children {
                         0 {
                             label = 'Via Lorem et'

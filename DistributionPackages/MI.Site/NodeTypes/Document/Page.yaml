@@ -8,3 +8,26 @@
   childNodes:
     main:
       type: 'MI.Site:Collection.Main'
+  properties:
+    menuType:
+      type: string
+      defaultValue: dropdown
+      ui:
+        label: 'Menütyp'
+        reloadIfChanged: true
+        inspector:
+          group: document
+          # For level 2 pages (-1 for page level)
+          # could be solved also with constraints
+          hidden: 'ClientEval:node.depth !== 3'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: false
+            placeholder: 'Menütyp wählen'
+            values:
+              dropdown:
+                label: 'Dropdown'
+                icon: caret-square-down
+              megamenu:
+                label: 'Megamenu'
+                icon: columns

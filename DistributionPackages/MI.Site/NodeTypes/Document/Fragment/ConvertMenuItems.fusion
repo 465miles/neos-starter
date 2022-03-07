@@ -14,6 +14,9 @@ prototype(MI.Site:Document.Page.Fragment.ConvertMenuItems) < prototype(Neos.Fusi
             node = ${item.node}
         }
 
+        menuType = ${q(item.node).property('menuType')}
+        menuType.@if.is = ${item.menuLevel == 1}
+
         children = MI.Site:Document.Page.Fragment.ConvertMenuItems {
             items = ${item.subItems}
         }

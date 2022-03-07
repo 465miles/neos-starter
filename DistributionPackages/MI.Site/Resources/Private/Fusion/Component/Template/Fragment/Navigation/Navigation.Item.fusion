@@ -4,7 +4,13 @@ prototype(MI.Site:Component.Template.Fragment.Navigation.Item) < prototype(Neos.
         uri = ${PropTypes.string.isRequired}
         label = ${PropTypes.string.isRequired}
         children = ${PropTypes.any}
+        menuType = ${PropTypes.oneOf(['dropdown', 'megamenu']).isRequired}
     }
+
+    rendererfefw = afx`
+
+        {Json.stringify(props, ['JSON_PRETTY_PRINT'])}
+    `
 
     renderer = afx`
         <li
@@ -16,17 +22,18 @@ prototype(MI.Site:Component.Template.Fragment.Navigation.Item) < prototype(Neos.
                 class.main="px-5 py-2.5 flex gap-2.5 justify-center items-center relative text-secondary-700 transition-colors duration-250 rounded-xl"
                 class.hover="group-hover:bg-primary-50"
                 x-bind:class={"location.pathname === '" + props.uri + "' ? 'text-primary' : 'text-secondary-700'"}
-                x-on:mouseover={!!props.children ? "show($refs.dropdown)" : "close()"}
+                x-on:mouseover={props.children && props.menuType == 'megamenu' ? "show($refs.dropdown)" : "close()"}
             >
                 <span class="text-lg">
                     {props.label}
                 </span>
             </a>
-            <template x-ref="dropdown" @if={!!props.children}>
+            <template x-ref="dropdown" @if={props.children && props.menuType == 'megamenu'}>
                 <Neos.Fusion:Loop items={props.children}>
                     <MI.Site:Component.Template.Fragment.Navigation.Megamenu.Column {...item} />
                 </Neos.Fusion:Loop>
             </template>
+            <MI.Site:Component.Template.Fragment.Navigation.Dropdown @if={props.menuType == 'dropdown'} />
         </li>
     `
 }

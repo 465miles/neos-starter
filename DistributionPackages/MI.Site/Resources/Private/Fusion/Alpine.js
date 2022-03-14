@@ -17,7 +17,10 @@ VideoExternal(Alpine)
 AccordionItem(Alpine)
 TabLabel(Alpine)
 TabPanel(Alpine)
-Navigation(Alpine)
+
+if(Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) >= 768) {
+    Navigation(Alpine)
+}
 
 Alpine.magic('inBackendWaitForInlineEditing', el => callback => {
 

@@ -5,7 +5,8 @@ prototype(MI.Site:Component.Template.Fragment.Navigation.Megamenu) < prototype(N
             x-cloak
             x-show="open"
             x-transition
-            class.main="absolute left-0 w-full top-[85%]"
+            class.mobile="hidden"
+            class.main="md:block absolute left-0 w-full top-[85%]"
         >
             <MI.Site:Component.Organism.Container>
                 <div

@@ -10,11 +10,23 @@ prototype(MI.Site:Component.Template.Fragment.Navigation) < prototype(Neos.Fusio
             x-data='MI_Site_Component_Template_Fragment_Navigation'
             '@mouseleave'='close'
         >
-            <ul class="flex items-center" x-ref="main">
+            <ul
+                class.mobile="absolute left-5 sm:left-10 right-5 sm:right-10 top-[85%] bg-white shadow-lg p-5 rounded-xl border-[1px] border-secondary-100"
+                class.main="flex items-center flex-wrap md:static md:top-['auto'] md:left-['auto'] md:right-['auto'] md:bg-none md:shadow-none md:p-0 md:border-none"
+                x-ref="main"
+            >
                 <Neos.Fusion:Loop items={props.menuItems}>
                     <MI.Site:Component.Template.Fragment.Navigation.Item {...item} />
                 </Neos.Fusion:Loop>
             </ul>
+            <button class="flex items-center md:hidden py-6">
+                <svg class="block h-8 w-8" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1.5" clip-rule="evenodd" viewBox="0 0 24 24">
+                        <path fill="none" d="M0 0h24v24H0z"/>
+                    <path fill="none" stroke="#000" stroke-width="3.17" d="M3.004 70h18" transform="matrix(.88889 0 0 1 1.33 -64)"/>
+                    <path fill="none" stroke="#000" stroke-width="3.17" d="M3.004 70h18" transform="matrix(.88889 0 0 1 1.33 -52)"/>
+                    <path fill="none" stroke="#000" stroke-width="3.17" d="M3.004 70h18" transform="matrix(.88889 0 0 1 1.33 -58)"/>
+                    </svg>
+            </button>
             <MI.Site:Component.Template.Fragment.Navigation.Megamenu />
         </nav>
     `
